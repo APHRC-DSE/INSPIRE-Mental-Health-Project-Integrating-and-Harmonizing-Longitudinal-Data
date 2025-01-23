@@ -39,18 +39,19 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │
 │   ├── staging database   
 │   │   │                 
-│   │   ├── staging db     <- Documentation on design and creation of the staging database
-│   │   ├── metadata       <- Files generated for various staging db tables
-│   │   ├── ETL source to staging      <- Files generated for various staging db tables
-│   │   └── train_model.py
+│   │   ├── staging db              <- Documentation on design and creation of the staging database
+│   │   ├── metadata                <- Files generated for various staging db tables
+│   │   ├── ETL source to staging   <- Source code on ETL of various data using the various tools. i.e SQL, Python, Pentaho.
+│   │   ├── merge csv dumps         <- Merging all ETL population studies to staging
+│   │   └── metabase dashboard
 │   │
-│   ├── OMOP-CDM           <- Staging to OMOP Mapping document
+│   ├── OMOP-CDM           <- ETL from staging to OMOP
 │   │   │                 
-│   │   ├── predict_model.py
-│   │   └── train_model.py
+│   │   ├── Mapping                 <- Staging to OMOP Mapping document
+│   │   └── ETL staging to OMOP
 │   │
-│   └── visualisation  <- Scripts to create exploratory and results-oriented visualisations
-│       └── visualise.py
+│   └── ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
+│   
 └──
 ```
 
