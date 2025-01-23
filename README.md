@@ -1,5 +1,5 @@
 # INSPIRE-Mental-Health-Project-Integrating-and-Harmonizing-Longitudinal-Data
-This repository contains metadata of data accessed during the landscape analysis and the use case data that was used to develop the staging database
+This repository contains project resources for building a data science platform for integration and harmonization of longitudinal data on mental health in Africa.
 
 ## Summary
 Longitudinal studies are essential for understanding the progression of mental health disorders over time, but combining data collected through different methods to assess conditions like depression, anxiety, and psychosis presents significant challenges. This project will utilize a mapping technique allowing for the conversion of diverse longitudinal data into a standardized staging database, leveraging the Data Documentation Initiative (DDI) Lifecycle and the Observational Medical Outcomes Partnership (OMOP) Common Data Model (CDM) standards to ensure consistency and compatibility across datasets.
