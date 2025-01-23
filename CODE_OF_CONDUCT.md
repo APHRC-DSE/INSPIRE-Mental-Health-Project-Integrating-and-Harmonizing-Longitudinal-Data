@@ -1,11 +1,5 @@
 # Contributor Covenant Code of Conduct
 
-**NOTE: PLEASE UPDATE THIS FOR YOUR OWN REPO**
-
-> Code of Conduct, commonly abbreviated as “CoC”, is a set of rules outlining the social norms, rules, & responsibilities of an individual project, party or organization.
-
-*This is an example of a Code of Conduct (CoC) provided as a starting point for an open source project. When reusing this repo, you should edit and adapt this to meet the needs of your specific team. If you want to apply an institutional CoC to a project repo make sure that all members involved are employees of the same organisation, such as for the Turing. When external members are involved, you might want to use a hybrid approach, as used by the [Open Research Community Management Team](https://github.com/alan-turing-institute/open-research-community-management/blob/main/CODE_OF_CONDUCT.md#122-if-the-breach-is-considered-outside-the-scope-of-this-code-of-conduct). There are many more examples to choose from, so please also check other sources.*
-
 This Code of Conduct document outlines our expectations for 
 participants within the team as well as this online repository (project).
 We also provide steps to reporting any concern, uncomfortable situation 
@@ -13,17 +7,7 @@ or unacceptable behaviour by other participants.
 We are committed to providing a welcoming, collaborative and inspiring experience 
 for all and expect our code of conduct to be honoured.
 
-<!--Delete these lines when reusing this repository-->
-The Code of Conduct used in this document is selected from the options provided by GitHub that reuses Contributor Covenant's version (add a new file -> name that `CODE_OF_CONDUCT.md` -> click on 'Choose a code of conduct template' -> select from the options that best suits the requirements in your project).
-<img width="1379" alt="image" src="https://user-images.githubusercontent.com/5370471/160671868-b936eaea-355e-45e2-b188-a9221567056a.png">
-
-We have further adopted the language and content that reflects our values and needs in the project.
-To learn more about why we recommend creating a CODE_OF_CONDUCT.md file, please read the [Participation Guidelines](https://the-turing-way.netlify.app/project-design/project-repo/project-repo-participation.html) chapter in *The Turing Way* Guide for Project Design.
-It is recommended to select and adapt a well established Code of Conduct. Many openly developed projects have a Code of Conduct in place that often is openly licensed and can be re-used and adapted for your project. 
-*The Turing Way* [Code of Conduct](https://github.com/alan-turing-institute/the-turing-way/blob/main/CODE_OF_CONDUCT.md) is one example of a Code of Conduct built on various existing ones and can be adapted further.
-<!--Delete these lines when reusing this repository-->
-
-### Diversity Statement
+## Diversity Statement
 
 We encourage everyone to participate and are committed to building a project
 for all. Although we will fail at times, we seek to treat everyone both as
@@ -32,12 +16,19 @@ expect them to take responsibility for it. If someone has been harmed or
 offended, it is our responsibility to listen carefully and respectfully, and do
 our best to right the wrong.
 
-Although this list cannot be exhaustive, we explicitly honour diversity in age,
-gender, gender identity or expression, culture, ethnicity, language, national
-origin, political beliefs, profession, race, religion, sexual orientation,
-socioeconomic status, and technical ability. We will not tolerate discrimination
-based on any of the protected characteristics above, including participants with
-any visible or invisible disabilities.
+## Our Pledge
+
+We as members, contributors, and leaders explicitly pledge to make participation in our community
+a harassment-free experience for everyone, regardless of age, gender, body size, visible or 
+invisible disability, ethnicity, sex characteristics, gender identity or expression, 
+level of experience, education, socio-economic status, nationality, national origin, 
+political beliefs, culture, language, personal appearance, race, caste, colour, religion,
+sexual identity or orientation, socioeconomic status, profession, and technical ability. 
+Although this list cannot be exhaustive, We will not tolerate discrimination based on 
+any of the protected characteristics above.
+
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive,
+and healthy community.
 
 ## Our Standards
 
@@ -90,31 +81,69 @@ All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
 Together we strive to foster an environment where everyone feels valued, respected, and included.
 
+### Enforcement Responsibilities
 
 Community leaders are responsible for clarifying and enforcing our standards of
 acceptable behaviour and will take appropriate and fair corrective, restorative and 
 action in response to any behaviour that they deem inappropriate, threatening, offensive,
 or harmful.
 
-### Enforcement Responsibilities
-
 Community leaders have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions that are
 not aligned to this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
 
+## Enforcement Guidelines
+
+Community leaders will follow these Community Impact Guidelines in determining the 
+consequences for any action they deem in violation of this Code of Conduct:
+
+### 1. Correction
+
+**Community Impact**: Use of inappropriate language or other behaviour deemed
+unprofessional or unwelcome in the community.
+
+**Consequence**: A private, written warning from community leaders, providing
+clarity around the nature of the violation and an explanation of why the
+behaviour was inappropriate. A public apology may be requested.
+
+### 2. Warning
+
+**Community Impact**: A violation through a single incident or series of
+actions.
+
+**Consequence**: A warning with consequences for continued behaviour. No
+interaction with the people involved, including unsolicited interaction with
+those enforcing the Code of Conduct, for a specified period of time. This
+includes avoiding interactions in community spaces as well as external channels
+like social media. Violating these terms may lead to a temporary or permanent
+ban.
+
+### 3. Temporary Break
+
+**Community Impact**: A serious violation of community standards, including
+sustained inappropriate behaviour.
+
+**Consequence**: A temporary break from any sort of interaction or public
+communication with the community for a specified period of time. No public or
+private interaction with the people involved, including unsolicited interaction
+with those enforcing the Code of Conduct, is allowed during this period.
+
+### 4. Other Measures
+
+**Community Impact**: Demonstrating a pattern of disrespect for the community
+standards, including sustained inappropriate behaviour, harassment of an
+individual, or aggression toward or disparagement of classes of individuals.
+
+**Consequence**: Other more serious measures may be taken in consultation with the community leaders.
+
 ## Reporting Incident
 
 If you experience or witness unacceptable behaviour, or have any other concerns, please report it 
-by contacting the Team Lead.
-For **this** template repo related communications, please email Malvika Sharan (msharan@turing.ac.uk).
+by contacting the [**Study Program Coordinator - Bylhah Mugotitsa**](mailto:bmugotitsa@aphrc.org?subject=[GitHub]%20Source%20Han%20Sans).
 
-**When reusing this repo please replace information by adding NAME AND CONTACT INFORMATION appropriate for your project.**. 
-
-To report an issue involving the team lead, please email directly to the Programme Lead.
-For **this** template repo related communications, please email Kirstie Whitaker (kwhitaker@turing.ac.uk).
-
-**When reusing this repo please replace information by adding NAME AND CONTACT INFORMATION appropriate for your project.**. 
+To report an issue involving the Study Program Coordinator, please email directly to the 
+[**Study PI - Agnes Kiragga**](mailto:akiragga@aphrc.org?subject=[GitHub]%20Source%20Han%20Sans).
 
 In your report please include:
 
