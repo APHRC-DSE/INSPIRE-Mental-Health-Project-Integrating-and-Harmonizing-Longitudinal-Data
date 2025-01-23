@@ -2,4 +2,6 @@
 
 ## Secondary data
 
+We conducted a scoping analysis [APHRC-DSE/INSPIRE-Mental-Health-Project_Landscape_Analysis](https://github.com/APHRC-DSE/INSPIRE-Mental-Health-Project_Landscape_Analysis) that led to access of datasets from 17 articles.
+
 ## Primary data
