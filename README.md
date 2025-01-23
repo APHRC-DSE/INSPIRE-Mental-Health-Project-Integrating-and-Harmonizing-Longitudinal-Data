@@ -51,7 +51,6 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   └── ETL staging to OMOP
 │   │
 │   └── ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
-│   
 └──
 ```
 
