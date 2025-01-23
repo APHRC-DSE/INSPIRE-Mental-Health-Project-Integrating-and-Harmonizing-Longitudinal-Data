@@ -29,28 +29,36 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │
 ├── images                 <- Images folder for any images to be used in the README files
 │
-├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and how they can be accessed. 
+├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and how they can be
+│                             accessed.  
 │   ├── primary        
 │   └── secondary      
 │
-├── project_management     <- Meeting notes and other project planning resources
+├── project_management     <- Project planning resources
+│   ├── communication
+│   ├── people folder
+│   ├── policies
+│   ├── project planning
+│   ├── project proposals          
+│   └── project reports 
 │
 ├── src                    <- Delivarable 2 - 5: Source code for use in this project.
 │   │
-│   ├── staging database   
+│   ├── A. staging database   
 │   │   │                 
-│   │   ├── staging db              <- Documentation on design and creation of the staging database
-│   │   ├── metadata                <- Files generated for various staging db tables
-│   │   ├── ETL source to staging   <- Source code on ETL of various data using the various tools. i.e SQL, Python, Pentaho.
-│   │   ├── merge csv dumps         <- Merging all ETL population studies to staging
-│   │   └── metabase dashboard
+│   │   ├── 1. staging db              <- Documentation on design and creation of the staging database
+│   │   ├── 2. metadata                <- Files generated for various staging db tables
+│   │   ├── 3. ETL-source to staging   <- Source code on ETL of various data using the various tools.
+│   │   │                                  i.e SQL, Python, Pentaho.
+│   │   ├── 4. merge csv dumps         <- Merging all ETL population studies to staging
+│   │   └── 5. metabase dashboard
 │   │
-│   ├── OMOP-CDM           <- ETL from staging to OMOP
+│   ├── B. OMOP-CDM           <- ETL from staging to OMOP
 │   │   │                 
-│   │   ├── Mapping                 <- Staging to OMOP Mapping document
-│   │   └── ETL staging to OMOP
+│   │   ├── 1. mapping document           <- Staging to OMOP Mapping document
+│   │   └── 2. ETL staging to OMOP
 │   │
-│   └── ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
+│   └── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
 └──
 ```
 
@@ -62,8 +70,9 @@ This repository has been set up and maintained by [Bylhah Mugotitsa ](https://gi
 ---
 
 This work is licensed under the MIT license (code) and Creative Commons Attribution 4.0 International license (for documentation).
-You are free to share and adapt the material for any purpose, even commercially, as long as you provide attribution (give appropriate credit, provide a link to the license,
-and indicate if changes were made) in any reasonable manner, but not in any way that suggests the license or endorses you or your use and with no additional restrictions.
+You are free to share and adapt the material for any purpose, even commercially, as long as you provide 
+attribution (give appropriate credit, provide a link to the license, and indicate if changes were made) in any reasonable
+manner, but not in any way that suggests the license or endorses you or your use and with no additional restrictions.
 
 🤝 Acknowledgement
 ---
