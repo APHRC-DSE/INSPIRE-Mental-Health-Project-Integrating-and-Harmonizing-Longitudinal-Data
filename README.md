@@ -16,6 +16,44 @@ The staging database serves as an innovative tool in managing longitudinal menta
 - **D4:** Identify and answer key questions about causes and management of mental health in African settings through cohorts identified in the OMOP database. 
 - **D5:** Conduct advanced causal inferential analyses on the impact of community, household and environmental exposures on mental health across a federated cloud-based environment on the East Africa data web.
 
+## Repo Structure
+
+Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecutter-data-science).
+
+```
+├── LICENSE
+├── README.md              <- The top-level README for users of this project.
+├── CODE_OF_CONDUCT.md     <- Guidelines for users and contributors of the project.
+├── CONTRIBUTING.md        <- Information on how to contribute to the project.
+├── CHANGES.md             <- Information on summary of changes made in this repository
+│
+├── images                 <- Images folder for any images to be used in the README files
+│
+├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and how they can be accessed. 
+│   ├── primary        
+│   └── secondary      
+│
+├── project_management     <- Meeting notes and other project planning resources
+│
+├── src                    <- Delivarable 2 - 5: Source code for use in this project.
+│   │
+│   ├── staging database   
+│   │   │                 
+│   │   ├── staging db     <- Documentation on design and creation of the staging database
+│   │   ├── metadata       <- Files generated for various staging db tables
+│   │   ├── ETL source to staging      <- Files generated for various staging db tables
+│   │   └── train_model.py
+│   │
+│   ├── OMOP-CDM           <- Staging to OMOP Mapping document
+│   │   │                 
+│   │   ├── predict_model.py
+│   │   └── train_model.py
+│   │
+│   └── visualisation  <- Scripts to create exploratory and results-oriented visualisations
+│       └── visualise.py
+└──
+```
+
 ## Maintainers
 
 This repository has been set up and maintained by [Bylhah Mugotitsa ](https://github.com/BeeMugo9) and [Reinpeter Momanyi](https://github.com/reinpmomz) to centralise resources used, developed and maintained under the project.
