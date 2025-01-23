@@ -16,15 +16,9 @@ The staging database serves as an innovative tool in managing longitudinal menta
 - **D4:** Identify and answer key questions about causes and management of mental health in African settings through cohorts identified in the OMOP database. 
 - **D5:** Conduct advanced causal inferential analyses on the impact of community, household and environmental exposures on mental health across a federated cloud-based environment on the East Africa data web.
 
-## Contributing
+## Maintainers
 
-### Guidelines
-
-### Code of Conduct
-
-### Maintainers
-
-This repository has been set up and maintained by [Bylhah Mugotitsa ](https://github.com/BeeMugo9) and [Reinpeter Momanyi](https://github.com/reinpmomz) to centralise resources used, developed and maintained by the project.
+This repository has been set up and maintained by [Bylhah Mugotitsa ](https://github.com/BeeMugo9) and [Reinpeter Momanyi](https://github.com/reinpmomz) to centralise resources used, developed and maintained under the project.
 
 ♻️ License
 ---
@@ -37,5 +31,11 @@ and indicate if changes were made) in any reasonable manner, but not in any way 
 ---
 
 This repository uses the template created by Malvika and members of *The Turing Way* team, shared under CC-BY 4.0 for reuse: https://github.com/the-turing-way/reproducible-project-template.
+
+## Contributors ✨
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 
