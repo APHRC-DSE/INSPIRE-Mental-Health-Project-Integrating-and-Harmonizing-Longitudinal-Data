@@ -51,6 +51,20 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   ├── 2. metadata                <- Files generated for various staging db tables
 │   │   ├── 3. ETL-source to staging   <- Source code on ETL of various data using the various tools.
 │   │   │                                  i.e SQL, Python, Pentaho.
+│   │   │   │
+│   │   │   ├── population_study_id_1              
+│   │   │   ├── population_study_id_2             
+│   │   │   ├── population_study_id_3             
+│   │   │   ├── population_study_id_4              
+│   │   │   ├── population_study_id_5             
+│   │   │   ├── population_study_id_6
+│   │   │   ├── population_study_id_7              
+│   │   │   ├── population_study_id_8             
+│   │   │   ├── population_study_id_9             
+│   │   │   ├── population_study_id_10              
+│   │   │   ├── population_study_id_11             
+│   │   │   └── population_study_id_12
+│   │   │                                                 
 │   │   ├── 4. merge csv dumps         <- Merging all ETL population studies to staging
 │   │   └── 5. metabase dashboard
 │   │
