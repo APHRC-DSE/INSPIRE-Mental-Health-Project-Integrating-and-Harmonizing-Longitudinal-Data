@@ -36,3 +36,5 @@ Here are recommendations of directories (main bullet points) and files (sub-bull
     * [ ] Six monthly project updates
     * [ ] Impact report
     * [ ] Research related reporting
+* [ ] Workshops
+    * [ ] Deliverables
