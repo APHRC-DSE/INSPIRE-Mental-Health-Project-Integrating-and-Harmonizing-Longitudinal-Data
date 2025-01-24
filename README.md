@@ -29,8 +29,8 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │
 ├── images                 <- Images folder for any images to be used in the README files
 │
-├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and how they can be
-│                             accessed.  
+├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and
+│                             how they can be accessed.  
 │   ├── primary        
 │   └── secondary      
 │
@@ -39,14 +39,15 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   ├── people folder
 │   ├── policies
 │   ├── project planning
-│   ├── project proposals          
-│   └── project reports 
+│   ├── project proposals
+│   ├── project reports           
+│   └── workshops
 │
 ├── src                    <- Delivarable 2 - 5: Source code for use in this project.
 │   │
 │   ├── A. staging database   
 │   │   │                 
-│   │   ├── 1. staging db              <- Documentation on design and creation of the staging database
+│   │   ├── 1. staging db              <- Documentation on design and creation of staging database
 │   │   ├── 2. metadata                <- Files generated for various staging db tables
 │   │   ├── 3. ETL-source to staging   <- Source code on ETL of various data using the various tools.
 │   │   │                                  i.e SQL, Python, Pentaho.
