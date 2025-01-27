@@ -1,0 +1,263 @@
+inspire_concept_id,concept_id,concept_vocabulary,concept_code,concept_text,score,start_date,end_date
+3000000001,3042924,LOINC,44250-9,Little interest or pleasure in doing things in last 2W,,01-Jan-1970,31-Dec-2099
+3000000002,3045858,LOINC,44255-8,"Feeling down, depressed, or hopeless in last 2 weeks",,01-Jan-1970,31-Dec-2099
+3000000003,3045933,LOINC,44259-0,"Trouble falling or staying asleep, or sleeping too much in last 2 weeks",,01-Jan-1970,31-Dec-2099
+3000000004,3044964,LOINC,44254-1,Feeling tired or having little energy in last 2W,,01-Jan-1970,31-Dec-2099
+3000000005,3044098,LOINC,44251-7,Poor appetite or overeating in last 2W,,01-Jan-1970,31-Dec-2099
+3000000006,3043801,LOINC,44258-2,Feeling bad about yourself — or that you are a failure or have let yourself or your family down in last 2W,,01-Jan-1970,31-Dec-2099
+3000000007,3045019,LOINC,44252-5,"Trouble concentrating on things, such as reading the newspaper or watching television in last 2W",,01-Jan-1970,31-Dec-2099
+3000000008,3043785,LOINC,44253-3,Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual in last 2W,,01-Jan-1970,31-Dec-2099
+3000000009,3043462,LOINC,44260-8,Thoughts that you would be better off dead or of hurting yourself in some way in last 2W,,01-Jan-1970,31-Dec-2099
+3000000010,3042932,LOINC,44261-6,Patient Health Questionnaire 9 item (PHQ-9) total score,,01-Jan-1970,31-Dec-2099
+3000000011,45883172,LOINC,LA6568-5,Not at all,0,01-Jan-1970,31-Dec-2099
+3000000012,45879886,LOINC,LA6569-3,Several days,1,01-Jan-1970,31-Dec-2099
+3000000013,45878994,LOINC,LA6570-1,More than half the days,2,01-Jan-1970,31-Dec-2099
+3000000014,45882010,LOINC,LA6571-9,Nearly every day,3,01-Jan-1970,31-Dec-2099
+3000000015,40772149,LOINC,69725-0,"Feeling nervous, anxious, or on edge in last 2W",,01-Jan-1970,31-Dec-2099
+3000000016,40771094,LOINC,68509-9,Not being able to stop or control worrying in last 2W,,01-Jan-1970,31-Dec-2099
+3000000017,40772155,LOINC,69733-4,Worrying too much about different things in last 2W,,01-Jan-1970,31-Dec-2099
+3000000018,40772156,LOINC,69734-2,Trouble relaxing in last 2W,,01-Jan-1970,31-Dec-2099
+3000000019,40772157,LOINC,69735-9,Being so restless that it's hard to sit still in last 2W,,01-Jan-1970,31-Dec-2099
+3000000020,40772115,LOINC,69689-8,Becoming easily annoyed or Irritable in last 2W,,01-Jan-1970,31-Dec-2099
+3000000021,40772158,LOINC,69736-7,Feeling afraid as if something awful might happen in last 2W,,01-Jan-1970,31-Dec-2099
+3000000022,42868746,LOINC,70274-6,Generalized anxiety disorder 7 item (GAD-7) total score,,01-Jan-1970,31-Dec-2099
+3000000023,42870286,LOINC,71344-6,I have been able to laugh and see the funny side of things,,01-Jan-1970,31-Dec-2099
+3000000024,42870287,LOINC,71345-3,I have looked forward with enjoyment to things,,01-Jan-1970,31-Dec-2099
+3000000025,42870288,LOINC,71346-1,I have blamed myself unnecessisarily when things went wrong,,01-Jan-1970,31-Dec-2099
+3000000026,42870289,LOINC,71347-9,I have been anxious or worried for no good reason,,01-Jan-1970,31-Dec-2099
+3000000027,42870290,LOINC,71348-7,I have felt scared or panicky for no very good reason,,01-Jan-1970,31-Dec-2099
+3000000028,42870291,LOINC,71349-5,Things have been getting on top of me,,01-Jan-1970,31-Dec-2099
+3000000029,42870292,LOINC,71350-3,I have been so unhappy that I have had difficulty sleeping,,01-Jan-1970,31-Dec-2099
+3000000030,42870293,LOINC,71351-1,I have felt sad or miserable,,01-Jan-1970,31-Dec-2099
+3000000031,42870294,LOINC,71352-9,I have been so unhappy that I have been crying,,01-Jan-1970,31-Dec-2099
+3000000032,42870295,LOINC,71353-7,The thought of harming myself has occurred to me,,01-Jan-1970,31-Dec-2099
+3000000033,1989297,LOINC,99046-5,Total score [EPDS,,01-Jan-1970,31-Dec-2099
+3000000034,45878094,LOINC,LA18376-6,As much as I always could,0,01-Jan-1970,31-Dec-2099
+3000000035,45877849,LOINC,LA18377-4,Not quite so much now,1,01-Jan-1970,31-Dec-2099
+3000000036,45878095,LOINC,LA18378-2,Definitely not so much now,2,01-Jan-1970,31-Dec-2099
+3000000037,45883172,LOINC,LA6568-5,Not at all,3,01-Jan-1970,31-Dec-2099
+3000000038,45885323,LOINC,LA18379-0,As much as I ever could,0,01-Jan-1970,31-Dec-2099
+3000000039,45879387,LOINC,LA18380-8,Rather less than I used to,1,01-Jan-1970,31-Dec-2099
+3000000040,45880856,LOINC,LA18381-6,Definitely less than I used to,2,01-Jan-1970,31-Dec-2099
+3000000041,45879388,LOINC,LA18382-4,Hardly at all,3,01-Jan-1970,31-Dec-2099
+3000000042,45885120,LOINC,LA18383-2,"Yes, most of the time",3,01-Jan-1970,31-Dec-2099
+3000000043,45880858,LOINC,LA18384-0,"Yes, some of the time",2,01-Jan-1970,31-Dec-2099
+3000000044,45880859,LOINC,LA18385-7,Not very often,1,01-Jan-1970,31-Dec-2099
+3000000045,45880857,LOINC,LA18386-5,"No, never",0,01-Jan-1970,31-Dec-2099
+3000000046,45885119,LOINC,LA18387-3,"No, not at all",0,01-Jan-1970,31-Dec-2099
+3000000047,45884598,LOINC,LA14751-4,Hardly ever,1,01-Jan-1970,31-Dec-2099
+3000000048,45879997,LOINC,LA18388-1,"Yes, sometimes",2,01-Jan-1970,31-Dec-2099
+3000000049,45877850,LOINC,LA18389-9,"Yes, very often",3,01-Jan-1970,31-Dec-2099
+3000000050,45885324,LOINC,LA18390-7,"Yes, quite a lot",3,01-Jan-1970,31-Dec-2099
+3000000051,45879389,LOINC,LA18391-5,"No, not much",1,01-Jan-1970,31-Dec-2099
+3000000052,45879390,LOINC,LA18392-3,"Yes, most of the time I haven't been able to cope at all",3,01-Jan-1970,31-Dec-2099
+3000000053,45881507,LOINC,LA18393-1,"Yes, sometimes I haven't been coping as well as usual",2,01-Jan-1970,31-Dec-2099
+3000000054,45877851,LOINC,LA18394-9,"No, most of the time I have coped quite well",1,01-Jan-1970,31-Dec-2099
+3000000055,45885325,LOINC,LA18395-6,"No, have been coping as well as ever",0,01-Jan-1970,31-Dec-2099
+3000000056,45879391,LOINC,LA18396-4,"Yes, quite often",2,01-Jan-1970,31-Dec-2099
+3000000057,45885326,LOINC,LA18397-2,Only occasionally,1,01-Jan-1970,31-Dec-2099
+3000000058,45879391,LOINC,LA18396-4,"Yes, quite often",3,01-Jan-1970,31-Dec-2099
+3000000059,45882528,LOINC,LA10082-8,Sometimes,2,01-Jan-1970,31-Dec-2099
+3000000060,45876662,LOINC,LA6270-8,Never,0,01-Jan-1970,31-Dec-2099
+3000000061,3965677,LOINC,101718-5,Trouble falling or staying asleep?,,01-Jan-1970,31-Dec-2099
+3000000062,3965341,LOINC,101717-7,Having difficulty concentrating?,,01-Jan-1970,31-Dec-2099
+3000000063,3966273,LOINC,101716-9,Feeling jumpy or easily startled?,,01-Jan-1970,31-Dec-2099
+3000000064,3966558,LOINC,101715-1,Being superalert or watchful or on guard?,,01-Jan-1970,31-Dec-2099
+3000000065,3965363,LOINC,101702-9,Taking too many risks or doing things that could cause you harm?,,01-Jan-1970,31-Dec-2099
+3000000066,3966052,LOINC,101714-4,"Irritable behavior, angry outbursts, or acting aggressively?",,01-Jan-1970,31-Dec-2099
+3000000067,3965084,LOINC,101713-6,"Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?",,01-Jan-1970,31-Dec-2099
+3000000068,3966252,LOINC,101712-8,Feeling distant or cut off from other people?,,01-Jan-1970,31-Dec-2099
+3000000069,3966495,LOINC,101711-0,Loss of interest in activities that you used to enjoy?,,01-Jan-1970,31-Dec-2099
+3000000070,3966374,LOINC,101701-1,"Having strong negative feelings such as fear, horror, anger, guilt, or shame?",,01-Jan-1970,31-Dec-2099
+3000000071,3966792,LOINC,101700-3,Blaming yourself or someone else for the stressful experience or what happened after it?,,01-Jan-1970,31-Dec-2099
+3000000072,3965176,LOINC,101699-7,"Having strong negative beliefs about yourself, others, or the world?",,01-Jan-1970,31-Dec-2099
+3000000073,3965435,LOINC,101710-2,Trouble remembering important parts of the stressful experience?,,01-Jan-1970,31-Dec-2099
+3000000074,3966717,LOINC,101709-4,"Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?",,01-Jan-1970,31-Dec-2099
+3000000075,3965383,LOINC,101708-6,"Avoiding memories, thoughts, or feelings related to the stressful experience?",,01-Jan-1970,31-Dec-2099
+3000000076,3964830,LOINC,101707-8,"Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?",,01-Jan-1970,31-Dec-2099
+3000000077,3966500,LOINC,101706-0,Feeling very upset when something reminded you of the stressful experience?,,01-Jan-1970,31-Dec-2099
+3000000078,3964593,LOINC,101705-2,Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?,,01-Jan-1970,31-Dec-2099
+3000000079,3965854,LOINC,101704-5,"Repeated, disturbing dreams of the stressful experience?",,01-Jan-1970,31-Dec-2099
+3000000080,3966729,LOINC,101703-7,"Repeated, disturbing, and unwanted memories of the stressful experience?",,01-Jan-1970,31-Dec-2099
+3000000081,3965578,LOINC,101698-9,PTSD PCL-5 score [PCL-5],,01-Jan-1970,31-Dec-2099
+3000000082,45881667,LOINC,LA13863-8,A little bit,1,01-Jan-1970,31-Dec-2099
+3000000083,45884554,LOINC,LA13939-6,Moderately,2,01-Jan-1970,31-Dec-2099
+3000000084,45884456,LOINC,LA13902-4,Quite a bit,3,01-Jan-1970,31-Dec-2099
+3000000085,45879397,LOINC,LA14868-6,Extremely,4,01-Jan-1970,31-Dec-2099
+3000000086,1761605,LOINC,100767-3,I was bothered by things that usually don’t bother me.,,01-Jan-1970,31-Dec-2099
+3000000087,1761326,LOINC,100768-1,I did not feel like eating; my appetite was poor.,,01-Jan-1970,31-Dec-2099
+3000000088,1761611,LOINC,100769-9,I felt that I could not shake off the blues even with help from my family or friends.,,01-Jan-1970,31-Dec-2099
+3000000089,1761886,LOINC,100770-7,I felt I was just as good as other people.,,01-Jan-1970,31-Dec-2099
+3000000090,1761791,LOINC,100771-5,I had trouble keeping my mind on what I was doing.,,01-Jan-1970,31-Dec-2099
+3000000091,1761895,LOINC,100772-3,I felt depressed.,,01-Jan-1970,31-Dec-2099
+3000000092,1761503,LOINC,100773-1,I felt that everything I did was an effort.,,01-Jan-1970,31-Dec-2099
+3000000093,1761675,LOINC,100774-9,I felt hopeful about the future.,,01-Jan-1970,31-Dec-2099
+3000000094,1761350,LOINC,100775-6,I thought my life had been a failure.,,01-Jan-1970,31-Dec-2099
+3000000095,1761739,LOINC,100776-4,I felt fearful.,,01-Jan-1970,31-Dec-2099
+3000000096,1761695,LOINC,100777-2,My sleep was restless.,,01-Jan-1970,31-Dec-2099
+3000000097,1761700,LOINC,100778-0,I was happy.,,01-Jan-1970,31-Dec-2099
+3000000098,1761653,LOINC,100779-8,I talked less than usual.,,01-Jan-1970,31-Dec-2099
+3000000099,1761319,LOINC,100780-6,I felt lonely.,,01-Jan-1970,31-Dec-2099
+3000000100,1761353,LOINC,100781-4,People were unfriendly,,01-Jan-1970,31-Dec-2099
+3000000101,1761535,LOINC,100782-2,I enjoyed life.,,01-Jan-1970,31-Dec-2099
+3000000102,1761710,LOINC,100783-0,I had crying spells.,,01-Jan-1970,31-Dec-2099
+3000000103,1761730,LOINC,100784-8,I felt sad.,,01-Jan-1970,31-Dec-2099
+3000000104,1761541,LOINC,100785-5,I felt that people dislike me.,,01-Jan-1970,31-Dec-2099
+3000000105,1761073,LOINC,100786-3,"I could not get ""going.""",,01-Jan-1970,31-Dec-2099
+3000000106,1761347,LOINC,100787-1,Total Score CES-D,,01-Jan-1970,31-Dec-2099
+3000000107,45883771,LOINC,LA15665-5,Rarely or never,0,01-Jan-1970,31-Dec-2099
+3000000108,45879198,LOINC,LA14733-2,Some of the time,1,01-Jan-1970,31-Dec-2099
+3000000109,45879593,LOINC,LA6483-7,Occasionally,2,01-Jan-1970,31-Dec-2099
+3000000110,45879199,LOINC,LA14734-0,Most of the time,3,01-Jan-1970,31-Dec-2099
+3000000111,8532,GENDER,F,Female,,01-Jan-1970,31-Dec-2099
+3000000112,8507,GENDER,M,Male,,01-Jan-1970,31-Dec-2099
+3000000113,45880050,LOINC,LA35-1,No schooling,,01-Jan-1970,31-Dec-2099
+3000000114,45878725,LOINC,LA36-9,8th grade/less,,01-Jan-1970,31-Dec-2099
+3000000115,45881538,LOINC,LA37-7,9-11 grades,,01-Jan-1970,31-Dec-2099
+3000000116,45876261,LOINC,LA38-5,High school,,01-Jan-1970,31-Dec-2099
+3000000117,45881537,LOINC,LA39-3,Technical or trade school,,01-Jan-1970,31-Dec-2099
+3000000118,45876260,LOINC,LA40-1,Some college,,01-Jan-1970,31-Dec-2099
+3000000119,45880354,LOINC,LA12459-6,"Associate degree (e.g., AA, AS)",,01-Jan-1970,31-Dec-2099
+3000000120,45884155,LOINC,LA12460-4,"Bachelor's degree (e.g., BA, AB, BS)",,01-Jan-1970,31-Dec-2099
+3000000121,45878298,LOINC,LA12461-2,"Master's degree (e.g., MA, MS, MEng, MEd, MSW, MBA)",,01-Jan-1970,31-Dec-2099
+3000000122,37079105,LOINC,LA30185-5,"Doctoral degree (e.g., PhD, EdD)",,01-Jan-1970,31-Dec-2099
+3000000123,37079233,LOINC,LA30186-3,"Professional degree (e.g., MD, DDS, DVM, LLB, JD)",,01-Jan-1970,31-Dec-2099
+3000000124,45877986,LOINC,LA4489-6,Unknown,,01-Jan-1970,31-Dec-2099
+3000000125,38003600,RACE,3.03,African,,01-Jan-1970,31-Dec-2099
+3000000126,1620470,LOINC,LA32570-6,Cohabiting,,01-Jan-1970,31-Dec-2099
+3000000127,45883375,LOINC,LA51-8,Divorced,,01-Jan-1970,31-Dec-2099
+3000000128,45876756,LOINC,LA48-4,Married,,01-Jan-1970,31-Dec-2099
+3000000129,45881671,LOINC,LA47-6,Never Married,,01-Jan-1970,31-Dec-2099
+3000000130,45884459,LOINC,LA4288-2,Separeted,,01-Jan-1970,31-Dec-2099
+3000000131,1620675,LOINC,LA32569-8,Separeted or Divorced,,01-Jan-1970,31-Dec-2099
+3000000132,45879879,LOINC,LA17717-2,Single,,01-Jan-1970,31-Dec-2099
+3000000133,45883711,LOINC,LA49-2,Widowed,,01-Jan-1970,31-Dec-2099
+3000000134,36309758,LOINC,LA20603-9,"Agriculture, Fishing",,01-Jan-1970,31-Dec-2099
+3000000135,45877708,LOINC,LA17990-5,Employed,,01-Jan-1970,31-Dec-2099
+3000000136,4026886,SNOMED,106540006,Laborer,,01-Jan-1970,31-Dec-2099
+3000000137,45878142,LOINC,LA46-8,Other,,01-Jan-1970,31-Dec-2099
+3000000138,45877709,LOINC,LA17956-6,Unemployed,,01-Jan-1970,31-Dec-2099
+3000000139,4175384,SNOMED,276120001,Catholic Religion,,01-Jan-1970,31-Dec-2099
+3000000140,4156951,SNOMED,271390004,Islam,,01-Jan-1970,31-Dec-2099
+3000000141,4183095,SNOMED,298024007,Seventh Day Adventist religion,,01-Jan-1970,31-Dec-2099
+3000000142,4183092,SNOMED,298020003,Protestant religion,,01-Jan-1970,31-Dec-2099
+3000000143,4144269,SNOMED,266915004,Nonconformist religion,,01-Jan-1970,31-Dec-2099
+3000000144,3000000144,INSPIRE,,"During the PAST WEEK, how much difficulty did you have Managing your day-to-day life",,23-Mar-2024,31-Dec-2099
+3000000145,3000000145,INSPIRE,,"During the PAST WEEK, how much difficulty did you have Coping with problems in your life",,23-Mar-2024,31-Dec-2099
+3000000146,3000000146,INSPIRE,,"During the PAST WEEK, how much difficulty did you have Concentrating",,23-Mar-2024,31-Dec-2099
+3000000147,3000000147,INSPIRE,,"During the PAST WEEK, how much of the time did you Get along with people in your family",,23-Mar-2024,31-Dec-2099
+3000000148,3000000148,INSPIRE,,"During the PAST WEEK, how much of the time did you Get along with people outside your family",,23-Mar-2024,31-Dec-2099
+3000000149,3000000149,INSPIRE,,"During the PAST WEEK, how much of the time did you Get along well in social situations",,23-Mar-2024,31-Dec-2099
+3000000150,3000000150,INSPIRE,,"During the PAST WEEK, how much of the time did you Feel close to another person",,23-Mar-2024,31-Dec-2099
+3000000151,3000000151,INSPIRE,,"During the PAST WEEK, how much of the time did you Feel like you had someone to turn to if you needed help",,23-Mar-2024,31-Dec-2099
+3000000152,3000000152,INSPIRE,,"During the PAST WEEK, how much of the time did you Feel confident in yourself",,23-Mar-2024,31-Dec-2099
+3000000153,3000000153,INSPIRE,,"During the PAST WEEK, how much of the time did you Feel sad or depressed",,23-Mar-2024,31-Dec-2099
+3000000154,3000000154,INSPIRE,,"During the PAST WEEK, how much of the time did you Think about ending your life",,23-Mar-2024,31-Dec-2099
+3000000155,3000000155,INSPIRE,,"During the PAST WEEK, how much of the time did you Feel nervous",,23-Mar-2024,31-Dec-2099
+3000000156,3000000156,INSPIRE,,"During the PAST WEEK, how often did you Have thoughts racing through your head",,23-Mar-2024,31-Dec-2099
+3000000157,3000000157,INSPIRE,,"During the PAST WEEK, how often did you Think you had special powers",,23-Mar-2024,31-Dec-2099
+3000000158,3000000158,INSPIRE,,"During the PAST WEEK, how often did you Hear voices or see things",,23-Mar-2024,31-Dec-2099
+3000000159,3000000159,INSPIRE,,"During the PAST WEEK, how often did you Think people were watching you",,23-Mar-2024,31-Dec-2099
+3000000160,3000000160,INSPIRE,,"During the PAST WEEK, how often did you Think people were against you",,23-Mar-2024,31-Dec-2099
+3000000161,3000000161,INSPIRE,,"During the PAST WEEK, how often did you Have mood swings",,23-Mar-2024,31-Dec-2099
+3000000162,3000000162,INSPIRE,,"During the PAST WEEK, how often did you Feel short-tempered",,23-Mar-2024,31-Dec-2099
+3000000163,3000000163,INSPIRE,,"During the PAST WEEK, how often did you Think about hurting yourself",,23-Mar-2024,31-Dec-2099
+3000000164,3000000164,INSPIRE,,"During the PAST WEEK, how often Did you have an urge to drink alcohol or take street drugs",,23-Mar-2024,31-Dec-2099
+3000000165,3000000165,INSPIRE,,"During the PAST WEEK, how often Did anyone talk to you about your drinking or drug use",,23-Mar-2024,31-Dec-2099
+3000000166,3000000166,INSPIRE,,"During the PAST WEEK, how often Did you try to hide your drinking or drug use",,23-Mar-2024,31-Dec-2099
+3000000167,3000000167,INSPIRE,,"During the PAST WEEK, how often Did you have problems from your drinking or drug use",,23-Mar-2024,31-Dec-2099
+3000000168,3000000168,INSPIRE,,No difficulty,0,23-Mar-2024,31-Dec-2099
+3000000169,3000000169,INSPIRE,,A little difficulty,1,23-Mar-2024,31-Dec-2099
+3000000170,3000000170,INSPIRE,,Moderate difficulty,2,23-Mar-2024,31-Dec-2099
+3000000171,3000000171,INSPIRE,,Quite a bit difficulty,3,23-Mar-2024,31-Dec-2099
+3000000172,3000000172,INSPIRE,,Extreme difficulty,4,23-Mar-2024,31-Dec-2099
+3000000173,3000000173,INSPIRE,,None of the time,0,23-Mar-2024,31-Dec-2099
+3000000174,3000000174,INSPIRE,,A little of the time,1,23-Mar-2024,31-Dec-2099
+3000000175,3000000175,INSPIRE,,Half of the time,2,23-Mar-2024,31-Dec-2099
+3000000176,,,,,,,31-Dec-2099
+3000000177,3000000177,INSPIRE,,All of the time,4,23-Mar-2024,31-Dec-2099
+3000000178,,,,,,,31-Dec-2099
+3000000179,3000000179,INSPIRE,,Rarely,1,23-Mar-2024,31-Dec-2099
+3000000180,,,,,,,31-Dec-2099
+3000000181,3000000181,INSPIRE,,Often,3,23-Mar-2024,31-Dec-2099
+3000000182,3000000182,INSPIRE,,Always,4,23-Mar-2024,31-Dec-2099
+3000000183,32879,Type Concept,OMOP4976952,Registry,,01-Jan-1970,31-Dec-2099
+3000000184,32883,Type Concept,OMOP4976956,Survery,,01-Jan-1970,31-Dec-2099
+3000000185,36204334,LOINC,86639-2,Household size,,01-Jan-1970,31-Dec-2099
+3000000186,4076114,SNOMED,224168007,Household income,,01-Jan-1970,31-Dec-2099
+3000000187,3000000187,INSPIRE,,Housewife,,23-Mar-2024,31-Dec-2099
+3000000188,3000000188,INSPIRE,,Other Religion,,23-Mar-2024,31-Dec-2099
+3000000189,38003564,ETHNICITY,Not Hispanic,Not Hispanic or Latino,,01-Jan-1970,31-Dec-2099
+3000000190,3000000190,INSPIRE,,Self-employed business,,23-Mar-2024,31-Dec-2099
+3000000191,3000000191,INSPIRE,,"Higher Degree (Masters, Doctorate)'",,23-Mar-2024,31-Dec-2099
+3000000192,45883771,LOINC,LA15665-5,Rarely or never,3,01-Jan-1970,31-Dec-2099
+3000000193,45879198,LOINC,LA14733-2,Some of the time,2,01-Jan-1970,31-Dec-2099
+3000000194,45879593,LOINC,LA6483-7,Occasionally,1,01-Jan-1970,31-Dec-2099
+3000000195,45879199,LOINC,LA14734-0,Most of the time,0,01-Jan-1970,31-Dec-2099
+3000000196,44784097,SNOWMED,700000006,Vaginal delivery of fetus,,31-Jan-2014,31-Dec-2099
+3000000197,4015701,SNOWMED,11466000,Cesarean section,,31-Jan-2002,31-Dec-2099
+3000000198,3000000198,INSPIRE,DDI-L:Type_of_Instrument_Group_CV-1,Single: Just one instrument,,01-Jan-1970,31-Dec-2099
+3000000199,3000000199,INSPIRE,DDI-L:Type_of_Instrument_Group_CV-2,Multiple: 2 or more instruments with at least one conditioned on subgroup membership,,01-Jan-1970,31-Dec-2099
+3000000200,3000000200,INSPIRE,DDI-L:Type_of_Instrument_Group_CV-3,Multiple: A base instrument with topical changes from one wave to the next,,01-Jan-1970,31-Dec-2099
+3000000201,3000000201,INSPIRE,DDI-L:Type_of_Instrument_Group_CV-4,Multiple: Mixed,,01-Jan-1970,31-Dec-2099
+3000000202,3000000202,INSPIRE,Source of Income,Other Source of Income,,23-Mar-2024,31-Dec-2099
+3000000203,3000000203,INSPIRE,Source of Income,Remittences,,23-Mar-2024,31-Dec-2099
+3000000204,3000000204,INSPIRE,Source of Income,Trade,,23-Mar-2024,31-Dec-2099
+3000000205,3000000205,INSPIRE,Source of Income,No Income Mentioned,,23-Mar-2024,31-Dec-2099
+3000000206,3000000206,INSPIRE,Wealth Quintile,Less Poor,,23-Mar-2024,31-Dec-2099
+3000000207,3000000207,INSPIRE,Wealth Quintile,Poor,,23-Mar-2024,31-Dec-2099
+3000000208,3000000208,INSPIRE,Wealth Quintile,Poorest,,23-Mar-2024,31-Dec-2099
+3000000209,3000000209,INSPIRE,Wealth Quintile,Very Poor,,23-Mar-2024,31-Dec-2099
+3000000210,3000000210,INSPIRE,Wealth Quintile,Least Poor,,23-Mar-2024,31-Dec-2099
+3000000211,3000000211,INSPIRE,Wealth Quintile,No Answer,,23-Mar-2024,31-Dec-2099
+3000000212,3000000212,INSPIRE,Household Size,Household Size of One,,23-Mar-2024,31-Dec-2099
+3000000213,3000000213,INSPIRE,Household Size,Household Size of Two to Four,,23-Mar-2024,31-Dec-2099
+3000000214,3000000214,INSPIRE,Household Size,Household Size of Five to Nine,,23-Mar-2024,31-Dec-2099
+3000000215,3000000215,INSPIRE,Household Size,Household Size of Ten to Fourteen,,23-Mar-2024,31-Dec-2099
+3000000216,3000000216,INSPIRE,Household Size,Household Size of Fifteen or More,,23-Mar-2024,31-Dec-2099
+3000000217,3000000217,INSPIRE,Type Concept for Mental Health Assessment,Patient Health Questionnaire (PHQ-9),,23-Mar-2024,31-Dec-2099
+3000000218,3000000218,INSPIRE,Type Concept for Mental Health Assessment,Generalized Anxiety Disorder (GAD-7),,23-Mar-2024,31-Dec-2099
+3000000219,3000000219,INSPIRE,Type Concept for Mental Health Assessment,"Depression, Anxiety and Stress Scale (DASS-21)",,23-Mar-2024,31-Dec-2099
+3000000220,3000000220,INSPIRE,Type Concept for Mental Health Assessment,Edinburgh Postnatal Depression Scale (EPDS),,23-Mar-2024,31-Dec-2099
+3000000221,3000000221,INSPIRE,Type Concept for Mental Health Assessment,Posttraumatic Stress Disorder Checklist for DSM-5 (PCL-5),,23-Mar-2024,31-Dec-2099
+3000000222,3000000222,INSPIRE,Type Concept for Mental Health Assessment,Center for Epidemiologic Studies Depression Scale panel (CES-D),,23-Mar-2024,31-Dec-2099
+3000000223,3000000223,INSPIRE,Type Concept for Mental Health Assessment,Behavior and Symptom Identification Scale (BASIS-24),,23-Mar-2024,31-Dec-2099
+3000000224,36714019,SNOMED,719091001,World Health Organisation Disability Assessment Schedule (WHODAS 2.0),,01-Jan-1970,31-Dec-2099
+3000000225,3000000225,INSPIRE,Type Concept for Quality of Life Assessment,World Health Organization Quality-of-Life Scale (WHOQOL-BREF),,23-Mar-2024,31-Dec-2099
+3000000226,3000000226,INSPIRE,Type Concept for Social Support Assesment,Oslo 3-items social support scale,,23-Mar-2024,31-Dec-2099
+3000000227,3000000227,INSPIRE,Type Concept for stressful life events Assesment,List of Threatening Experiences (LTE),,23-Mar-2024,31-Dec-2099
+3000000228,3000000228,INSPIRE,Type Concept for fear of childbirth Assesment,Wijma Delivery Expectation/Experience Questionnaire (W-DEQ),,23-Mar-2024,31-Dec-2099
+3000000229,3000000229,INSPIRE,Type Concept for Domestic Violence Assesment,WHO (2005) multi country study questionnaire,,23-Mar-2024,31-Dec-2099
+3000000230,3000000230,INSPIRE,Type Concept for Social Support Assesment,Traumatic Event Scale ,,23-Mar-2024,31-Dec-2099
+3000000231,3000000231,INSPIRE,,World Health Organisation Disability Assessment Schedule (WHODAS 2.0) score,,23-Mar-2024,31-Dec-2099
+3000000232,3000000232,INSPIRE,,World Health Organization Quality-of-Life Scale (WHOQOL-BREF) total score,,23-Mar-2024,31-Dec-2099
+3000000233,3000000233,INSPIRE,,Oslo 3-items social support scale total score,,23-Mar-2024,31-Dec-2099
+3000000234,3000000234,INSPIRE,,healthrisk outcome (yes or no),,23-Mar-2024,31-Dec-2099
+3000000235,3000000235,INSPIRE,,deathloved outcome (yes or no),,23-Mar-2024,31-Dec-2099
+3000000236,3000000236,INSPIRE,,relationproblem outcome (yes or no),,23-Mar-2024,31-Dec-2099
+3000000237,3000000237,INSPIRE,,legalissue outcome (yes or no),,23-Mar-2024,31-Dec-2099
+3000000238,3000000238,INSPIRE,,incomeinstability outcome(yes or no),,23-Mar-2024,31-Dec-2099
+3000000239,3000000239,INSPIRE,,Fear of childbirth total score,,23-Mar-2024,31-Dec-2099
+3000000240,3000000240,INSPIRE,,Psychological violence outcome(yes or no),,23-Mar-2024,31-Dec-2099
+3000000241,3000000241,INSPIRE,,Measure Child birth stressor/ Traumatic birth outcome,,23-Mar-2024,31-Dec-2099
+3000000242,3038553,LOINC,39156-5,BMI,,01-Jan-1970,31-Dec-2099
+3000000243,45883764,LOINC,LA14270-5,Live birth,,01-Jan-1970,31-Dec-2099
+3000000244,45882030,LOINC,LA14667-2,Still birth,,01-Jan-1970,31-Dec-2099
+3000000245,4133029,SNOMED,127364007,Primigravida,,01-Jan-1970,31-Dec-2099
+3000000246,4132563,SNOMED,127365008,gravida 2,,01-Jan-1970,31-Dec-2099
+3000000247,4132099,SNOMED,127366009,gravida 3,,01-Jan-1970,31-Dec-2099
+3000000248,4132100,SNOMED,127367000,gravida 4,,01-Jan-1970,31-Dec-2099
+3000000249,4133030,SNOMED,127368005,gravida 5,,01-Jan-1970,31-Dec-2099
+3000000250,4132101,SNOMED,127369002,gravida 6,,01-Jan-1970,31-Dec-2099
+3000000251,4132564,SNOMED,127370001,gravida 7,,01-Jan-1970,31-Dec-2099
+3000000252,4133032,SNOMED,127371002,gravida 8,,01-Jan-1970,31-Dec-2099
+3000000253,441641,SNOMED,48782003,Spontaneous vaginal delivery,,01-Jan-1970,31-Dec-2099
+3000000254,193277,SNOMED,200144004,Cesarean delivery,,01-Jan-1970,31-Dec-2099
+3000000255,4012561,SNOMED,102877006,Parity 0,,01-Jan-1970,31-Dec-2099
+3000000256,4030563,SNOMED,14209008,Parity 1,,01-Jan-1970,31-Dec-2099
+3000000257,4167662,SNOMED,48395006,Parity 2,,01-Jan-1970,31-Dec-2099
+3000000258,4172590,SNOMED,49955008,Parity 3,,01-Jan-1970,31-Dec-2099
+3000000259,4173934,SNOMED,42279001,Parity 4,,01-Jan-1970,31-Dec-2099
+3000000260,4030380,SNOMED,13868004,Parity 5,,01-Jan-1970,31-Dec-2099
+3000000261,4097847,SNOMED,26886008,Parity 6,,01-Jan-1970,31-Dec-2099
+3000000262,4132155,SNOMED,26611006,Parity 7,,01-Jan-1970,31-Dec-2099

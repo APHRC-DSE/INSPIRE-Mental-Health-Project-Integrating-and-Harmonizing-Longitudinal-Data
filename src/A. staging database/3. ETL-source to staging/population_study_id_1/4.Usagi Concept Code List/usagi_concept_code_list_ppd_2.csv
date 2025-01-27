@@ -1,0 +1,10 @@
+sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:row_number,ADD_INFO:dataset,ADD_INFO:variable_name,ADD_INFO:description,matchScore,mappingStatus,equivalence,statusSetBy,statusSetOn,conceptId,conceptName,domainId,mappingType,comment,createdBy,createdOn,assignedReviewer
+1,Good,115,,154,ppdataset_clean.csv,rltp,relationship with partner's mother,1.00,APPROVED,EQUAL,Reinp,1730469770348,45876386,Good,Meas Value,MAPS_TO,,Reinp,1730469502303,
+4,religion,0,,161,ppdataset_clean.csv,rlg,religion,1.00,APPROVED,EQUAL,Reinp,1730470227474,4052017,Religious affiliation,Observation,MAPS_TO,,<auto>,1730468975352,
+3,Others (specified),28,,153,ppdataset_clean.csv,rlg,religion,0.64,FLAGGED,EQUAL,Reinp,1730469762462,45883155,Other (specify),Meas Value,MAPS_TO,,Reinp,1730469449454,
+3,Bad and cannot cope,6,,156,ppdataset_clean.csv,rltp,relationship with partner's mother,0.76,FLAGGED,EQUAL,Reinp,1730469782381,1620712,Bad,Meas Value,MAPS_TO,,Reinp,1730469711085,
+4,marital status,0,,158,ppdataset_clean.csv,mrtl,marital status,1.00,APPROVED,EQUAL,Reinp,1730470026211,4053609,Marital status,Observation,MAPS_TO,,<auto>,1730468979657,
+2,Not good but can cope,21,,155,ppdataset_clean.csv,rltp,relationship with partner's mother,0.50,UNCHECKED,UNREVIEWED,,0,4147718,Diet good,Observation,MAPS_TO,,<auto>,1730468980607,
+3,outcome of the baby,0,,157,ppdataset_clean.csv,otcm,outcome of the baby,0.64,APPROVED,EQUAL,Reinp,1730469972003,4264823,Birth outcome,Observation,MAPS_TO,,Reinp,1730469945035,
+5,participant occupation,0,,160,ppdataset_clean.csv,ocp1,participant occupation,0.69,APPROVED,EQUAL,Reinp,1730470207722,4033543,Occupation,Observation,MAPS_TO,,<auto>,1730468981274,
+4,highest level of education,0,,159,ppdataset_clean.csv,edc,highest level of education,1.00,APPROVED,EQUAL,Reinp,1730470966790,4022643,Educational achievement,Observation,MAPS_TO,,Reinp,1730470942151,

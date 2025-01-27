@@ -1,0 +1,10 @@
+row_number,dataset,variable_name,description,code,item,count
+153,ppdataset_clean.csv,rlg,religion,3,Others (specified),28
+154,ppdataset_clean.csv,rltp,relationship with partner's mother,1,Good,115
+155,ppdataset_clean.csv,rltp,relationship with partner's mother,2,Not good but can cope,21
+156,ppdataset_clean.csv,rltp,relationship with partner's mother,3,Bad and cannot cope,6
+157,ppdataset_clean.csv,otcm,outcome of the baby,3,outcome of the baby,0
+158,ppdataset_clean.csv,mrtl,marital status,4,marital status,0
+159,ppdataset_clean.csv,edc,highest level of education,4,highest level of education,0
+160,ppdataset_clean.csv,ocp1,participant occupation,5,participant occupation,0
+161,ppdataset_clean.csv,rlg,religion,4,religion,0

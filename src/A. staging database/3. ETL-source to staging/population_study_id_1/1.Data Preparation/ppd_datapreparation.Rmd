@@ -1,0 +1,535 @@
+---
+title: "ppd data preparation"
+author: "Reinpeter"
+date: "`r Sys.Date()`"
+output:
+  word_document: 
+    number_sections: yes
+  pdf_document:
+    number_sections: yes
+  html_document:
+    toc: yes
+    toc_depth: 4
+    number_sections: yes
+---
+
+# Clean the Environment
+
+```{r clean environment, results="hide", include=FALSE}
+### Start with a clean environment by removing objects in workspace
+rm(list=ls())
+
+```
+
+# Set Chunk requirements
+
+```{r setup, results="hide", include=FALSE}
+
+## Set Chunk requirements
+knitr::opts_chunk$set(#include = TRUE,
+                      echo=FALSE, message = FALSE, warning = FALSE,
+                      fig.width=13, fig.height=7)
+
+```
+
+# Setting Work Directory
+
+```{r setting working directory, include=FALSE, results = "hide"}
+
+### Setting work directory
+working_directory <- base::setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#working_directory <- base::setwd(".")
+
+mainDir <- base::getwd()
+subDir_data <- "data"
+subDir_output <- "Output"
+
+
+data_Dir <- base::file.path(mainDir, subDir_data)
+output_Dir <- base::file.path(mainDir, subDir_output)
+
+### create data folder
+base::ifelse(!base::dir.exists(data_Dir), base::dir.create(data_Dir), "Sub Directory exists")
+
+### create output folders
+base::ifelse(!base::dir.exists(output_Dir), base::dir.create(output_Dir), "Sub Directory exists")
+
+```
+
+# Install required packages
+
+```{r loading relevant packages, include=FALSE, results = "hide"}
+
+## Install required packages
+
+### Install CRAN packages
+required_packages <- c("tidyverse", "janitor", "knitr", "kableExtra", "lubridate", "gtsummary", "flextable",
+                       "labelled", "sjlabelled", "factoextra", "officer", "gridExtra", "ggpubr", "rstatix","scales",
+                       "readxl", "writexl"
+                       )
+
+installed_packages <- required_packages %in% base::rownames(utils::installed.packages())
+
+if (base::any(installed_packages==FALSE)) {
+  utils::install.packages(required_packages[!installed_packages]
+                          #, repos = "http://cran.us.r-project.org"
+                          )
+}
+
+### load libraries
+base::invisible(base::lapply(required_packages, library, character.only=TRUE))
+
+```
+
+# Create User defined functions
+
+```{r user defined functions1, include=FALSE, results = "hide"}
+
+## read all sheets in excel file
+read_excel_allsheets <- function(filename) {
+  sheets <- readxl::excel_sheets(filename) #List all sheets in an excel spreadsheet
+  out <- base::lapply(sheets, function(x) {
+    readxl::read_excel(filename, 
+                       sheet = x, 
+                       col_types = NULL, 
+                       na = "", 
+                       trim_ws = TRUE
+    )
+    }
+  ) 
+  base::names(out) <- sheets
+  out
+}
+
+```
+
+```{r user defined functions2, include=FALSE, results = "hide"}
+
+## Setting gt summary theme
+my_gtsummary_theme <- gtsummary::set_gtsummary_theme(
+  list(
+    ## round large p-values to three places
+    #"pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 3),
+    ## report mean (sd) and n (percent) as default stats in `tbl_summary()`
+    #"tbl_summary-fn:percent_fun" = function(x) gtsummary::style_percent(x, digits = 1), 
+    ## less than 10% are rounded to digits + 1 places
+    #"tbl_summary-str:continuous_stat" = "{mean} ({sd})",
+    "style_number-arg:big.mark" = ""
+    #"tbl_summary-str:categorical_stat" = "{n} ({p}%)" #"{n} / {N} ({p}%)"
+  )
+)
+
+### Setting `Compact` theme
+gtsummary_compact_theme <- gtsummary::theme_gtsummary_compact()
+
+## descriptive summary tables
+descriptive_table <- 
+  function(df, foot_note = "", caption = "", ci=FALSE, include, mean_vars = NULL, sum_vars = NULL,
+           flex_table = TRUE, categorical_proportion_digits = 1, statistic_categorical = "{n} ({p}%)") {
+    df <- (df %>%
+             mutate(across(where(is.character), sjlabelled::as_factor))
+           )
+    summ <- if (is.null(mean_vars) & is.null(sum_vars)) {
+      gtsummary::tbl_summary(df
+                             , include = any_of(include)
+                             , type = list(
+                               all_dichotomous() ~ "categorical"
+                               ,all_continuous() ~ "continuous2"
+                             )
+                             , statistic = list(
+                               all_continuous(continuous2 = TRUE) ~ c(
+                               "{mean} ({sd})",
+                               "{median} ({p25}, {p75})",
+                               "{min}, {max}" ),
+                               all_categorical() ~ statistic_categorical
+                               )
+                             , digits = list(all_continuous(continuous2 = TRUE) ~ 1, 
+                                             all_categorical() ~ c(0, categorical_proportion_digits)
+                             )
+                             , percent = "column" #"column", "row", or "cell"
+                             , missing = "ifany" #list missing data separately #ifany #no #always
+                             , missing_text = "Missing"
+      ) 
+    } else {
+      gtsummary::tbl_summary(df
+                             , include = any_of(include)
+                             , type = list(
+                               any_of(mean_vars) ~ "continuous2"
+                               ,any_of(sum_vars) ~ "continuous"
+                               ,all_dichotomous() ~ "categorical"
+                               ,c(all_continuous(), -any_of(sum_vars)) ~ "continuous2" 
+                             )
+                             , statistic = list(
+                               any_of(sum_vars) ~ "{sum}",
+                               all_continuous2() ~ c(
+                                 "{mean} ({sd})",
+                                 "{median} ({p25}, {p75})",
+                                 "{min}, {max}" ),
+                               all_categorical() ~ statistic_categorical
+                               )
+                             , digits = list(any_of(sum_vars) ~ 1, 
+                                             all_continuous2() ~ 1, 
+                                             all_categorical() ~ c(0, categorical_proportion_digits)
+                             )
+                             , percent = "column" #"column", "row", or "cell"
+                             , missing = "ifany" #list missing data separately #ifany #no #always
+                             , missing_text = "Missing"
+      )
+    }
+    
+    summ1 <- if (ci == TRUE) {
+      summ %>%
+        add_ci(conf.level = 0.95, # add columns with confidence interval
+               statistic = list(all_categorical() ~ "{conf.low}% - {conf.high}%",
+                                all_continuous() ~ "{conf.low} - {conf.high}"
+               ),
+               style_fun = list(all_categorical() ~ purrr::partial(style_sigfig, scale = 100, digits = 3),
+                                all_continuous() ~ style_sigfig
+               )
+        )
+    } else { summ }
+    
+    summ2 <- summ1 %>% 
+      modify_header(label = "**Variables**", all_stat_cols() ~ "**{level}**\n N = {n}"
+                    # update the column header
+      ) %>% 
+      bold_labels() %>%
+      italicize_levels() %>% 
+      add_n( statistic = "{N_nonmiss}", col_label = "**n**", last = FALSE, footnote = FALSE
+             # add column with total number of non-missing observations 
+      ) %>% 
+      modify_footnote(all_stat_cols() ~ foot_note) %>%
+      modify_caption(caption)
+    
+    summ3 <- if (flex_table == TRUE) { 
+      summ2 %>%
+        gtsummary::as_flex_table() 
+      # as_kable_extra() covert gtsummary object to knitrkable object. 
+      #as_flex_table() maintains identation, footnotes, spanning headers
+    } else {
+      summ2
+      }
+    
+    summ3
+    
+  }
+
+```
+
+
+# Load Recode file
+
+```{r recode file, include=FALSE, results = "hide"}
+
+recode_file <- read_excel_allsheets("ppd_recode_file_etl.xlsx")
+
+study_details <- recode_file[["study"]]
+
+epds_cutoff <- recode_file[["epds_cutoff"]]
+
+rename_vars_df <- recode_file[["rename_vars"]] #df for renaming variable labels
+
+selected_vars_df <- recode_file[["selected_vars"]] #df for choosing variables for analysis and plots
+
+## Creating a named vector to quickly assign the new variable labels
+rename_vars_df <- (rename_vars_df%>%
+                     dplyr::mutate(new_label = stringr::str_to_sentence(new_label))
+                   )
+
+new_labels <- rename_vars_df %>%
+  dplyr::select(new_variable, new_label)%>%
+  tibble::deframe()
+
+```
+
+# Load Data
+
+```{r load data, include=FALSE, results = "hide"}
+
+## Reading data from local folder
+
+data_files <- list.files(path = data_Dir, full.names = F)
+
+df_list <- sapply(data_files, function(x){
+  nn <- x
+  
+  readr::read_csv(base::file.path(data_Dir, nn))
+  
+}, simplify=FALSE)
+
+df_raw <- df_list[["ppdataset_updated_20170410_anon.csv"]]
+
+## creating data dictionary
+
+raw_attribute <- base::as.data.frame(labelled::look_for(df_raw, labels = TRUE, values = TRUE))
+
+```
+
+
+# Cleaning the Data
+
+```{r data cleaning, include=FALSE, results = "hide"}
+
+df_clean <- df_raw %>%
+  dplyr::mutate( across(c(hlp, ckn, clng, ccr), ~if_else(is.na(sid_prf), NA, .x)
+                        ) #Replace responses asked of those lost to followup with missing
+                 , hlp = if_else(ckn == "No" & clng == "No" & ccr == "No" , "No", "Yes")
+                 , across(c(enjy1, enjy2), ~if_else(.x == "Hardly at", "Hardly at all", .x)
+                          )
+                 , across(c(scrd1, scrd2), ~if_else(.x == "No-not at", "No-not at all", .x)
+                          )
+                 , across(c(slpn1, slpn2), ~if_else(.x == "Not very often", "No-Not very often", .x)
+                          )
+                 , across(c(ocp2, rltp, attd, cnfl, fdlt), ~if_else(.x == "Not Applicable", NA, .x)
+                          )
+                 #, across(c(init1, addr1, phn1, admin1, init2, addr2, phn2, admin2), ~NA ) #Removing personal/quasi identifiers
+                 , edc = if_else(edc == "No formal education" | edc == "Primary", "<=Primary", edc)
+                 , incm = if_else(incm == "Ksh 481-720" | incm == "More than Ksh 720", "Ksh 481 and above", incm)
+                 , incm = gsub("Ksh", "USD", incm)
+                 , mod = if_else(mod == "Normal Vaginal delivery" | mod == "Assisted Vaginal delivery",
+                                 "Vaginal delivery", mod
+                                 )
+                 , cnfl = if_else(cnfl == "Verbal conflicts" | cnfl == "Any physical confrontation", "Yes",
+                                  if_else(cnfl == "No conflict", "No", cnfl
+                                          )
+                                  )
+                 , fdlt = if_else(fdlt == "Don’t know", "Dont Know", fdlt)
+                 , hppy1 = if_else(hppy1 == "yes", "Yes", hppy1)
+                 , hppy2 = if_else(hppy2 == "N/A", NA, hppy2)
+                 , dtpnrf = if_else(is.na(dtpnrf), dt2, dtpnrf)
+                 , across(c(dtsd, dtpnrf, ydob1, bdob1, dtepds1, ydob2, bdob2, dt2),
+                          ~lubridate::dmy(.x)
+                          ) #columns to class date
+                 , ydob1 = if_else(ydob1 == as.Date("2014-06-26"), as.Date("1991-01-01"),
+                                   if_else(ydob1 == as.Date("2014-05-20"), as.Date("1992-01-04"),
+                                           if_else(ydob1 == as.Date("2014-05-14"), as.Date("2014-05-14")-years(23), ydob1
+                                                   )
+                                           )
+                                   )
+                 , across(c(bcmp, pwp), ~if_else(.x == "Absent", "No", "Yes"
+                                                 )
+                          )
+                 , across(c(lgh1, lgh2),
+                          ~factor(.x, levels = c("As much as I always could", "Not quite so much now",
+                                                 "Definitely not so much now", "Not at all"
+                                                 )
+                                  )
+                          ) #EPDS Question 1 to factor
+                 , across(c(enjy1, enjy2),
+                          ~factor(.x, levels = c("As much as I ever did", "Rather less than I used to",
+                                                 "Definitely less than I used to", "Hardly at all"
+                                                 )
+                                  )
+                          ) #EPDS Question 2 to factor
+                 , across(c(blmd1, blmd2),
+                          ~factor(.x, levels = c("No-never", "Not very often", "Yes-some of the time", "Yes-most of the time"
+                                                 )
+                                  )
+                          ) #EPDS Question 3 to factor
+                 , across(c(anxs1, anxs2),
+                          ~factor(.x, levels = c("No-not at all", "Hardly ever", "Yes-sometimes", "Yes-very often"
+                                                 )
+                                  )
+                          ) #EPDS Question 4 to factor
+                 , across(c(scrd1, scrd2),
+                          ~factor(.x, levels = c("No-not at all", "No-not much", "Yes-sometimes", "Yes-quite a lot"
+                                                 )
+                                  )
+                          ) #EPDS Question 5 to factor
+                 , across(c(thng1, thng2),
+                          ~factor(.x, levels = c("No-I have been coping as well as ever",
+                                                 "No-most of the time I have coped quite well",
+                                                 "Yes-sometimes I have not been coping as well as usual",
+                                                 "Yes-most of the time I have not been able to cope at all"
+                                                 )
+                                  )
+                          ) #EPDS Question 6 to factor
+                 , across(c(slpn1, slpn2),
+                          ~factor(.x, levels = c("No-not at all", "No-Not very often", "Yes-sometimes", "Yes-most of the time"
+                                                 )
+                                  )
+                          ) #EPDS Question 7 to factor
+                 , across(c(sad1, sad2),
+                          ~factor(.x, levels = c("No-not at all", "Not very often", "Yes-quite often", "Yes-most of the time"
+                                                 )
+                                  )
+                          ) #EPDS Question 8 to factor
+                 , across(c(cryn1, cryn2),
+                          ~factor(.x, levels = c("No-never", "Only occasionally", "Yes-quite often", "Yes-most of the time"
+                                                 )
+                                  )
+                          ) #EPDS Question 9 to factor
+                 , across(c(hrmg1, hrmg2),
+                          ~factor(.x, levels = c("Never", "Hardly ever", "Sometimes", "Yes-quite often"
+                                                 )
+                                  )
+                          ) #EPDS Question 10 to factor
+                 , scr1 = rowSums(across(c(lgh1, enjy1, blmd1, anxs1, scrd1, thng1, slpn1, sad1, cryn1, hrmg1),
+                                         ~as.numeric(.x)-1
+                                         ), na.rm = TRUE
+                                  )
+                 , scr1 = if_else(rowSums(across(c(lgh1, enjy1, blmd1, anxs1, scrd1, thng1, slpn1, sad1, cryn1, hrmg1),
+                                                 ~is.na(.x)
+                                                 )) > round(0.2*10,0), NA, scr1 
+                                  ) #If more than 20% of total columns have missing, replace with NA
+                 , scr2 = rowSums(across(c(lgh2, enjy2, blmd2, anxs2, scrd2, thng2, slpn2, sad2, cryn2, hrmg2),
+                                         ~as.numeric(.x)-1
+                                         ), na.rm = TRUE
+                                  )
+                 , scr2 = if_else(rowSums(across(c(lgh2, enjy2, blmd2, anxs2, scrd2, thng2, slpn2, sad2, cryn2, hrmg2),
+                                                 ~is.na(.x)
+                                                 )) > round(0.2*10,0), NA, scr2 
+                                  ) #If more than 20% of total columns have missing, replace with NA
+                 , depr1 = if_else(scr1 < epds_cutoff$antepartum_cutoff, "No", "Yes")
+                 , depr2 = if_else(scr2 < epds_cutoff$postpartum_cutoff, "No", "Yes")
+                 , age = round(abs(time_length(difftime(dtsd, ydob1, units = "auto"), unit = "year")
+                                    ),1
+                                )
+                 , age2 = round(abs(time_length(difftime(dtpnrf, ydob1, units = "auto"), unit = "year")
+                                    ),1
+                                )
+                 , across(c(mstr, fstr, estr, sstr, nstr, hist1, hist2, uppg, alch1, mntl, fmntl,
+                            bcmp, pwp, lbw, nad, bhp, hppy1, hppy2, fbr, sic, cnfl, hlp, ckn, clng, ccr, depr1, depr2,
+                            otcm, sex
+                            ),
+                          ~as.factor(.x)
+                          ) #columns with two levels to factor
+                 , mrtl = factor(mrtl, levels = c("Married", "Separated", "Never Married"
+                                                  ) #marital status to factor
+                                 )
+                 , edc = factor(edc, levels = c("<=Primary", "Secondary", "Tertiary (college/University)"
+                                                 ) #highest level of education to factor
+                                )
+                 , ocp1 = factor(ocp1, levels = c("Participant has a wage/salaried work",
+                                                 "Participant has self-employed business work",
+                                                 "Participant is a housewife by choice",
+                                                 "Participant is unable to find employment"
+                                                ) #participant occupation to factor
+                                 )
+                 , ocp2 = factor(ocp2, levels = c("Salaried/Wage work", "Self Employed business work", "Unable to find work"
+                                                  ) #partner occupation to factor
+                                 )
+                 , rlg = factor(rlg, levels = c("Catholic", "Protestant", "Others (specified)"
+                                                ) #religion to factor
+                                )
+                 , incm = factor(incm, levels = c("USD 81-240", "USD 241-480", "USD 481 and above"
+                                                  ) #monthly family income to factor
+                                 )
+                 , rltp = factor(rltp, levels = c("Good", "Not good but can cope", "Bad and cannot cope"
+                                                 ) #relationship with partner's mother to factor
+                                 )
+                 , across(c(attd, alch2),
+                          ~factor(.x, levels = c("Not Sure", "No", "Yes"
+                                                   )
+                                  )
+                          ) #columns with Not sure No Yes responses to factor
+                 , mod = factor(mod, levels = c("Vaginal delivery", "Caesarean Section"
+                                                ) #mode of delivery to factor
+                                )
+                 , fdlt = factor(fdlt, levels = c("No", "Dont Know"
+                                                  ) #presence of partner infidelity  to factor
+                                 )
+                ) %>%
+  labelled::set_variable_labels(depr1 = "antepartum depression"
+                                , depr2 = "postpartum depression"
+                                , age2 = "age of participant at followup"
+                                #labeling created variables
+                                ) %>% 
+  labelled::set_variable_labels(!!!new_labels[names(new_labels) %in% names(.)]) #labeling variables from data dictionary
+
+
+## saving clean dataset
+
+### csv file
+readr::write_csv(x = df_clean %>% dplyr::select(-c(depr1, depr2, age2)),
+                 file = base::file.path(output_Dir, "ppdataset_clean.csv"),
+                 na = ""
+                 )
+
+```
+
+
+# Data for Analysis
+
+```{r analysis data, include=FALSE, results = "hide"}
+
+## group variables 
+### if empty vector use character()
+analysis_vars_df <- selected_vars_df[selected_vars_df$select == "retain",]
+outcome_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "outcome"]
+socio_demo_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "socio_demo"]
+psychosocial_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "psychosocial_factors"]
+prenatal_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "prenatal_factors"]
+postnatal_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "postnatal_factors"]
+epds_baseline_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "epds_baseline"]
+epds_followup_vars <- analysis_vars_df$new_variable[analysis_vars_df$select_group  == "epds_followup"]
+
+## make dataset with variables for descriptive and inferential statistics
+df_analysis <- df_clean %>%
+  dplyr::select(any_of(c(outcome_vars, socio_demo_vars, psychosocial_vars, prenatal_vars, postnatal_vars,
+                         epds_baseline_vars, epds_followup_vars
+                         )
+                       )
+                )
+
+analysis_report <- paste0(
+  paste0(analysis_vars_df$new_variable,collapse=", ")," ", length(analysis_vars_df$new_variable)
+  , " variables used for analysis" 
+  )
+print(analysis_report)
+
+none_analysis_report <- paste0(
+  paste0(selected_vars_df$new_variable[selected_vars_df$select == "drop"],
+         collapse=", ")," ", 
+  length(selected_vars_df$new_variable[selected_vars_df$select == "drop"])
+  , " variables not used for analysis"
+  )
+print(none_analysis_report)
+
+```
+
+
+# Descriptive Statistics
+
+```{r descriptives}
+
+my_gtsummary_theme
+
+gtsummary_compact_theme
+
+## Descriptive statistics
+
+descriptive_stats <- descriptive_table(df = df_analysis,
+                                       include = names(df_analysis),
+                                       mean_vars = c("hsld", "dlv", "noc"),
+                                       foot_note = "n (%); Mean (SD); Median (IQR); Range",
+                                       caption = "Descriptive Statistics",
+                                       ci = FALSE,
+                                       flex_table = TRUE
+                                       )
+
+print(descriptive_stats)
+
+```
+
+```{r saving descriptive output}
+
+flextable::save_as_docx(descriptive_stats, 
+                        path = base::file.path(output_Dir, "descriptive_stats.docx"),
+                        align = "center", #left, center (default) or right.
+                        pr_section = officer::prop_section(
+                          page_size = officer::page_size(orient = "portrait"), #Use NULL (default value) for no content.
+                          page_margins = officer::page_mar(), #Use NULL (default value) for no content.
+                          type = "nextPage", # "continuous", "evenPage", "oddPage", "nextColumn", "nextPage"
+                          section_columns = NULL, #Use NULL (default value) for no content.
+                          header_default = NULL, #Use NULL (default value) for no content.
+                          header_even = NULL, #Use NULL (default value) for no content.
+                          header_first = NULL, #Use NULL (default value) for no content.
+                          footer_default = NULL, #Use NULL (default value) for no content.
+                          footer_even = NULL, #Use NULL (default value) for no content.
+                          footer_first = NULL #Use NULL (default value) for no content.
+                          )
+                        )
+
+```
+

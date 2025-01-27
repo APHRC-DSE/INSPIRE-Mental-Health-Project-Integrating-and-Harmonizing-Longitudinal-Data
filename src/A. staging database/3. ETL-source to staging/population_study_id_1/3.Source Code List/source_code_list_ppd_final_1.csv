@@ -1,0 +1,153 @@
+row_number,dataset,variable_name,description,code,item,count
+1,ppdataset_clean.csv,mrtl,marital status,1,Married,166
+2,ppdataset_clean.csv,mrtl,marital status,2,Never Married,16
+3,ppdataset_clean.csv,mrtl,marital status,3,Separated,6
+4,ppdataset_clean.csv,edc,highest level of education,1,Secondary,88
+5,ppdataset_clean.csv,edc,highest level of education,2,<=Primary,52
+6,ppdataset_clean.csv,edc,highest level of education,3,Tertiary (college/University),48
+7,ppdataset_clean.csv,ocp1,participant occupation,1,Participant is a housewife by choice,77
+8,ppdataset_clean.csv,ocp1,participant occupation,2,Participant has self-employed business work,57
+9,ppdataset_clean.csv,ocp1,participant occupation,3,Participant has a wage/salaried work,34
+10,ppdataset_clean.csv,ocp1,participant occupation,4,Participant is unable to find employment,11
+11,ppdataset_clean.csv,ocp2,partner occupation,1,Salaried/Wage work,105
+12,ppdataset_clean.csv,ocp2,partner occupation,2,Self Employed business work,69
+13,ppdataset_clean.csv,ocp2,partner occupation,3,Unable to find work,1
+14,ppdataset_clean.csv,rlg,religion,1,Protestant,102
+15,ppdataset_clean.csv,rlg,religion,2,Catholic,58
+16,ppdataset_clean.csv,hsld,household size,1,household size,0
+17,ppdataset_clean.csv,mstr,marital stress,1,marital stress,48
+18,ppdataset_clean.csv,fstr,family stress,1,family stress,37
+19,ppdataset_clean.csv,estr,economic stress,1,economic stress,67
+20,ppdataset_clean.csv,sstr,societal stress,1,societal stress,4
+21,ppdataset_clean.csv,nstr,no stress,1,no stress,71
+22,ppdataset_clean.csv,pg,number of previous pregnancies,1,number of previous pregnancies,0
+23,ppdataset_clean.csv,dlv,number of previous deliveries,1,number of previous deliveries,0
+24,ppdataset_clean.csv,msc,number of previous miscarriages,1,number of previous miscarriages,0
+25,ppdataset_clean.csv,sbth,number of previous still births,1,number of previous still births,0
+26,ppdataset_clean.csv,indab,number of previous induced abortion,1,number of previous induced abortion,0
+27,ppdataset_clean.csv,gst,gestational age of current pregnancy,1,gestational age of current pregnancy,0
+28,ppdataset_clean.csv,uppg,unplanned pregnancy,1,unplanned pregnancy,73
+29,ppdataset_clean.csv,mntl,participant history of mental illness,1,participant history of mental illness,184
+30,ppdataset_clean.csv,fmntl,family history of mental illness,1,family history of mental illness,170
+31,ppdataset_clean.csv,mod,mode of delivery,1,Vaginal delivery,139
+32,ppdataset_clean.csv,mod,mode of delivery,2,Caesarean Section,32
+33,ppdataset_clean.csv,bcmp,birth complications,1,birth complications,33
+34,ppdataset_clean.csv,pwp,persistent wound pain,1,persistent wound pain,41
+35,ppdataset_clean.csv,lbw,low birth weight,1,low birth weight,17
+36,ppdataset_clean.csv,nad,neonatal(nursery) admission,1,neonatal(nursery) admission,17
+37,ppdataset_clean.csv,otcm,outcome of the baby,1,Alive,160
+38,ppdataset_clean.csv,otcm,outcome of the baby,2,Mother lost the baby,11
+39,ppdataset_clean.csv,bhp,history of baby being unwell,1,history of baby being unwell,29
+40,ppdataset_clean.csv,sex,gender of the baby,1,Female,92
+41,ppdataset_clean.csv,sex,gender of the baby,2,Male,79
+42,ppdataset_clean.csv,hppy1,are you happy the baby is a girl/boy?,1,are you happy the baby is a girl/boy?,160
+43,ppdataset_clean.csv,hppy2,is your partner happy the baby is a girl/boy?,2,is your partner happy the baby is a girl/boy?,145
+44,ppdataset_clean.csv,fbr,are you breastfeeding,1,are you breastfeeding,160
+45,ppdataset_clean.csv,noc,number of children including newborn,1,number of children including newborn,0
+46,ppdataset_clean.csv,cnfl,presence of physical/verbal conflict with current partner/spouse during the previous 12 months,1,Physical/Verbal conflict,39
+47,ppdataset_clean.csv,hlp,partner helping with cooking or cleaning or childcare,1,partner helping with cooking or cleaning or childcare,132
+48,ppdataset_clean.csv,ckn,partner helping with cooking,1,partner helping with cooking,74
+49,ppdataset_clean.csv,clng,partner helping with cleaning,1,partner helping with cleaning,45
+50,ppdataset_clean.csv,ccr,partner helping with child care,1,partner helping with child care,116
+51,ppdataset_clean.csv,lgh1,1b. I have been able to laugh and see the funny side ofthings,1,1b. I have been able to laugh and see the funny side ofthings,0
+52,ppdataset_clean.csv,lgh1,1b. I have been able to laugh and see the funny side ofthings,2,As much as I always could,97
+53,ppdataset_clean.csv,lgh1,1b. I have been able to laugh and see the funny side ofthings,3,Not quite so much now,68
+54,ppdataset_clean.csv,lgh1,1b. I have been able to laugh and see the funny side ofthings,4,Definitely not so much now,14
+55,ppdataset_clean.csv,lgh1,1b. I have been able to laugh and see the funny side ofthings,5,Not at all,9
+56,ppdataset_clean.csv,enjy1,2b. I have looked forward with enjoyment to things,1,2b. I have looked forward with enjoyment to things,0
+57,ppdataset_clean.csv,enjy1,2b. I have looked forward with enjoyment to things,2,As much as I ever did,94
+58,ppdataset_clean.csv,enjy1,2b. I have looked forward with enjoyment to things,3,Rather less than I used to,73
+59,ppdataset_clean.csv,enjy1,2b. I have looked forward with enjoyment to things,4,Definitely less than I used to,11
+60,ppdataset_clean.csv,enjy1,2b. I have looked forward with enjoyment to things,5,Hardly at all,10
+61,ppdataset_clean.csv,blmd1,3b. I have blamed myself unnecessarily when things went wrong,1,3b. I have blamed myself unnecessarily when things went wrong,0
+62,ppdataset_clean.csv,blmd1,3b. I have blamed myself unnecessarily when things went wrong,2,No-never,62
+63,ppdataset_clean.csv,blmd1,3b. I have blamed myself unnecessarily when things went wrong,3,Yes-some of the time,58
+64,ppdataset_clean.csv,blmd1,3b. I have blamed myself unnecessarily when things went wrong,4,Not very often,49
+65,ppdataset_clean.csv,blmd1,3b. I have blamed myself unnecessarily when things went wrong,5,Yes-most of the time,19
+66,ppdataset_clean.csv,anxs1,4b. I have been anxious or worried for no good reason,1,4b. I have been anxious or worried for no good reason,0
+67,ppdataset_clean.csv,anxs1,4b. I have been anxious or worried for no good reason,2,No-not at all,84
+68,ppdataset_clean.csv,anxs1,4b. I have been anxious or worried for no good reason,3,Yes-sometimes,62
+69,ppdataset_clean.csv,anxs1,4b. I have been anxious or worried for no good reason,4,Hardly ever,31
+70,ppdataset_clean.csv,anxs1,4b. I have been anxious or worried for no good reason,5,Yes-very often,11
+71,ppdataset_clean.csv,scrd1,5b. I have felt scared or panicky for no good reason,1,5b. I have felt scared or panicky for no good reason,0
+72,ppdataset_clean.csv,scrd1,5b. I have felt scared or panicky for no good reason,2,No-not at all,75
+73,ppdataset_clean.csv,scrd1,5b. I have felt scared or panicky for no good reason,3,No-not much,61
+74,ppdataset_clean.csv,scrd1,5b. I have felt scared or panicky for no good reason,4,Yes-sometimes,45
+75,ppdataset_clean.csv,scrd1,5b. I have felt scared or panicky for no good reason,5,Yes-quite a lot,7
+76,ppdataset_clean.csv,sad1,8b. I have felt sad or miserable,1,8b. I have felt sad or miserable,0
+77,ppdataset_clean.csv,sad1,8b. I have felt sad or miserable,2,No-not at all,83
+78,ppdataset_clean.csv,sad1,8b. I have felt sad or miserable,3,Not very often,73
+79,ppdataset_clean.csv,sad1,8b. I have felt sad or miserable,4,Yes-quite often,24
+80,ppdataset_clean.csv,sad1,8b. I have felt sad or miserable,5,Yes-most of the time,8
+81,ppdataset_clean.csv,thng1,6b. Things have been getting to me,1,6b. Things have been getting to me,0
+82,ppdataset_clean.csv,thng1,6b. Things have been getting to me,2,No-most of the time I have coped quite well,73
+83,ppdataset_clean.csv,thng1,6b. Things have been getting to me,3,Yes-sometimes I have not been coping as well as usual,66
+84,ppdataset_clean.csv,thng1,6b. Things have been getting to me,4,No-I have been coping as well as ever,37
+85,ppdataset_clean.csv,thng1,6b. Things have been getting to me,5,Yes-most of the time I have not been able to cope at all,12
+86,ppdataset_clean.csv,cryn1,9b. I have been so unhappy that I have been crying,1,9b. I have been so unhappy that I have been crying,0
+87,ppdataset_clean.csv,cryn1,9b. I have been so unhappy that I have been crying,2,No-never,92
+88,ppdataset_clean.csv,cryn1,9b. I have been so unhappy that I have been crying,3,Only occasionally,75
+89,ppdataset_clean.csv,cryn1,9b. I have been so unhappy that I have been crying,4,Yes-most of the time,12
+90,ppdataset_clean.csv,cryn1,9b. I have been so unhappy that I have been crying,5,Yes-quite often,9
+91,ppdataset_clean.csv,slpn1,7b. I have been so unhappy that I have had difficulty sleeping,1,7b. I have been so unhappy that I have had difficulty sleeping,0
+92,ppdataset_clean.csv,slpn1,7b. I have been so unhappy that I have had difficulty sleeping,2,No-not at all,76
+93,ppdataset_clean.csv,slpn1,7b. I have been so unhappy that I have had difficulty sleeping,3,No-Not very often,59
+94,ppdataset_clean.csv,slpn1,7b. I have been so unhappy that I have had difficulty sleeping,4,Yes-sometimes,38
+95,ppdataset_clean.csv,slpn1,7b. I have been so unhappy that I have had difficulty sleeping,5,Yes-most of the time,15
+96,ppdataset_clean.csv,hrmg1,10b. The thought of harming myself has occurred to me,1,10b. The thought of harming myself has occurred to me,0
+97,ppdataset_clean.csv,hrmg1,10b. The thought of harming myself has occurred to me,2,Never,159
+98,ppdataset_clean.csv,hrmg1,10b. The thought of harming myself has occurred to me,3,Hardly ever,13
+99,ppdataset_clean.csv,hrmg1,10b. The thought of harming myself has occurred to me,4,Sometimes,10
+100,ppdataset_clean.csv,hrmg1,10b. The thought of harming myself has occurred to me,5,Yes-quite often,6
+101,ppdataset_clean.csv,scr1,total EPDS score (Phase 1),1,total EPDS score (Phase 1),0
+102,ppdataset_clean.csv,lgh2,1f. I have been able to laugh and see the funny side of things,1,1f. I have been able to laugh and see the funny side of things,0
+103,ppdataset_clean.csv,lgh2,1f. I have been able to laugh and see the funny side of things,2,As much as I always could,130
+104,ppdataset_clean.csv,lgh2,1f. I have been able to laugh and see the funny side of things,3,Not quite so much now,27
+105,ppdataset_clean.csv,lgh2,1f. I have been able to laugh and see the funny side of things,4,Definitely not so much now,8
+106,ppdataset_clean.csv,lgh2,1f. I have been able to laugh and see the funny side of things,5,Not at all,6
+107,ppdataset_clean.csv,enjy2,2f. I have looked forward with enjoyment to things,1,2f. I have looked forward with enjoyment to things,0
+108,ppdataset_clean.csv,enjy2,2f. I have looked forward with enjoyment to things,2,As much as I ever did,123
+109,ppdataset_clean.csv,enjy2,2f. I have looked forward with enjoyment to things,3,Rather less than I used to,35
+110,ppdataset_clean.csv,enjy2,2f. I have looked forward with enjoyment to things,4,Definitely less than I used to,8
+111,ppdataset_clean.csv,enjy2,2f. I have looked forward with enjoyment to things,5,Hardly at all,5
+112,ppdataset_clean.csv,blmd2,3f. I have blamed myself unnecessarily when things went wrong,1,3f. I have blamed myself unnecessarily when things went wrong,0
+113,ppdataset_clean.csv,blmd2,3f. I have blamed myself unnecessarily when things went wrong,2,No-never,75
+114,ppdataset_clean.csv,blmd2,3f. I have blamed myself unnecessarily when things went wrong,3,Not very often,49
+115,ppdataset_clean.csv,blmd2,3f. I have blamed myself unnecessarily when things went wrong,4,Yes-some of the time,34
+116,ppdataset_clean.csv,blmd2,3f. I have blamed myself unnecessarily when things went wrong,5,Yes-most of the time,13
+117,ppdataset_clean.csv,anxs2,4f. I have been anxious or worried for no good reason,1,4f. I have been anxious or worried for no good reason,0
+118,ppdataset_clean.csv,anxs2,4f. I have been anxious or worried for no good reason,2,No-not at all,103
+119,ppdataset_clean.csv,anxs2,4f. I have been anxious or worried for no good reason,3,Hardly ever,34
+120,ppdataset_clean.csv,anxs2,4f. I have been anxious or worried for no good reason,4,Yes-sometimes,28
+121,ppdataset_clean.csv,anxs2,4f. I have been anxious or worried for no good reason,5,Yes-very often,6
+122,ppdataset_clean.csv,scrd2,5f. I have felt scared or panicky for no good reason,1,5f. I have felt scared or panicky for no good reason,0
+123,ppdataset_clean.csv,scrd2,5f. I have felt scared or panicky for no good reason,2,No-not at all,105
+124,ppdataset_clean.csv,scrd2,5f. I have felt scared or panicky for no good reason,3,No-not much,42
+125,ppdataset_clean.csv,scrd2,5f. I have felt scared or panicky for no good reason,4,Yes-sometimes,21
+126,ppdataset_clean.csv,scrd2,5f. I have felt scared or panicky for no good reason,5,Yes-quite a lot,3
+127,ppdataset_clean.csv,sad2,8f. I have felt sad or miserable,1,8f. I have felt sad or miserable,0
+128,ppdataset_clean.csv,sad2,8f. I have felt sad or miserable,2,No-not at all,88
+129,ppdataset_clean.csv,sad2,8f. I have felt sad or miserable,3,Not very often,58
+130,ppdataset_clean.csv,sad2,8f. I have felt sad or miserable,4,Yes-quite often,21
+131,ppdataset_clean.csv,sad2,8f. I have felt sad or miserable,5,Yes-most of the time,4
+132,ppdataset_clean.csv,thng2,6f. Things have been getting to me,1,6f. Things have been getting to me,0
+133,ppdataset_clean.csv,thng2,6f. Things have been getting to me,2,No-most of the time I have coped quite well,100
+134,ppdataset_clean.csv,thng2,6f. Things have been getting to me,3,No-I have been coping as well as ever,38
+135,ppdataset_clean.csv,thng2,6f. Things have been getting to me,4,Yes-sometimes I have not been coping as well as usual,26
+136,ppdataset_clean.csv,thng2,6f. Things have been getting to me,5,Yes-most of the time I have not been able to cope at all,7
+137,ppdataset_clean.csv,cryn2,9f. I have been so unhappy that I have been crying,1,9f. I have been so unhappy that I have been crying,0
+138,ppdataset_clean.csv,cryn2,9f. I have been so unhappy that I have been crying,2,No-never,101
+139,ppdataset_clean.csv,cryn2,9f. I have been so unhappy that I have been crying,3,Only occasionally,56
+140,ppdataset_clean.csv,cryn2,9f. I have been so unhappy that I have been crying,4,Yes-quite often,10
+141,ppdataset_clean.csv,cryn2,9f. I have been so unhappy that I have been crying,5,Yes-most of the time,4
+142,ppdataset_clean.csv,slpn2,7f. I have been so unhappy that I have had difficulty sleeping,1,7f. I have been so unhappy that I have had difficulty sleeping,0
+143,ppdataset_clean.csv,slpn2,7f. I have been so unhappy that I have had difficulty sleeping,2,No-not at all,93
+144,ppdataset_clean.csv,slpn2,7f. I have been so unhappy that I have had difficulty sleeping,3,No-Not very often,48
+145,ppdataset_clean.csv,slpn2,7f. I have been so unhappy that I have had difficulty sleeping,4,Yes-sometimes,27
+146,ppdataset_clean.csv,slpn2,7f. I have been so unhappy that I have had difficulty sleeping,5,Yes-most of the time,3
+147,ppdataset_clean.csv,hrmg2,10f. The thought of harming myself has occurred to me,1,10f. The thought of harming myself has occurred to me,0
+148,ppdataset_clean.csv,hrmg2,10f. The thought of harming myself has occurred to me,2,Never,153
+149,ppdataset_clean.csv,hrmg2,10f. The thought of harming myself has occurred to me,3,Hardly ever,9
+150,ppdataset_clean.csv,hrmg2,10f. The thought of harming myself has occurred to me,4,Sometimes,7
+151,ppdataset_clean.csv,hrmg2,10f. The thought of harming myself has occurred to me,5,Yes-quite often,2
+152,ppdataset_clean.csv,scr2,total EPDS score (Phase 2),1,total EPDS score (Phase 2),0
