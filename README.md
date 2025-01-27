@@ -29,6 +29,8 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │
 ├── images                 <- Images folder for any images to be used in the README files
 │
+├── assets                 <- Folder for evidence products  
+│
 ├── data                   <- Delivarable 1: A brief description of how we obtained the datasets and
 │                             how they can be accessed.  
 │   ├── primary        
