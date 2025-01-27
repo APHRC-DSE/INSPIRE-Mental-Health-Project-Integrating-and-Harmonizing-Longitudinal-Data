@@ -15,7 +15,7 @@ To ensure the diversity of tools mapped, the selection of secondary datasets fro
 - **Depression**: Edinburgh Postpartum Depression Scale (EPDS), Depression, anxiety and stress scale (DASS-21), Center of Epidemiologic Studies Depression Scale (CES-D 10 & CES-D 8) and Patient Health Questionnaire 9 item (PHQ-9)
 - **Anxiety**: Depression, anxiety and stress scale (DASS-21) and Generalized Anxiety Disorder 7-item (GAD-7) 
 
-The final studies to be mapped were from 11 articles as highlighted in the table below on the ETL to Staging column.
+The final studies to be mapped were from 11 articles as highlighted in the table below on the ***_ETL to Staging column***.
 
 | **number** | **study country** | **source title** | **link doi** | **tools used** | **ETL to Staging** |
 |---|---|---|---|---|---|
