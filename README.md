@@ -74,7 +74,11 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   │                 
 │   │   ├── 1. mapping document           <- Staging to OMOP Mapping document
 │   │   └── 2. ETL staging to OMOP
-│   │
+│   │   │   │
+│   │   │   ├── Pentaho
+│   │   │   ├── R
+│   │   │   └── Python
+│   │   │          
 │   └── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
 └──
 ```
