@@ -73,13 +73,14 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   ├── B. OMOP-CDM           <- ETL from staging to OMOP
 │   │   │                 
 │   │   ├── 1. mapping document           <- Staging to OMOP Mapping document
-│   │   ├── 2. ETL staging to OMOP       
-│   │   ├── 3. Achilles                   
-│   │   └── 4. Data Quality Dashboard
+│   │   ├── 2. ETL staging to OMOP        <- Source code on ETL
 │   │   │   │
 │   │   │   ├── Pentaho
 │   │   │   ├── R
 │   │   │   └── Python
+│   │   │   │       
+│   │   ├── 3. Achilles                   
+│   │   └── 4. Data Quality Dashboard
 │   │   │          
 │   └── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
 └──
