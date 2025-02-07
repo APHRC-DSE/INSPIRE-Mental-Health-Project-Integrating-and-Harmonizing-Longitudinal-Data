@@ -105,8 +105,6 @@ This repository uses the template created by Malvika and members of *The Turing 
 
 ## Contributors ✨
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
-
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 
