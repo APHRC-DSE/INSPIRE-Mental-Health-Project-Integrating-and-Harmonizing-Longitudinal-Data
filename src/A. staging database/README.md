@@ -15,9 +15,9 @@ This staging database is structured as a **star schema** and has two `endpoints`
     2. Studies in the staging database may be ETLed into the OMOP CDM for 
     subsequent descriptive, predictive and causal analysis
 
-The staging database structure was designed using a Relational Database Diagram Design Tool [dbdiagram](https://dbdiagram.io/). The ERD (Entity-Relationship Diagram) for the staging can be found [here](https://dbdiagram.io/d/MH-INSPIRE-Staging-Dataset-v1-1-65fa7820ae072629ce783398).
+The staging database structure was designed using a Relational Database Diagram Design Tool [dbdiagram](https://dbdiagram.io/). The Design for the staging can be found [here](https://dbdiagram.io/d/MH-INSPIRE-Staging-Dataset-v1-1-65fa7820ae072629ce783398).
 
-[MH STAGING DATABASE SCHEMA DESIGN](./1.%20staging%20db)
+Design documentation, ERD (Entity-Relationship Diagram) and schema ddl for the staging can be found in the [1. staging db](./1.%20staging%20db) folder.
     
 ## 2. Generating Metadata tables
 
