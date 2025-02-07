@@ -7,7 +7,7 @@ The “INSPIRE” project integrates longitudinal data from African studies into
 
 The staging database serves as an innovative tool in managing longitudinal mental health data, going beyond simple data hosting to act as a comprehensive study descriptor. It provides detailed insights into each study stage and establishes a data science foundation for standardizing and integrating the data into OMOP CDM.
 
-![Image](https://github.com/APHRC-DSE/INSPIRE-Mental-Health-Project-Integrating-and-Harmonizing-Longitudinal-Data/blob/main/images/staging_db_data_pipeline.png)
+![image](../images/staging_db_data_pipeline.png)
 
 ## Data to ETL
 
