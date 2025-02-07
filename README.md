@@ -78,7 +78,7 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   │   ├── Pentaho
 │   │   │   ├── R
 │   │   │   └── Python
-│   │   │   │       
+│   │   │         
 │   │   ├── 3. Achilles                   
 │   │   └── 4. Data Quality Dashboard
 │   │   │          
