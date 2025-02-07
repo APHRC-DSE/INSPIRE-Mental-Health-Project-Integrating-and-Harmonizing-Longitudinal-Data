@@ -13,7 +13,7 @@ This staging database is structured as a **star schema** has two `endpoints`:
     2. Studies in the staging database may be ETLed into the OMOP CDM for subsequent descriptive, predictive and causal 
     analysis
 
-![Image](images/staging_db_data_pipeline.png)
+![Image](./images/staging_db_data_pipeline.png)
     
 ### 2. Generating Metadata tables
 
