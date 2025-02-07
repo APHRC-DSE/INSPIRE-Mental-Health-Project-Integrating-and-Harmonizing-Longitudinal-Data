@@ -73,13 +73,14 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   ├── B. OMOP-CDM           <- ETL from staging to OMOP
 │   │   │                 
 │   │   ├── 1. mapping document           <- Staging to OMOP Mapping document
-│   │   ├── 2. ETL staging to OMOP       
-│   │   ├── 3. Achilles                   
-│   │   └── 4. Data Quality Dashboard
+│   │   ├── 2. ETL staging to OMOP        <- Source code on ETL
 │   │   │   │
 │   │   │   ├── Pentaho
 │   │   │   ├── R
 │   │   │   └── Python
+│   │   │         
+│   │   ├── 3. Achilles                   
+│   │   └── 4. Data Quality Dashboard
 │   │   │          
 │   └── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
 └──
@@ -103,8 +104,6 @@ manner, but not in any way that suggests the license or endorses you or your use
 This repository uses the template created by Malvika and members of *The Turing Way* team, shared under CC-BY 4.0 for reuse: https://github.com/the-turing-way/reproducible-project-template.
 
 ## Contributors ✨
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
