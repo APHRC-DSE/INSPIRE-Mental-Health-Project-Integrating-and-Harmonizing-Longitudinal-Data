@@ -12,8 +12,6 @@ This staging database is structured as a **star schema** has two `endpoints`:
     1. It is a window into study execution and is the basis for reporting
     2. Studies in the staging database may be ETLed into the OMOP CDM for subsequent descriptive, predictive and causal 
     analysis
-
-![Image](https://github.com/APHRC-DSE/INSPIRE-Mental-Health-Project-Integrating-and-Harmonizing-Longitudinal-Data/blob/main/images/staging_db_data_pipeline.png)
     
 ### 2. Generating Metadata tables
 
