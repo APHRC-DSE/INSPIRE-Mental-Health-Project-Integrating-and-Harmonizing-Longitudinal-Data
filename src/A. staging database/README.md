@@ -7,9 +7,7 @@ The steps follow a chronological order as below:
 
 The staging database follows the **DDI Lifecycle specification**, chronicling the execution of longitudinal studies from one wave to the next across a dynamic population with in-migration and out-migration, as the case may be. Also, from one wave to the next there may be one or more mental health instruments.
 
-![image](../../images/staging_db_data_pipeline.png)
-
-![image](https://github.com/APHRC-DSE/INSPIRE-Mental-Health-Project-Integrating-and-Harmonizing-Longitudinal-Data/blob/main/images/LS%20Fact%20v4-3.png)
+![image](../../images/LS Fact v4-3.png)
 
 This staging database is structured as a **star schema** and has two `endpoints`: 
 
