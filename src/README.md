@@ -3,19 +3,22 @@
 ## Summary
 Longitudinal studies are essential for understanding the progression of mental health disorders over time, but combining data collected through different methods to assess conditions like depression, anxiety, and psychosis presents significant challenges. This project will utilize a mapping technique allowing for the conversion of diverse longitudinal data into a standardized staging database, leveraging the [Data Documentation Initiative (DDI) Lifecycle](https://ddi-lifecycle-documentation.readthedocs.io/en/latest/User%20Guide/Introduction.html) and the [Observational Medical Outcomes Partnership (OMOP) Common Data Model (CDM)](https://ohdsi.github.io/CommonDataModel/) standards to ensure consistency and compatibility across datasets.
 
-The “INSPIRE” project integrates longitudinal data from African studies into a staging database using metadata documentation standards structured with a snowflake schema. This facilitates the development of Extraction, Transformation, and Loading (ETL) scripts for integrating data into OMOP CDM. The staging database schema is designed to capture the dynamic nature of longitudinal studies, including changes in research protocols and the use of different instruments across data collection waves. Utilizing the staging database will streamline the data migration process enabling subsequent integration into the OMOP CDM. Adherence to metadata standards ensures data quality, promotes interoperability, and expands opportunities for data sharing in mental health research.
+The “INSPIRE” project integrates longitudinal data from African studies into a staging database using **metadata documentation standards structured with a snowflake schema**. Adherence to metadata standards ensures data quality, promotes interoperability, and expands opportunities for data sharing in mental health research.  
+- The staging database schema is designed to capture the dynamic nature of longitudinal studies, including changes in research protocols and the use of different instruments across data collection waves.
+- Utilizing the staging database will streamline the data migration process. This facilitates the development of Extraction, Transformation, and Loading (ETL) scripts for subsequent integration into the OMOP CDM.
 
 The staging database serves as an innovative tool in managing longitudinal mental health data, going beyond simple data hosting to act as a comprehensive study descriptor. It provides detailed insights into each study stage and establishes a data science foundation for standardizing and integrating the data into OMOP CDM.
 
 ![image](../images/staging_db_data_pipeline.png)
 
-## Data to ETL
+## Source Data
 
 ### Secondary data
 To ensure the diversity of tools mapped, the selection of secondary datasets from the 17 articles to be mapped to the staging database was based on the mental health assessment tools used as below:
 
 - **Depression**: Edinburgh Postpartum Depression Scale (EPDS), Depression, anxiety and stress scale (DASS-21), Center of Epidemiologic Studies Depression Scale (CES-D 10 & CES-D 8) and Patient Health Questionnaire 9 item (PHQ-9)
-- **Anxiety**: Depression, anxiety and stress scale (DASS-21) and Generalized Anxiety Disorder 7-item (GAD-7) 
+- **Anxiety**: Depression, anxiety and stress scale (DASS-21) and Generalized Anxiety Disorder 7-item (GAD-7)
+- **Psychosis**: Psychosis Screening Questionnaire (PSQ)  
 
 The final studies to be mapped were from 11 articles as highlighted in the table below on the ***ETL to Staging column***.
 
@@ -39,4 +42,4 @@ The final studies to be mapped were from 11 articles as highlighted in the table
 | **16** | South Africa | Proximity To Healthcare Clinic And Depression Risk In South Africa: Geospatial Evidence From A Nationally Representative Longitudinal Study | https://doi.org/10.1007/s00127-017-1369-x | Center for Epidemiological Studies-Depression (CES-D) | Yes |
 | **17** | South Africa | Living Alone And Depression In A Developing Country Context: Longitudinal Evidence From South Africa | https://doi.org/10.1016/j.ssmph.2021.100800 | Center for Epidemiological Studies-Depression (CES-D) | Yes |
 
-
+### Primary data
