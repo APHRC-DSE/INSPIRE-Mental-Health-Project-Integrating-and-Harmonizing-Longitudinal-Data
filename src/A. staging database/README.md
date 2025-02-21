@@ -1,4 +1,4 @@
-# Staging database, Metadata tables, ETL source to staging, Merging various ETL instances to central staging and Metabase
+# A. staging database
 This folder contains information and code on the structure of the staging database, generated metadata tables from the various studies, ETL(extract, transform and load) source data to a local instance of the staging database, merging various local instances to central staging data base and visualizing the database on a platform.
 
 The steps follow a chronological order as below:
