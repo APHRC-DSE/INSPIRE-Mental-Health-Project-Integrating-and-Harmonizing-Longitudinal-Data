@@ -5,11 +5,11 @@
 -
 -
 -
-- Feb 21, 2025: ETL-source to staging folders for population study id 13 and 14 added by Reinpeter Momanyi.
+- Feb 21, 2025: ETL-source to staging folders for population study id 13 and 14 added and ETL-source to staging for population study id 12(wave 2) and 14(wave 1) updated by Reinpeter Momanyi.
 - Feb 7, 2025: Staging database documents added to the staging db folder by Reinpeter Momanyi.
 - Feb 3, 2025: Achilles and Data Quality Dashboard sub-folder added in the OMOP-CDM folder by Reinpeter Momanyi.
 - Jan 30, 2025: Pentaho, R and Python sub-folders added in ETL staging to OMOP folder by Reinpeter Momanyi.
-- Jan 28, 2025: ETL-source to staging for population study id 12 updated by Reinpeter Momanyi.
+- Jan 28, 2025: ETL-source to staging for population study id 12(wave 1) updated by Reinpeter Momanyi.
 - Jan 27, 2025: Assets folder added in the file structure and ETL-source to staging for population study id 1 updated by 
   Reinpeter Momanyi.
 - Jan 24, 2025: Workshop sub-folder added in project management and secondary data subfolder updated by Reinpeter Momanyi.
