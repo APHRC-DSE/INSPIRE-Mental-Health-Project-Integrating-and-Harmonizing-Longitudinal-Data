@@ -20,7 +20,15 @@ The staging database structure was designed using a Relational Database Diagram 
 Design documentation, ERD (Entity-Relationship Diagram) and schema ddl for the staging can be found in the [1. staging db](./1.%20staging%20db) folder.
     
 ## 2. Generating Metadata tables
+The **staging database contains 15 tables**: `Concept`, `Data capture Event`, `Household`, `Household Characteristics`,
+`Individual`, `Individual Demographics`, `Instrument`, `Instrument Item`, `Interview`, `Location`,
+`Longitudinal Population Study Fact`, `Methodology`, `Population Study`, `Resident Episode`, and `Wave`.
 
+Of the 15 tables, **7 are metadata tables** i.e. `Concept`, `Data capture Event`, `Instrument`, `Instrument Item`, `Methodology`, `Population Study` and `Wave`.
+
+Metadata generated is from 14 population longitudinal studies (11 secondary and 3 primary). See Table in _3. ETL from source data to staging_
+
+Any Metadata for subsequent data received from primary collection sites will be added to the tables.
 
 ## 3. ETL from source data to staging
 
