@@ -30,6 +30,8 @@ Metadata generated is from 14 population longitudinal studies (11 secondary and 
 
 Any Metadata for subsequent data received from primary collection sites will be added to the tables.
 
+Metadata for the 14 population longitudinal studies can be found in the [2. metadata](./2.%20metadata%20) folder.
+
 ## 3. ETL from source data to staging
 
 ### Data processing
