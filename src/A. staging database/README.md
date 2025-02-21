@@ -37,7 +37,11 @@ Metadata for the 14 population longitudinal studies can be found in the [2. meta
 ### Data processing
 Data processing is a crucial aspect of any data related project and involves organizing, cleaning, and preparing data for analysis using appropriate tools and techniques.
 
-It is important to clearly separate the design of the ETL from the implementation of the ETL. Designing the ETL requires extensive knowledge of both the source data, as well as the CDM. Implementing the ETL on the other hand typically relies mostly on technical expertise on how to make the ETL computationally efficient.
+In this project, data processing was done using various tools i.e `R`, `Pentaho` and `Python` to clean and subset variables.
+
+It is important to clearly separate the design of the ETL from the implementation of the ETL. Designing the ETL requires extensive knowledge of both the source data. Implementing the ETL on the other hand typically relies mostly on technical expertise on how to make the ETL computationally efficient.
+
+In this project, implementation of the ETL to the staging database was done using various tools i.e `PostgreSQL`, `Pentaho` and `Python`.
 
 
 ## 4. Merge the various ETL-source data to staging instances to central staging database
