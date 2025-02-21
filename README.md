@@ -64,10 +64,12 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   │   ├── population_study_id_8             
 │   │   │   ├── population_study_id_9             
 │   │   │   ├── population_study_id_10              
-│   │   │   ├── population_study_id_11             
-│   │   │   └── population_study_id_12
+│   │   │   ├── population_study_id_11
+│   │   │   ├── population_study_id_12
+│   │   │   ├── population_study_id_13               
+│   │   │   └── population_study_id_14
 │   │   │                                                 
-│   │   ├── 4. merge csv dumps         <- Merging all ETL population studies to central staging
+│   │   ├── 4. merge dumps         <- Merging all ETL population studies to central staging
 │   │   └── 5. metabase dashboard
 │   │
 │   ├── B. OMOP-CDM           <- ETL from staging to OMOP
