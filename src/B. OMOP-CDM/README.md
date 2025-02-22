@@ -7,7 +7,7 @@ The steps follow a chronological order as below:
 Two closely-integrated tools have been developed to support the ETL design process: `White Rabbit`, and `Rabbit-in-a-Hat`.
 
 ### White Rabbit
-To initiate an ETL process on a database you need to understand your data, including the tables, fields, and content. This is where the White Rabbit tool comes in. White Rabbit is a software tool to help prepare for ETLs of longitudinal healthcare databases into the OMOP CDM. White Rabbit scans your data and creates a report containing all the information necessary to begin designing the ETL. 
+To initiate an ETL process on a database you need to understand your data, including the tables, fields, and content. This is where the White Rabbit tool comes in. [White Rabbit](https://ohdsi.github.io/WhiteRabbit/WhiteRabbit.html) is a software tool to help prepare for ETLs of longitudinal healthcare databases into the OMOP CDM. White Rabbit scans your data and creates a report containing all the information necessary to begin designing the ETL. 
 
 Process Overview: The typical sequence for using the software to scan source data:
 
@@ -17,7 +17,7 @@ Process Overview: The typical sequence for using the software to scan source dat
 - White Rabbit creates a **Scan Report** (an export of information about the source data).
 
 ### Rabbit in a Hat
-Rabbit-In-a-Hat is designed to read and display a White Rabbit scan document. White Rabbit generates information about the source data while Rabbit-In-a-Hat uses that information and through a graphical user interface to allow a user to connect source data to tables and columns within the CDM. Rabbit-In-a-Hat generates documentation for the ETL process, it does not generate code to create an ETL.
+[Rabbit-In-a-Hat](https://ohdsi.github.io/WhiteRabbit/WhiteRabbit.html) is designed to read and display a White Rabbit scan document. White Rabbit generates information about the source data while Rabbit-In-a-Hat uses that information and through a graphical user interface to allow a user to connect source data to tables and columns within the CDM. Rabbit-In-a-Hat generates documentation for the ETL process, it does not generate code to create an ETL.
 
 Process Overview: The typical sequence for using this software to generate documentation of an ETL:
 
