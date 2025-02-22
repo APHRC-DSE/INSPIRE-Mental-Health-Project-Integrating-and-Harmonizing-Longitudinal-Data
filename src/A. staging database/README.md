@@ -39,6 +39,21 @@ Data processing is a crucial aspect of any data related project and involves org
 
 In this project, data processing was done using various tools i.e `R`, `Pentaho` and `Python` to clean and subset variables.
 
+### Vocabulary Mapping
+Sometimes the source data uses coding systems that are not in the Vocabulary. In this case, a mapping must be created from the source coding system to the Standard Concepts. Code mapping can be a daunting task, especially when there are many codes in the source coding system. 
+
+In this project, `Usagi` and `Athena` were used to map vocabularies of source concepts.
+
+#### Usagi
+Usagi is a tool to aid the manual process of creating a code mapping. It can make suggested mappings based on textual similarity of code descriptions. If the source codes are only available in a foreign language, **Google Translate** often gives good translation of the terms into English. Usagi allows the user to search for the appropriate target concepts if the automated suggestion is not correct. Finally, the user can indicate which mappings are approved to be used in the ETL.
+
+The typical sequence for using this software is:
+
+- Load codes from your sources system (“source codes”) that you would like to map to Vocabulary concepts.
+- Usagi will run a term similarity approach to map source codes to Vocabulary concepts.
+- Leverage Usagi interface to check, and where needed, improve suggested mappings. Preferably an individual who has experience with the coding system and medical terminology should be used for this review.
+- Export mapping to the Vocabulary’s _SOURCE_TO_CONCEPT_MAP_.
+
 ### Implementation of the ETL 
 It is important to clearly separate the design of the ETL from the implementation of the ETL. Designing the ETL requires extensive knowledge of both the source data. Implementing the ETL on the other hand typically relies mostly on technical expertise on how to make the ETL computationally efficient.
 
