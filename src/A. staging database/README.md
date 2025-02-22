@@ -30,7 +30,7 @@ Metadata generated is from 14 population longitudinal studies (11 secondary and 
 
 Any Metadata for subsequent data received from primary collection sites will be added to the tables.
 
-Metadata for the 14 population longitudinal studies can be found in the [2. metadata](./2.%20metadata) folder.
+Metadata for the 14 population longitudinal can be found in the [2. metadata](./2.%20metadata) folder.
 
 ## 3. ETL from source data to staging
 
@@ -39,6 +39,7 @@ Data processing is a crucial aspect of any data related project and involves org
 
 In this project, data processing was done using various tools i.e `R`, `Pentaho` and `Python` to clean and subset variables.
 
+### Implementation of the ETL 
 It is important to clearly separate the design of the ETL from the implementation of the ETL. Designing the ETL requires extensive knowledge of both the source data. Implementing the ETL on the other hand typically relies mostly on technical expertise on how to make the ETL computationally efficient.
 
 In this project, implementation of the ETL to the staging database was done using various tools i.e `PostgreSQL`, `Pentaho` and `Python`.
@@ -59,6 +60,8 @@ In this project, implementation of the ETL to the staging database was done usin
 | **12** | Primary | Uganda | Iganga Mayuge HDSS |  | Patient Health Questionnaire (PHQ-9); Generalized Anxiety Disorder (GAD-7); Psychosis Screening Questionnaire (PSQ) | Pentaho | Pentaho |
 | **13** | Primary | Uganda | Kagando HDSS |  | Patient Health Questionnaire (PHQ-9); Generalized Anxiety Disorder (GAD-7); Psychosis Screening Questionnaire (PSQ) | Python | Python |
 | **14** | Primary | Kenya | Kilifi HDSS |  | Patient Health Questionnaire (PHQ-9); Generalized Anxiety Disorder (GAD-7); Psychosis Screening Questionnaire (PSQ) | Pentaho | Pentaho |
+
+ETL implementation for the 14 population longitudinal can be found in the [3. ETL-source to staging](./3.%20ETL-source%20to%20staging) folder.
 
 ## 4. Merge the various ETL-source data to staging instances to central staging database
 
