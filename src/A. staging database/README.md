@@ -30,7 +30,7 @@ Metadata generated is from 14 population longitudinal studies (11 secondary and 
 
 Any Metadata for subsequent data received from primary collection sites will be added to the tables.
 
-Metadata for the 14 population longitudinal can be found in the [2. metadata](./2.%20metadata) folder.
+Metadata for the 14 population longitudinal studies can be found in the [2. metadata](./2.%20metadata) folder.
 
 ## 3. ETL from source data to staging
 
@@ -61,7 +61,7 @@ In this project, implementation of the ETL to the staging database was done usin
 | **13** | Primary | Uganda | Kagando HDSS |  | Patient Health Questionnaire (PHQ-9); Generalized Anxiety Disorder (GAD-7); Psychosis Screening Questionnaire (PSQ) | Python | Python |
 | **14** | Primary | Kenya | Kilifi HDSS |  | Patient Health Questionnaire (PHQ-9); Generalized Anxiety Disorder (GAD-7); Psychosis Screening Questionnaire (PSQ) | Pentaho | Pentaho |
 
-ETL implementation for the 14 population longitudinal can be found in the [3. ETL-source to staging](./3.%20ETL-source%20to%20staging) folder.
+ETL implementation for the 14 population longitudinal studies can be found in the [3. ETL-source to staging](./3.%20ETL-source%20to%20staging) folder.
 
 ## 4. Merge the various ETL-source data to staging instances to central staging database
 
