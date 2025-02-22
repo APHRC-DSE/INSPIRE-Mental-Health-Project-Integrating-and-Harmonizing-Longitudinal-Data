@@ -45,7 +45,7 @@ Sometimes the source data uses coding systems that are not in the Vocabulary. In
 In this project, `Usagi` and `Athena` were used to map vocabularies of source concepts.
 
 #### Usagi
-Usagi is a tool to aid the manual process of creating a code mapping. It can make suggested mappings based on textual similarity of code descriptions. If the source codes are only available in a foreign language, **Google Translate** often gives good translation of the terms into English. Usagi allows the user to search for the appropriate target concepts if the automated suggestion is not correct. Finally, the user can indicate which mappings are approved to be used in the ETL.
+[Usagi](https://ohdsi.github.io/Usagi/index.html) is a tool to aid the manual process of creating a code mapping. It can make suggested mappings based on textual similarity of code descriptions. If the source codes are only available in a foreign language, **Google Translate** often gives good translation of the terms into English. Usagi allows the user to search for the appropriate target concepts if the automated suggestion is not correct. Finally, the user can indicate which mappings are approved to be used in the ETL.
 
 The typical sequence for using this software is:
 
