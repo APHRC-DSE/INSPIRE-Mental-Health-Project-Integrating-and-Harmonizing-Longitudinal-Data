@@ -33,12 +33,20 @@ ETL design and implementation process from staging db to OMOP CDM can be found i
 
 
 ## 3. Achilles
+Achilles is part of [HADES](https://ohdsi.github.io/Hades/index.html) set collection of open-source R packages.
 
+Achilles (Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems) provides descriptive statistics, characterization and visualization of an OMOP CDM database. ACHILLES currently supports CDM version 5.3 and 5.4.
+
+It is a critical resource to evaluate the composition of CDM databases.
+
+Code for running Achilles analysis on the 14 OMOP CDM instances can be found in the [3. Achilles](./3.%20Achilles) folder.
 
 ## 4. Data Quality Dashboard
+Data Quality Dashboard is part of [HADES](https://ohdsi.github.io/Hades/index.html) set collection of open-source R packages.
 
+It applies a harmonized data quality assessment to data that has been standardized in the OMOP Common Data Model. This package will run a series of data quality checks against an OMOP CDM instance (currently supports v5.4, v5.3 and v5.2). It systematically goes table by table and field by field to quantify the number of records in a CDM that do not conform to the given specifications and evaluates the checks against some pre-specified threshold. Over 1,500 checks are performed, each one organized into the `Kahn framework`.
 
-
+Code for running Data Quality Dashboard on the 14 OMOP CDM instances can be found in the [4. Data Quality Dashboard](./4.%20Data%20Quality%20Dashboard) folder.
 
 
 
