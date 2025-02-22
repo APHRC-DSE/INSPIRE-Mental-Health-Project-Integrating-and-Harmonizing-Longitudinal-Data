@@ -27,7 +27,7 @@ Process Overview: The typical sequence for using this software to generate docum
 - For each source table to CDM table connection, further define the connection with source column to CDM column detail.
 - Save Rabbit-In-a-Hat work and export to a MS Word document.
 
-ETL design and implementation process from staging db to OMOP CDM can be found in the [1. mapping document](./1.%20mapping document) folder.
+ETL design and implementation process from staging db to OMOP CDM can be found in the [1. mapping document](./1.%20mapping%20document) folder.
 
 ## 2. ETL staging to OMOP
 
