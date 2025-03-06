@@ -1,0 +1,15 @@
+methodology_id,data_collection_methodology_description,data_collection_methodology_type,time_method_description,time_method_type,sampling_procedure_description,sampling_procedure_type,data_collection_software_name,data_collection_software_version,data_collection_software_package_type,quality_statement_standard_name,quality_statement_standard_description,population_study_id
+1,structured questionnaire,"Secondary, quantitative",,longitudinal,,,Edinburgh Postnatal Depression Scale (EPDS),,,,,1
+2,structured questionnaire,"Secondary, quantitative",,longitudinal,,simple random sampling,DASS-21 and PCL-5,,,,,2
+3,structured questionnaire,"Secondary, quantitative",,longitudinal,,simple random sampling,DASS-21 and PCL-5,,,,,3
+4,structured questionnaire,"Secondary, quantitative",,longitudinal,,simple random sampling,Center for Epidemiological Studies-Depression Scale eight-item scale (CES-D 8),,computer-assisted personal interviewing (CAPI),,,4
+5,structured questionnaire,"Secondary, mixed method",,longitudinal,,simple random sampling,Depression Scale (CES-D); Posttraumatic Stress Disorder (PTSD) scale (DSM IV),,,,,5
+6,structured questionnaire,"Secondary, quantitative",,longitudinal,,two-stage design,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,6
+7,structured questionnaire,"Secondary, quantitative",,longitudinal,,cluster sampling ,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,7
+8,structured questionnaire,"Secondary, quantitative",,longitudinal,,cluster sampling,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,8
+9,structured questionnaire,"Secondary, quantitative",,longitudinal,,two-stage design,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,9
+10,structured questionnaire,"Secondary, quantitative",,longitudinal,,two-stage cluster sampling,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,10
+11,structured questionnaire,"Secondary, quantitative",,longitudinal,,two-stage cluster sampling,Center of Epidemiologic Studies Depression Scale (CES-D-10),,computer-assisted personal interviewing (CAPI),,,11
+12,structured questionnaire,"Primary, quantitative",,longitudinal,,simple random sampling,"PHQ-9, GAD-7, BASIS-24, PSQ",,Survey Monkey,,,12
+13,structured questionnaire,"Primary, quantitative",,longitudinal,,simple random sampling,"PHQ-9, GAD-7, BASIS-24, PSQ",,Survey Monkey,,,13
+14,structured questionnaire,"Primary, quantitative",,longitudinal,,simple random sampling,"PHQ-9, GAD-7, BASIS-24, PSQ",,Open Data Kit (ODK),,,14
