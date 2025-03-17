@@ -14,7 +14,7 @@ This staging database is structured as a **star schema** and has three `endpoint
     1. It is a window into study execution and is the basis for reporting
     2. Studies in the staging database may be ETLed into the OMOP CDM for 
     subsequent descriptive, predictive and causal analysis
-    3. It can be used to produce an OMOP standard vocabulary like UK Biobank in [Athena](https://athena.ohdsi.org/search-terms/start)
+    3. It can be used to produce an OMOP standard vocabulary like UK Biobank in Athena.
 
 The staging database structure was designed using a Relational Database Diagram Design Tool [dbdiagram](https://dbdiagram.io/). The Design for the staging can be found [here](https://dbdiagram.io/d/MH-INSPIRE-Staging-Dataset-v1-1-65fa7820ae072629ce783398).
 
