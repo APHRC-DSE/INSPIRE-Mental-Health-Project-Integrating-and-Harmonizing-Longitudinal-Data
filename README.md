@@ -107,6 +107,23 @@ This repository uses the template created by Malvika and members of *The Turing 
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people:
+
+| **Emoji Type/Represents** | **Role** | **Contributor** | **Institution** | **Profile Link** |
+|---|---|---|---|---|
+| 💵 `Financial` | Financial Support | Wellcome Trust | Wellcome Trust | https://wellcome.org/ |
+| 🔍 `Grant Finders` | Principal Investigator | Agnes Kiragga | African Population & Health Research Centre (APHRC) |  |
+| 🔍 `Grant Finders` | Principal Investigator | Jim Todd | London School of Hygiene & Tropical Medicine |  |
+| 📆 `Project Management` | Project Management | Bylhah Mugotitsa | African Population & Health Research Centre (APHRC) |  |
+|  |  | Emma Slaymaker | London School of Hygiene & Tropical Medicine |  |
+|  | Ideas, design & review | Jay Greenfield | Committee Data of the International Science Council  (CODATA) |  |
+|  | Ideas, design & review | Tathagata Bhattacharjee | London School of Hygiene & Tropical Medicine |  |
+|  🚇 `Infrastructure` | Build-Tools i.e staging database, visualization platform | Dorothy Mailosi | Committee Data of the International Science Council  (CODATA) |  |
+|  🚇 `Infrastructure` | Build-Tools i.e staging database, visualization platform | Michael Ochola | African Population & Health Research Centre (APHRC) |  |
+| 📖 `doc` | Documentation | David Amadi | London School of Hygiene & Tropical Medicine |  |
+| 💻 `code` |  | Reinpeter Ondeyo | African Population & Health Research Centre (APHRC) |  |
+| 💻 `code` |  | Pauline Andeso | African Population & Health Research Centre (APHRC) |  |
+| 💻 `code` |  | Joseph Kuria | African Population & Health Research Centre (APHRC) |  |
+|  | Committee |  |  |  |
 
 
