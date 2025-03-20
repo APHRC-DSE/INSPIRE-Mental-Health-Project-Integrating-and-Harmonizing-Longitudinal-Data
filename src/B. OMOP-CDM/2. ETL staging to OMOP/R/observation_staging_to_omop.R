@@ -201,11 +201,12 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   , value_as_number = value_as_num
                   , value_as_string = value_as_char
                   , value_as_concept_id = concept_id
-                  , observation_source_value = concept_text
+                  , value_source_value = concept_text
                   , observation_event_id = measurement_id
                   ) %>%
       dplyr::mutate(observation_type_concept_id = 32883
-                    , observation_source_concept_id = as.integer(observation_concept_id)
+                    , observation_source_value = value_as_string
+                    , observation_source_concept_id = value_as_concept_id
                     , obs_event_field_concept_id = 1147138 #concept id for measurement.measurement_id for CDM v5
                     )
   
@@ -257,7 +258,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                                      0 # source of income, Socioeconomic status
                                                      ))))))))))
                    , observation_source_value = individual_concept_id_text
-                   , observation_source_concept_id = individual_concept_id
+                   , observation_source_concept_id = as.numeric(individual_concept_id)
                    , observation_type_concept_id = 32883
                    , value_as_number = NA
                    , value_as_concept_id = as.numeric(individual_concept_id) #Changed from NULL
@@ -276,7 +277,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   )
   
   observation_table_final <- dplyr::bind_rows(observation_table, observation_table_c) %>%
-    dplyr::arrange(person_id, visit_occurrence_id) %>%
+    dplyr::arrange(person_id, visit_occurrence_id, visit_detail_id) %>%
     dplyr::mutate(observation_id = 1:n()
                   ) %>%
     dplyr::select(observation_id, person_id, observation_concept_id, observation_date, observation_datetime
@@ -285,7 +286,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   , observation_source_value, observation_source_concept_id, unit_source_value, qualifier_source_value
                   , value_source_value, observation_event_id, obs_event_field_concept_id
                   ) %>%
-    dplyr::mutate(across(c(observation_source_value), ~strtrim(.x, 49)
+    dplyr::mutate(across(c(observation_source_value, value_source_value), ~strtrim(.x, 49)
                          )
                   )
   

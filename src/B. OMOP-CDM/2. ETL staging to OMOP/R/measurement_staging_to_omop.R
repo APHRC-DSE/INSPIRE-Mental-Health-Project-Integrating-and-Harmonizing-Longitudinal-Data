@@ -114,7 +114,7 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                         dplyr::distinct(concept_id, .keep_all = TRUE),
                       by = c("measurement_source_concept_id"="concept_id")
                       ) %>%
-    dplyr::arrange(individual_id, visit_occurrence_id) %>%
+    dplyr::arrange(individual_id, visit_occurrence_id, visit_detail_id) %>%
     dplyr::rename( person_id = individual_id
                    , measurement_date = interview_date
                    , measurement_datetime = visit_detail_start_datetime
