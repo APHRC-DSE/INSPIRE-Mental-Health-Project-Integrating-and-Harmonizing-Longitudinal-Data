@@ -13,5 +13,9 @@
 # dta files
 *.dta
 
+# word files
+*.doc
+*.docx
+
 # csv files
 #*.csv
