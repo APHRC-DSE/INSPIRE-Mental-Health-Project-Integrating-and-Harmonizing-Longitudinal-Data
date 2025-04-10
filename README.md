@@ -112,18 +112,16 @@ Thanks goes to these wonderful people:
 | **Emoji Type/Represents** | **Role** | **Contributor** | **Institution** | **Profile Link** |
 |---|---|---|---|---|
 | 💵 `Financial` | Financial Support | Wellcome Trust | Wellcome Trust | https://wellcome.org/ |
-| 🔍 `Grant Finders` | Principal Investigator | Agnes Kiragga | African Population & Health Research Centre (APHRC) |  |
+| 🔍 `Grant Finders` | Principal Investigator | Agnes Kiragga | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/agnes-kiragga-6039013a/) |
 | 🔍 `Grant Finders` | Principal Investigator | Jim Todd | London School of Hygiene & Tropical Medicine |  |
-| 📆 `Project Management` | Project Management | Bylhah Mugotitsa | African Population & Health Research Centre (APHRC) |  |
-|  |  | Emma Slaymaker | London School of Hygiene & Tropical Medicine |  |
-|  | Ideas, design & review | Jay Greenfield | Committee Data of the International Science Council  (CODATA) |  |
-|  | Ideas, design & review | Tathagata Bhattacharjee | London School of Hygiene & Tropical Medicine |  |
-|  🚇 `Infrastructure` | Build-Tools i.e staging database, visualization platform | Dorothy Mailosi | Committee Data of the International Science Council  (CODATA) |  |
-|  🚇 `Infrastructure` | Build-Tools i.e staging database, visualization platform | Michael Ochola | African Population & Health Research Centre (APHRC) |  |
-| 📖 `doc` | Documentation | David Amadi | London School of Hygiene & Tropical Medicine |  |
-| 💻 `code` |  | Reinpeter Ondeyo | African Population & Health Research Centre (APHRC) |  |
-| 💻 `code` |  | Pauline Andeso | African Population & Health Research Centre (APHRC) |  |
-| 💻 `code` |  | Joseph Kuria | African Population & Health Research Centre (APHRC) |  |
-|  | Committee |  |  |  |
-
+| 📆 `Project Management` <br /> 🔬 `Research` | Project management and research | Bylhah Mugotitsa | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/bylhah-bylhah-m/) |
+| 🤔 `Ideas` <br /> 👀  `Review` | Ideas & review | Emma Slaymaker | London School of Hygiene & Tropical Medicine |  |
+| 🤔 `Ideas` <br /> 🎨 `Design`  <br /> 👀  `Review` <br /> 🔣 `Analysis` | Ideas, staging database design, review & Atlas analysis | Jay Greenfield | Committee Data of the International Science Council  (CODATA) |  |
+| 🤔 `Ideas` <br /> 🎨 `Design`  <br /> 👀  `Review` <br /> 💻 `code` | Ideas, staging database design, review & ETLs | Tathagata Bhattacharjee | London School of Hygiene & Tropical Medicine |  |
+|  🚇 `Infrastructure` <br /> 📦 `platform` <br /> 💻 `code` | Build-Tools i.e staging database, visualization platform & ETLs | Dorothy Mailosi | Committee Data of the International Science Council  (CODATA) |  |
+|  🚇 `Infrastructure` <br /> 📦 `platform` <br /> 💻 `code` | Build-Tools i.e staging database, visualization platform & ETLs | Michael Ochola | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/mike-ochola-79312a8a/) |
+| 📖 `doc` <br /> 💻 `code` | Documentation of project & ETLs | David Amadi | London School of Hygiene & Tropical Medicine | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/david-amadi-1a543917/) |
+| 📖 `doc` <br /> 💻 `code` | Documentation of project & ETLs | Reinpeter Ondeyo | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/reinpeter-ondeyo-momanyi-19b50b1a/) |
+| 💻 `code` <br /> 🔣 `analysis` | ETLs & Atlas analysis | Pauline Andeso | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/pauline-andeso-b44015108/) |
+| 💻 `code` | ETLs | Joseph Kuria | African Population & Health Research Centre (APHRC) | [<i class=""fa-brands fa-linkedin""></i>](https://www.linkedin.com/in/kuriajm/) |
 
