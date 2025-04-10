@@ -125,3 +125,4 @@ Thanks goes to these wonderful people:
 | 💻 `code` <br /> 🔣 `analysis` | ETLs & Atlas analysis | Pauline Andeso | African Population & Health Research Centre (APHRC) | |
 | 💻 `code` | ETLs | Joseph Kuria | African Population & Health Research Centre (APHRC) | |
 
+The full list of the committee members for the project is available in the [people folder](./project_management/people folder).
