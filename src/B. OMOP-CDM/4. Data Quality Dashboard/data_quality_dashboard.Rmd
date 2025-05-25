@@ -1,0 +1,223 @@
+---
+title: "Data quality dashboard"
+author: "DSP - Inspire Mental Health"
+date: "`r Sys.Date()`"
+output:
+  word_document: 
+    number_sections: yes
+  pdf_document:
+    number_sections: yes
+  html_document:
+    toc: yes
+    toc_depth: 4
+    number_sections: yes
+---
+
+# Clean the Environment
+
+```{r clean environment, results="hide", include=FALSE}
+### Start with a clean environment by removing objects in workspace
+rm(list=ls())
+
+```
+
+# Set Chunk requirements
+
+```{r setup, results="hide", include=FALSE}
+
+## Set Chunk requirements
+knitr::opts_chunk$set(#include = TRUE,
+                      echo=FALSE, message = FALSE, warning = FALSE,
+                      fig.width=13, fig.height=7)
+
+```
+
+# Setting Work Directory
+
+```{r setting working directory, include=FALSE, results = "hide"}
+
+### Setting work directory
+working_directory <- base::setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#working_directory <- base::setwd(".")
+
+```
+
+# Creating Data, output and Achilles folders
+
+```{r creating subfolders, include=FALSE, results = "hide"}
+
+mainDir <- base::getwd()
+subDir_data <- "data"
+subDir_output <- "Output"
+
+
+data_Dir <- base::file.path(mainDir, subDir_data)
+output_Dir <- base::file.path(mainDir, subDir_output)
+
+
+### create data folder
+base::ifelse(!base::dir.exists(data_Dir), base::dir.create(data_Dir), "Sub Directory exists")
+
+### create output folders
+base::ifelse(!base::dir.exists(output_Dir), base::dir.create(output_Dir), "Sub Directory exists")
+
+
+### create Output folder for DQD
+DQD_Dir <- base::file.path(output_Dir, "Data Quality Dashboard")
+
+base::ifelse(!base::dir.exists(DQD_Dir), base::dir.create(DQD_Dir),
+             "Data Quality Dashboard Sub Directory exists"
+             )
+
+```
+
+# Install required packages (CRAN and Github)
+
+```{r loading relevant packages, include=FALSE, results = "hide"}
+
+## Install required packages
+
+### Install CRAN packages
+required_packages <- c("RPostgres", "DBI", "tidyverse", "devtools", "DatabaseConnector", "remotes"
+                       )
+
+installed_packages <- required_packages %in% base::rownames(utils::installed.packages())
+
+if (base::any(installed_packages==FALSE)) {
+  utils::install.packages(required_packages[!installed_packages]
+                          #, repos = "http://cran.us.r-project.org"
+                          )
+}
+
+### load CRAN libraries
+base::invisible(base::lapply(required_packages, library, character.only=TRUE))
+
+### development packages
+required_dev_packages <- c("OHDSI/DataQualityDashboard")
+required_dev_name_packages <- stringr::str_extract(required_dev_packages, '\\b[^/]+$')
+
+installed_dev_packages <- required_dev_name_packages %in% base::rownames(utils::installed.packages())
+
+if (base::any(installed_dev_packages==FALSE)) {
+  remotes::install_github(required_dev_packages[!installed_dev_packages])
+} 
+
+### load development libraries
+base::invisible(base::lapply(required_dev_name_packages, library, character.only=TRUE))
+
+```
+
+
+# Store password credentials in .Renviron
+
+- Store your password credentials for postgres in `.Renviron` file and retrieve with `Sys.getenv()`. 
+
+- There are two ways you can do this: By running `usethis::edit_r_environ()` or `file.edit("~/.Renviron")`.
+
+- After running either the above codes, `.Renviron` file will open. Type your password and equate it to an object name. i.e ***postgres_password=your password here***
+
+- Save and close the file then restart R.
+
+
+# Connecting to database with local CDM instances
+
+```{r Connecting to local database}
+
+database_name <- "mh_staging" #This will be different depending on how you named your database
+
+con <- DBI::dbConnect(drv = RPostgres::Postgres(),
+                      dbname = database_name, 
+                      host = 'localhost', 
+                      port = 5432, 
+                      user = 'postgres',
+                      password = Sys.getenv("postgres_password")
+                      ) 
+
+print(con)
+
+```
+
+# Extract CDM instances of interest from database
+
+```{r}
+
+#List all schemas in database 
+list_all_schemas_cdm <- dbGetQuery(con, "SELECT schema_name FROM information_schema.schemata") #output is df
+
+#Extract schemas of interest with the stated format you saved. We saved ours as this: study_1_cdm_r, study_2_cdm_r.....etc
+
+list_all_schemas_study_cdm <- list_all_schemas_cdm$schema_name[grepl("^study_", list_all_schemas_cdm$schema_name)]
+
+```
+
+# Run Data Quality Dashboard
+
+Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems (ACHILLES). Achilles provides descriptive statistics on an OMOP CDM database. ACHILLES currently supports CDM version 5 and above (Use major release number or minor number only e.g. 5, 5.3, 5.4)
+
+```{r}
+
+# Create connection details
+  cd_dqd <- DatabaseConnector::createConnectionDetails(
+    dbms = "postgresql",
+    server = paste0("localhost","/",database_name),
+    user = "postgres",
+    password = Sys.getenv("postgres_password"),
+    port = 5432,
+    pathToDriver = base::file.path(data_Dir, "JDBC Driver postgresql") #Make sure you put JDBC drivers in data folder
+    )
+
+```
+
+
+```{r}
+
+#DQD dashboard for the study data
+
+#VIEWING CHECKS 
+#To see description of checks using R, execute the command below:
+
+DataQualityDashboard::listDqChecks(cdmVersion = "5.4") # Put the version of the CDM you are using
+
+dqd_dashboard <- sapply(list_all_schemas_study_cdm, function(x){
+  
+  nn <- x
+  
+  results_schema <- paste0("results_", nn) #Creating object to match results schemas in database: results_study_1_cdm_r....etc
+  
+  vocabulary_schema <- "vocabulary" #one common vocabulary schema in database
+  
+  output_folder <- base::file.path(DQD_Dir, nn) #create output folder for individual studies
+  
+  output_file <- paste0("results_",nn, ".json") #create name of json output file
+  
+  DataQualityDashboard::executeDqChecks(
+    connectionDetails = cd_dqd,
+    cdmDatabaseSchema = nn, # database schema name of the CDM
+    resultsDatabaseSchema = results_schema, # database schema name of the results
+    vocabDatabaseSchema = vocabulary_schema, #default is to set it as the cdmDatabaseSchema
+    cdmSourceName = "", # a human readable name for your CDM source
+    cdmVersion = "5.4", # the CDM version you are targeting. Currently supports 5.2, 5.3, and 5.4
+    numThreads = 1, #determine how many threads (concurrent SQL sessions) to use
+    sqlOnly = FALSE, # set to TRUE if you want to get the SQL scripts and not run the queries
+    sqlOnlyUnionCount = 1,
+    sqlOnlyIncrementalInsert = FALSE, # TRUE if you want the generated SQL queries to calculate DQD
+    outputFolder = output_folder, #where should the results and logs go?
+    outputFile = output_file,
+    verboseMode = FALSE, # set to FALSE if you don't want the logs to be printed to the console
+    writeToTable = TRUE, # set to FALSE if you want to skip writing to a SQL table in results schema
+    writeTableName = "dqdashboard_results", #The name of the results table. 
+    writeToCsv = FALSE, # set to FALSE if you want to skip writing to csv file
+    csvFile = "", # only needed if writeToCsv is set to TRUE
+    checkLevels = c("TABLE", "FIELD", "CONCEPT"),
+    tablesToExclude = c("CONCEPT", "VOCABULARY", "CONCEPT_ANCESTOR", "CONCEPT_RELATIONSHIP",
+                        "CONCEPT_CLASS", "CONCEPT_SYNONYM", "RELATIONSHIP", "DOMAIN",
+                        "DRUG_STRENGTH"
+                        )
+    )
+  
+}, simplify = FALSE
+)
+
+```
+
+
