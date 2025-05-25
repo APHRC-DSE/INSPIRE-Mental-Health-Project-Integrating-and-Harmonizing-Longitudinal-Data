@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(lubridate)
 
 ## Condition Occurrence CDM table Transformation
@@ -10,7 +11,70 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
   nn <- x
   study_id <- readr::parse_number(nn)
   
-  condition_occurrence_table <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
+  ## Individual demographics
+  condition_table_a <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
+    dplyr::filter(population_study_id == study_id) %>%
+    dplyr::select(population_study_id, individual_id) %>%
+    dplyr::distinct() %>%
+    dplyr::inner_join(person_cdm_table[[nn]] %>%
+                        dplyr::select(person_id, location_id, provider_id, care_site_id),
+                      by = c("individual_id" = "person_id")
+                      ) %>%
+    dplyr::inner_join(staging_tables_data[["individual"]] %>%
+                        dplyr::select(individual_id, household_id),
+                      by = c("individual_id")
+                      ) %>%
+    dplyr::inner_join(staging_tables_data[["individual_demographics"]] %>%
+                        dplyr::mutate(individual_concept_id_text = trimws(individual_concept_id_text)
+                                      ) %>%
+                        dplyr::filter(individual_concept_id_text %in% c("Diabetes present", "Mild anemia", "Severe anemia",
+                                                                        "Moderate anemia", "Dyslipidemia", "Hypertension",
+                                                                        "Normal Blood Pressure", "Diabetes", "Pain", "HIV Negative",
+                                                                        "Acquired immunodeficiency syndrome, AIDS, or HIV positive"
+                                                                        )
+                                      ),
+                      by = c("individual_id")
+                      ) %>%
+    dplyr::mutate(individual_concept_id = ifelse(individual_concept_id_text %in% c("Hypertension"), 316866,
+                                          ifelse(individual_concept_id_text %in% c("Mild anemia","Severe anemia", "Moderate anemia"), 439777,
+                                                 as.numeric(individual_concept_id)))
+                  ) %>%
+    dplyr::inner_join(visit_occurrence_cdm_table[[nn]] %>%
+                        dplyr::select(person_id, visit_occurrence_id, visit_start_date, visit_start_datetime, provider_id, care_site_id),
+                      by = c("individual_id" = "person_id"
+                             , "provider_id" = "provider_id"
+                             , "care_site_id" = "care_site_id"
+                             )
+                      ) %>%
+    dplyr::distinct(individual_id, individual_concept_id, visit_occurrence_id, visit_start_date, .keep_all = TRUE) %>%
+    dplyr::inner_join(visit_detail_cdm_table[[nn]] %>%
+                         dplyr::select(person_id, visit_detail_id, visit_detail_start_date, provider_id, care_site_id, visit_occurrence_id),
+                       by = c("individual_id" = "person_id"
+                              , "provider_id" = "provider_id"
+                              , "care_site_id" = "care_site_id"
+                              , "visit_occurrence_id" = "visit_occurrence_id"
+                              , "visit_start_date" = "visit_detail_start_date"
+                              )
+                       ) %>%
+    dplyr::distinct(visit_occurrence_id, individual_concept_id_text, .keep_all = TRUE) %>%
+    dplyr::inner_join(staging_tables_data[["interview"]] %>%
+                        dplyr::select(individual_id, interview_date, wave_id) %>%
+                        dplyr::distinct(),
+                      by = c("individual_id" = "individual_id"
+                             ,"visit_start_date" = "interview_date"
+                             )
+                      ) %>%
+    dplyr::mutate(condition_concept_id = individual_concept_id) %>%
+    dplyr::rename( person_id = individual_id
+                   , condition_concept_id = individual_concept_id
+                   , condition_start_date = visit_start_date
+                   , condition_start_datetime = visit_start_datetime
+                   , condition_source_value = individual_concept_id_text
+                   , condition_source_concept_id = individual_concept_id
+                   )
+  
+  ## LPS fact table tool scores
+  condition_table_b <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
     dplyr::filter(population_study_id == study_id) %>%
     dplyr::arrange(fact_id) %>%
     dplyr::select(population_study_id, individual_id, interview_id, instrument_id, instrument_item_id, concept_id,
@@ -48,6 +112,16 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                                                      value_type_concept_id == 1761347 , NA,
                                                    as.numeric(value_type_concept_id)
                                                    ) #population study 6,7,8,9,10,11 NA represents no concept id as per staging db
+                  , concept_id = ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Over half the days", 45878994,
+                                 ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Not at all sure", 45883172,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "No", 4188540,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Yes", 4188539,
+                                        as.numeric(concept_id) 
+                                        )))) #population study 14 conceptid for GAD7 and PSQ answers from NA to actual
                   ) %>%
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_id, interview_date, instrument_id, wave_id),
@@ -83,7 +157,7 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
     dplyr::filter(instrument_item_id %in% c(10, 18, 19, 20, 21, 32, 53, 74, 109, 110
                                             , 111, 112, 118, 134, 135) #Filter Total scores only
                   ) %>%
-    dplyr::inner_join(staging_tables_data[["instrument"]] %>%
+    dplyr::left_join(staging_tables_data[["instrument"]] %>%
                         dplyr::select(instrument_id, name),
                       by = c("instrument_id")
                       ) %>%
@@ -132,16 +206,17 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                                             if_else(condition=="Antenatal depression", 37312479,
                                             if_else(condition=="Pospartum depression", 4239471,
                                             if_else(condition=="PTSD", 436676,
-                                            if_else(condition=="Poor sleep hygiene", 40481897,
+                                            if_else(condition=="Poor sleep hygiene", 3327871, #40481897,
                                             if_else(condition=="Psychosis", 436073,
                                             if_else(condition=="Anxiety", 442077,
-                                            if_else(condition=="Severe anxiety", 4214746,
-                                            if_else(condition=="Moderate anxiety", 4263429,
-                                            if_else(condition=="Mild anxiety", 4322025,
-                                            if_else(condition=="Severe depression", 4149321,
-                                            if_else(condition=="Moderate Severe depression", 36717092,
-                                            if_else(condition=="Moderate depression", 4151170,
-                                            if_else(condition=="Mild depression", 4149320,0
+                                            if_else(condition=="Severe anxiety", 442077, #4214746,
+                                            if_else(condition=="Moderate anxiety", 442077, #4263429,
+                                            if_else(condition=="Mild anxiety", 0, #4322025,
+                                            if_else(condition=="Severe depression", 440383, #4149321,
+                                            if_else(condition=="Moderate Severe depression", 440383, #36717092,
+                                            if_else(condition=="Moderate depression", 440383, #4151170,
+                                            if_else(condition=="Mild depression", 0, #4149320,
+                                                    0
                                                     
                                                     ))))))))))))))
                    
@@ -149,19 +224,24 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
     tidyr::drop_na(condition) %>%
     dplyr::filter(condition_concept_id !=0
                   ) %>%
-    dplyr::mutate( condition_occurrence_id = 1:n()
-                   , condition_end_date = NA
-                   , condition_type_concept_id = 32883
-                   , condition_status_concept_id = 32899
-                   , condition_end_datetime = NA
-                   , stop_reason = NA
-                   ) %>%
+    dplyr::mutate(value_as_num = as.character(value_as_num)
+                  ) %>%
     dplyr::rename( person_id = individual_id
                    , condition_start_date = interview_date
                    , condition_start_datetime = visit_detail_start_datetime
                    , condition_source_value = value_as_num
                    , condition_status_source_value = name
                    , condition_source_concept_id = concept_id
+                   )
+  
+  condition_table_final <- dplyr::bind_rows(condition_table_a, condition_table_b) %>%
+    dplyr::arrange(person_id, visit_occurrence_id, visit_detail_id) %>%
+    dplyr::mutate( condition_occurrence_id = 1:n()
+                   , condition_end_date = NA
+                   , condition_type_concept_id = 32883
+                   , condition_status_concept_id = 32899
+                   , condition_end_datetime = NA
+                   , stop_reason = NA
                    ) %>%
     dplyr::select( condition_occurrence_id, person_id, condition_concept_id, condition_start_date, condition_start_datetime,
                    condition_end_date, condition_end_datetime, condition_type_concept_id, condition_status_concept_id,

@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(lubridate)
 
 ## Visit Detail CDM table Transformation
@@ -32,6 +33,8 @@ visit_detail_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^
                               )
                        )  %>%
     dplyr::arrange(individual_id, instrument_id, visit_occurrence_id) %>%
+    dplyr::filter(!instrument_id %in% c(7) #Drop Basis 24 tool
+                  ) %>%
     dplyr::mutate(visit_detail_id = 1:n()
                   , visit_detail_concept_id = 581476
                   , visit_detail_start_datetime = lubridate::as_datetime(interview_date, tz = "UTC")
@@ -62,8 +65,6 @@ visit_detail_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^
                   , discharged_to_source_value = "Home Visit"
                   , preceding_visit_detail_id = visit_detail_id
                   , parent_visit_detail_id = NA
-                  ) %>%
-    dplyr::filter(!instrument_id %in% c(7) #Drop Basis 24 tool
                   ) %>%
     dplyr::rename( visit_detail_start_date = interview_date) %>%
     dplyr::group_by(individual_id, visit_detail_source_concept_id) %>%

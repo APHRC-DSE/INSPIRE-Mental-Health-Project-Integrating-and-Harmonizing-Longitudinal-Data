@@ -6,16 +6,31 @@ working_directory
 #Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems (ACHILLES) 
 ## Achilles provides descriptive statistics on an OMOP CDM database. ACHILLES currently supports CDM version 5.3 and 5.4.
 
+## Create connection details
+cd_achilles <- DatabaseConnector::createConnectionDetails(
+  dbms = "postgresql",
+  server = paste0("localhost","/",database_name),
+  user = "postgres",
+  password = Sys.getenv("postgres_password"),
+  port = 5432,
+  pathToDriver = base::file.path(data_Dir, "JDBC Driver postgresql")
+  )
 
-### Run Achilles
+
+## Run Achilles
 achilles_analysis <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study_", list_all_schemas_study_cdm$schema_name)], function(x){
   nn <- x
+  study_id <- readr::parse_number(nn)
 
   results_schema <- paste0("results_", nn)
   
   vocabulary_schema <- "vocabulary"
   
-  source_name <- cdm_source_cdm_table[[nn]]$cdm_source_abbreviation
+  #If name is too long,.txt file will fail to generate and show error
+  source_name <- staging_tables_data[["population_study"]] %>%
+    dplyr::filter(population_study_id == study_id) %>%
+    dplyr::pull(data_source) %>%
+    as.character()
   
   output_folder <- base::file.path(Achilles_Analysis_Dir, nn) #create output folder for individual studies
   
@@ -24,17 +39,8 @@ achilles_analysis <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study
   
   options(rstudio.connectionObserver.errorsSuppressed = TRUE)
   
-  cd <- DatabaseConnector::createConnectionDetails(
-    dbms = "postgresql",
-    server = paste0("localhost","/",database_name),
-    user = "postgres",
-    password = Sys.getenv("postgres_password"),
-    port = 5432,
-    pathToDriver = base::file.path(data_Dir, "JDBC Driver postgresql")
-    )
-  
   #run achilles
-  Achilles::achilles(connectionDetails = cd,
+  Achilles::achilles(connectionDetails = cd_achilles,
                      cdmDatabaseSchema = nn,
                      resultsDatabaseSchema = results_schema,  #no capital letters- brings issues with postgres
                      vocabDatabaseSchema = vocabulary_schema,
@@ -52,3 +58,7 @@ achilles_analysis <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study
 }, simplify = FALSE
 )
 
+staging_tables_data[["population_study"]] %>%
+  dplyr::filter(population_study_id == 1) %>%
+  dplyr::pull(data_source) %>%
+  as.character()

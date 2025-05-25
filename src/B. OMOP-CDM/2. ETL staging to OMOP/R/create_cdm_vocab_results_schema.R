@@ -38,13 +38,4 @@ create_results_schema_name <- sapply(as.numeric(list_population_studies), functi
 create_vocabulary_schema_name <- dbExecute(con, paste0("CREATE SCHEMA IF NOT EXISTS vocabulary;")
                                            )
 
-#List all schemas after each study schema have been created 
-list_all_schemas_cdm <- dbGetQuery(con, "SELECT schema_name FROM information_schema.schemata") #output is df
-
-#List lps tables based on staging schema version adding vocabulary schema
-list_tables_study_lps <- paste(c(paste0("study_", as.numeric(list_population_studies), "_cdm_r"), "vocabulary"))
-
-#List all schemas with changing staging schema version
-list_all_schemas_study_cdm <- list_all_schemas_cdm %>%
-  dplyr::filter(schema_name %in% list_tables_study_lps)
   

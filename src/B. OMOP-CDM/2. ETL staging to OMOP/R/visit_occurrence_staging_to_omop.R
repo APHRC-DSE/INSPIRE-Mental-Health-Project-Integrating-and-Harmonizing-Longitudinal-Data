@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(lubridate)
 
 ## Visit Occurrence CDM table Transformation

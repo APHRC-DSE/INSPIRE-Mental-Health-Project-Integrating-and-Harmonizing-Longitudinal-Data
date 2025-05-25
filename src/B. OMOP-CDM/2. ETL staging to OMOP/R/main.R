@@ -43,9 +43,11 @@ print(con)
 
 ######################################################################
 ## Local Database
-#staging_schema_name <- "mh_staging_1_1" #study 12, 1
-#staging_schema_name <- "mh_staging_1_1_dev_old" #study 12, 1, 5, 2, 3
-staging_schema_name <- "mh_staging_1_1_dev_old_new" #study 12, 1, 5, 2, 3, 7, 8, 9, 10, 11
+#staging_schema_name <- "mh_staging_1_1" #study 12 w1, 1
+#staging_schema_name <- "mh_staging_1_1_dev_old" #study 12 w1, 1, 5, 2, 3
+#staging_schema_name <- "mh_staging_1_1_dev_old_new" #study 12 w1, 1, 5, 2, 3, 7, 8, 9, 10, 11
+#staging_schema_name <- "mh_staging_1_1_dev_march" #study 12 w1, 1, 5, 2, 3, 7, 8, 9, 10, 11, 14
+staging_schema_name <- "mh_staging_1_1_dev_april" #study 12 w1 w2, 1, 5, 2, 3, 7, 8, 9, 10, 11, 14, 6, 13 #ignore 13 and 14
 
 ### updating staging metadata tables
 source("empty_staging_metadata_tables.R")
@@ -56,8 +58,28 @@ source("load_staging_metadata_tables.R")
 ### Loading and saving staging database schema in Postgres to environment
 source("read_mh_staging_schema_tables.R")
 
+list_population_studies_raw <- unique(staging_tables_data[["longitudinal_population_study_fact"]]$population_study_id)
+
+list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(13, 14)]
+
+######################################################################
+
 ### Create OMOP-CDM Schemas for individual studies, single vocabulary and list all schemas
 source("create_cdm_vocab_results_schema.R")
+
+######################################################################
+
+#List all schemas after each study schema have been created 
+list_all_schemas_cdm <- dbGetQuery(con, "SELECT schema_name FROM information_schema.schemata") #output is df
+
+#List lps tables based on staging schema version adding vocabulary schema
+list_tables_study_lps <- paste(c(paste0("study_", as.numeric(list_population_studies), "_cdm_r"), "vocabulary"))
+
+#List all schemas with changing staging schema version
+list_all_schemas_study_cdm <- list_all_schemas_cdm %>%
+  dplyr::filter(schema_name %in% list_tables_study_lps)
+
+######################################################################
 
 ### create OMOPCDM_5.4_ddl tables, Primary key, foreign keys and indexing
 source("create_cdm_tables_rpackage.R")
@@ -142,6 +164,8 @@ DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_5_cdm_r"), "results_study_5_cdm_r.json"))
 
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_6_cdm_r"), "results_study_6_cdm_r.json"))
+
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_7_cdm_r"), "results_study_7_cdm_r.json"))
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_8_cdm_r"), "results_study_8_cdm_r.json"))
@@ -154,6 +178,7 @@ DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_12_cdm_r"), "results_study_12_cdm_r.json"))
 
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_14_cdm_r"), "results_study_14_cdm_r.json"))
 
 ######################################################################
 
@@ -175,4 +200,3 @@ save(list = ls(all.names = TRUE)[!ls(all.names = TRUE) %in% c("working_directory
 source("main.R")
 
 ######################################################################
-

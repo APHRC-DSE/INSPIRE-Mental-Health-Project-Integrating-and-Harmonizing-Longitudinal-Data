@@ -10,31 +10,37 @@ working_directory
 
 checks <- DataQualityDashboard::listDqChecks(cdmVersion = "5.4") # Put the version of the CDM you are using
 
+## Create connection details
+cd_dqd <- DatabaseConnector::createConnectionDetails(
+  dbms = "postgresql",
+  server = paste0("localhost","/",database_name),
+  user = "postgres",
+  password = Sys.getenv("postgres_password"),
+  port = 5432,
+  pathToDriver = base::file.path(data_Dir, "JDBC Driver postgresql")
+)
+
 
 dqd_dashboard <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study_", list_all_schemas_study_cdm$schema_name)], function(x){
   nn <- x
-
+  study_id <- readr::parse_number(nn)
+  
+  #Create results schema objects
   results_schema <- paste0("results_", nn)
   
   vocabulary_schema <- "vocabulary"
   
-  source_name <- cdm_source_cdm_table[[nn]]$cdm_source_abbreviation #If name is too long,.txt file will fail to generate and show error
+  #If name is too long,.txt file will fail to generate and show error
+  source_name <- staging_tables_data[["population_study"]] %>%
+    dplyr::filter(population_study_id == study_id) %>%
+    dplyr::pull(data_source) %>%
+    as.character()
   
   output_folder <- base::file.path(DQD_Dir, nn) #create output folder for individual studies
   
   output_file <- paste0("results_",nn, ".json")
   
-  cd <- DatabaseConnector::createConnectionDetails(
-    dbms = "postgresql",
-    server = paste0("localhost","/",database_name),
-    user = "postgres",
-    password = Sys.getenv("postgres_password"),
-    port = 5432,
-    pathToDriver = base::file.path(data_Dir, "JDBC Driver postgresql")
-    )
-  
-  
-  DataQualityDashboard::executeDqChecks(connectionDetails = cd,
+  DataQualityDashboard::executeDqChecks(connectionDetails = cd_dqd,
                                         cdmDatabaseSchema = nn, # database schema name of the CDM
                                         resultsDatabaseSchema = results_schema, # database schema name of the results
                                         vocabDatabaseSchema = vocabulary_schema, #default is to set it as the cdmDatabaseSchema

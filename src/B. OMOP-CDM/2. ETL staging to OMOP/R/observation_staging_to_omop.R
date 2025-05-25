@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(lubridate)
 
 ## Observation CDM table Transformation
@@ -26,15 +27,90 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
     dplyr::inner_join(staging_tables_data[["individual_demographics"]] %>%
                         dplyr::mutate(individual_concept_id_text = trimws(individual_concept_id_text)
                                       ) %>%
-                        dplyr::filter(!individual_concept_id_text %in% c("Coloured", "Asian/Indian", "African", "White",
-                                                                         "Not Hispanic or Latino", "BMI", "No diabetes",
+                        dplyr::filter(!individual_concept_id_text %in% c("Coloured", "Asian/Indian", "African", "White", "Asian Indian",
+                                                                         "Not Hispanic or Latino", "BMI", "No diabetes", "Diabetes",
                                                                          "Diabetes present", "Mild anemia", "Severe anemia",
                                                                          "Moderate anemia", "No anemia present", "Dyslipidemia",
-                                                                         "No Dyslipidemia", "Hypertension", "Normal Blood Pressure"
+                                                                         "No Dyslipidemia", "Hypertension", "Normal Blood Pressure",
+                                                                         "Pain", "No pain", "HIV Negative",
+                                                                         "Acquired immunodeficiency syndrome, AIDS, or HIV positive",
+                                                                         "does not smoke smokeless tobacco", "Smokeless tobacco",
+                                                                         "drinker", "Non - drinker", "drinks", "Not Hispanic or Latin"
                                                                          )
                                       ),
                       by = c("individual_id")
                       ) %>%
+    #Group socio-demo into hierachy so as to obtain wave_id 
+    dplyr::mutate( observation_concept_id = ifelse(individual_concept_id_text %in% c("Protestant Religion", "Catholic Religion",
+                                                                                       "Islam", "Religion Unknown", "Pentecost Religion",
+                                                                                       "Seventh Day Adventist", "Nonconformist Religion",
+                                                                                       "Other Religion", "Protestant religion",
+                                                                                       "Christian, follower of religion", "African religion",
+                                                                                       "Jewish, follower of religion", "No religious affiliation",
+                                                                                       "Muslim, follower of religion", "Hindu, follower of religion"
+                                                                                       ), 4052017, #Religion
+                                              ifelse(individual_concept_id_text %in% c("8th grade / less", "High School", "No Schooling", "Secondary Education",
+                                                                                       "Bachelors degree", "Some college", "8th grade/less",
+                                                                                       "9th - 12th grade, no diploma", "No schooling", "Primary Education",
+                                                                                       "Technical or trade school", "Bachelors degree (e.g., BA, AB, BS)",
+                                                                                       "Higher Degree (Masters, Doctorate)", "Other education",
+                                                                                       "Bachelors degree (e.g. BA AB BS)", "Educated to primary school level",
+                                                                                       "University diploma achieved", "Masters degree (e.g. MA MS MEng MEd MSW MBA)",
+                                                                                       "Doctoral degree (e.g. PhD EdD)", "Some college", "High school"
+                                                                                       ), 42528763, #Highest level of Education
+                                              ifelse(individual_concept_id_text %in% c("Self-employed business", "Employed", "Housewife",
+                                                                                       "Unemployed", "Homemaker"
+                                                                                       ), 44804285, #Employment
+                                              ifelse(individual_concept_id_text %in% c("Married", "Cohabiting", "Never Married", "Separation",
+                                                                                       "Widowed", "Marital Status Unknown", "Divorced", "Single",
+                                                                                       "Separeted", "Single/divorced/widowed", "Separated or Divorced",
+                                                                                       "Separated or divorced", "Unknown Marital Status", "Not Married"
+                                                                                       ), 4053609, #Marital Status
+                                              ifelse(individual_concept_id_text %in% c("Cesarean section", "Vaginal delivery of fetus",
+                                                                                       "Spontaneous vaginal delivery", "Cesarean delivery"
+                                                                                       ), 43054892, #Delivery Method
+                                              ifelse(individual_concept_id_text %in% c("Live Birth", "Stillbirth/Fetal anomaly/IUFD"
+                                                                                       ), 4264823, #Birth outcome
+                                              ifelse(individual_concept_id_text %in% c("Underweight", "Normal weight", "Overweight",
+                                                                                       "Obese"
+                                                                                       ), 4245997, #Body Mass Index
+                                              ifelse(individual_concept_id_text %in% c("gravida 0", "Primigravida", "gravida 1",
+                                                                                       "gravida 2", "gravida 3", "gravida 4",
+                                                                                       "gravida 5", "gravida 6", "gravida 7",
+                                                                                       "gravida 8", "gravida 9", "gravida 10",
+                                                                                       "gravida more than 10"
+                                                                                       ), 4060186, #Gravida
+                                              ifelse(individual_concept_id_text %in% c("Parity 0", "Parity 1", "Parity 2", "Parity 3",
+                                                                                       "Parity 4", "Parity 5", "Parity 6", "Parity 7",
+                                                                                       "Parity 8", "Parity 9", "Parity ten or more"
+                                                                                       ), 4264419, #Parity
+                                                     0  
+                                                     )))))))))
+                   ) %>%
+    dplyr::arrange(observation_concept_id) %>%
+    dplyr::group_by(individual_id, observation_concept_id) %>%
+    dplyr::mutate(unique_seq = 1:n()
+                  ,unique_types = dplyr::n_distinct(individual_concept_id) 
+                  ) %>%
+    dplyr::ungroup() %>%
+    dplyr::inner_join(staging_tables_data[["wave"]] %>%
+                        dplyr::select(wave_id, name, population_study_id) %>%
+                        dplyr::mutate(name = readr::parse_number(name))
+                      , by = c("population_study_id" = "population_study_id", "unique_seq" = "name")
+                        ) %>%
+    dplyr::mutate(wave_id = ifelse(population_study_id %in% c(12) & wave_id ==33, 1,
+                            ifelse(population_study_id %in% c(12) & wave_id ==34, 2,
+                            ifelse(population_study_id %in% c(14) & wave_id ==36, 1, wave_id
+                                   )))
+                  #Matching wave_id for study 12,14 as is in staging. Transformed wrongly
+                  ) %>%
+    #Get interview date from wave id
+    dplyr::inner_join(staging_tables_data[["interview"]] %>%
+                        dplyr::select(individual_id, interview_date, wave_id) %>%
+                        dplyr::distinct(),
+                      by = c("individual_id","wave_id")
+                      ) %>%
+    #interview_date not linked with visit_start_date to duplicate entries for studies that had only one set of demographics for multiple waves
     dplyr::inner_join(visit_occurrence_cdm_table[[nn]] %>%
                         dplyr::select(person_id, visit_occurrence_id, visit_start_date, visit_start_datetime, provider_id, care_site_id),
                       by = c("individual_id" = "person_id"
@@ -42,7 +118,12 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                              , "care_site_id" = "care_site_id"
                              )
                       ) %>%
-    dplyr::distinct(individual_id, individual_concept_id, visit_occurrence_id, visit_start_date, .keep_all = TRUE) %>%
+    dplyr::mutate(visit_start_date = if_else(unique_types == 2 & interview_date != visit_start_date, NA, visit_start_date)
+                  #Condition to remove duplicate values so as to remain with changing demographics
+                  ) %>%
+    tidyr::drop_na(visit_start_date) %>%
+    dplyr::select(-c(unique_seq, unique_types, interview_date, wave_id)
+                  ) %>%
     dplyr::inner_join(visit_detail_cdm_table[[nn]] %>%
                          dplyr::select(person_id, visit_detail_id, visit_detail_start_date, provider_id, care_site_id, visit_occurrence_id),
                        by = c("individual_id" = "person_id"
@@ -53,34 +134,63 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                               )
                        ) %>%
     dplyr::distinct(visit_occurrence_id, individual_concept_id_text, .keep_all = TRUE) %>%
+    #Remerge interview table to get actual wave again
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_date, wave_id) %>%
                         dplyr::distinct(),
-                      by = c("individual_id" = "individual_id"
-                             ,"visit_start_date" = "interview_date"
-                             )
+                      by = c("individual_id" = "individual_id", "visit_start_date" = "interview_date")
                       ) %>%
-    dplyr::mutate(individual_concept_id_text = ifelse(population_study_id == 1 & wave_id == 1 &
+    dplyr::mutate(individual_concept_id_text = ifelse(population_study_id %in% c(1) & wave_id == 1 &
                                                         individual_concept_id_text %in% c("Cesarean section", "Vaginal delivery of fetus"),
-                                                      NA, individual_concept_id_text
+                                                      NA, as.character(individual_concept_id_text)
                                                       ) #population study 1, wave id 1, change "Cesarean section", "Vaginal delivery of fetus" to NA
+                  , individual_concept_id = ifelse(individual_concept_id_text %in% c("Cesarean section", "Cesarean delivery"), 45877865,
+                                            ifelse(individual_concept_id_text %in% c("Vaginal delivery of fetus", "Spontaneous vaginal delivery"), 45885338,
+                                            ifelse(individual_concept_id_text %in% c("Self-employed business"), 44803428,
+                                            ifelse(individual_concept_id_text %in% c("Marital Status Unknown", "Unknown Marital Status"), 4052929,
+                                                   as.numeric(individual_concept_id)
+                                                   )))) #changing delivery methods to vaginal, CS which are answers to delivery method
                   ) %>%
     tidyr::drop_na(individual_concept_id_text)
   
+  
   ## Household demographics
   observation_table_b <- observation_table_a %>%
-    dplyr::select(-c(individual_concept_id, individual_concept_id_text, individual_demographics_id)
+    dplyr::select(-c(individual_concept_id, individual_concept_id_text, individual_demographics_id, wave_id)
                   ) %>%
     dplyr::distinct() %>%
     dplyr::inner_join( staging_tables_data[["household_characteristics"]] %>%
-                         dplyr::select(-household_characteristics_id) %>%
+                         dplyr::select(-c(household_characteristics_id)) %>%
                          dplyr::mutate(household_characteristics_concept_text = trimws(household_characteristics_concept_text)
+                                       , household_characteristics_concept_id = ifelse(household_characteristics_concept_text %in% c("Fishing", "Agriculture"), 4036286,
+                                                                                ifelse(household_characteristics_concept_text %in% c("Remittences"), 44805930,
+                                                                                ifelse(household_characteristics_concept_text %in% c("Trade"), 4011913,
+                                                                                ifelse(household_characteristics_concept_text %in% c("No Income Mentioned"), 45878359,
+                                                                                       as.numeric(household_characteristics_concept_id)
+                                                                                )))) #changing Household income categories to standard concepts 
                                        ) %>%
                          dplyr::rename( individual_concept_id = household_characteristics_concept_id
                                         ,individual_concept_id_text = household_characteristics_concept_text
                                         ),
-                       by = c("household_id", "wave_id")
-                       )
+                       by = c("household_id")
+                       ) %>%
+    dplyr::distinct(individual_id, visit_occurrence_id, visit_start_date, wave_id, individual_concept_id, .keep_all = TRUE) %>%
+    dplyr::mutate(observation_concept_id = ifelse(individual_concept_id_text %in% c( "Employed", "Unemployed", "Laborer", "Fishing",
+                                                                                       "Agriculture", "Remittences", "Other income", "Trade",
+                                                                                       "No Income Mentioned"
+                                                                                       ), 4076114, #Household Income
+                                           ifelse(individual_concept_id_text %in% c("Household Size of Five to Nine", "Household Size of One",
+                                                                                       "Household Size of Ten to Fourteen",
+                                                                                       "Household Size of Two to Four",
+                                                                                       "Household Size of Fifteen or More"), 4075500, #household size
+                                           ifelse(individual_concept_id_text %in% c("Poorest", "Poor", "Very poor", "Less poor",
+                                                                                       "No Answer", "least poor", "Less Poor", "Very Poor"
+                                                                                       ), 4249447, #Socioeconomic status
+                                                  0
+                                                  )))
+                                                  
+                    ) %>%
+    dplyr::distinct(individual_id, visit_occurrence_id, visit_start_date, observation_concept_id, .keep_all = TRUE)
   
   ## Tool Questions and Responses
   observation_table_c <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
@@ -121,6 +231,20 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                                      value_type_concept_id == 1761347 , NA,
                                                    as.numeric(value_type_concept_id)
                                                    ) #population study 6,7,8,9,10,11 NA represents no concept id as per staging db
+                  , concept_id = ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Over half the days", 45878994,
+                                 ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Not at all sure", 45883172,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "No", 4188540,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Yes", 4188539,
+                                        as.numeric(concept_id) 
+                                        )))) #population study 14 conceptid for GAD7 and PSQ answers NA to actual
+                  , concept_id = ifelse(population_study_id %in% c(4,5) & concept_id == 3000000561, 4188540,
+                                 ifelse(population_study_id %in% c(4,5) & concept_id == 3000000560, 4188539,
+                                        as.numeric(concept_id) 
+                                        )) #population study 4 & 5 conceptid 3000000561/3000000560 to 4188539/4188540
                   ) %>%
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_id, interview_date, instrument_id),
@@ -162,12 +286,12 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   ) %>%
     dplyr::filter(!instrument_id %in% c(7) #Drop Basis 24 tool
                   ) %>%
-    dplyr::inner_join(staging_tables_data[["concept"]] %>%
+    dplyr::left_join(staging_tables_data[["concept"]] %>%
                         dplyr::select(concept_text, concept_id) %>%
                         dplyr::distinct(concept_id, .keep_all = TRUE),
                       by = c("value_type_concept_id"="concept_id")
                       ) %>%
-    dplyr::inner_join(staging_tables_data[["concept"]] %>%
+    dplyr::left_join(staging_tables_data[["concept"]] %>%
                         dplyr::select(concept_id, score) %>%
                         dplyr::distinct(concept_id, .keep_all = TRUE),
                       by = c("concept_id")
@@ -185,78 +309,57 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                ) #Get measurement id to link questions and answers to total score
                       ) %>%
     dplyr::arrange(individual_id, visit_occurrence_id) %>%
-    dplyr::mutate(value_as_num = ifelse(population_study_id == 12 & instrument_item_id %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9,
-                                                                                              11, 12, 13, 14, 15, 16, 17),
-                                        score, value_as_num
-                                        ) #Replace NA values for PHQ9 and GAD7 responses with scores for population study 12 
+    dplyr::mutate( value_as_num = as.integer(value_as_num)
+                   , value_as_num = ifelse(population_study_id %in% c(12) & is.na(value_as_num) & 
+                                             instrument_item_id %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 
+                                                                       11, 12, 13, 14, 15, 16, 17),
+                                           score, 
+                                    ifelse(population_study_id %in% c(14) & is.na(value_as_num) &
+                                             instrument_item_id %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9,
+                                                                       11, 12, 13, 14, 15, 16, 17,
+                                                                       99, 100, 101, 102, 103, 104,
+                                                                       105, 106, 107, 108
+                                                                       ),
+                                           score, value_as_num
+                                        )) #Replace NA values for PHQ9, GAD7, PSQ responses with scores for population study 12,14
+                  ) %>%
+    dplyr::mutate(visit_detail_source_concept_id = ifelse(visit_detail_source_concept_id == 4164838, 42870296, #EPDS panel concept_id
+                                                   ifelse(visit_detail_source_concept_id == 44804610, 40772147, #PHQ-9 panel concept_id
+                                                   ifelse(visit_detail_source_concept_id == 45772733, 40772159, #GAD-7 panel concept_id
+                                                   ifelse(visit_detail_source_concept_id == 37310582, 3966135, #PCL-5 panel concept_id
+                                                          as.numeric(visit_detail_source_concept_id)
+                                                          )))) #Change concept id for tools to observation domain
                   ) %>%
     dplyr::select(individual_id, value_type_concept_id, interview_date, visit_detail_start_datetime, value_as_num,
                   value_as_char, concept_id, concept_text, provider_id, visit_occurrence_id, visit_detail_id,
-                  measurement_id
+                  measurement_id, visit_detail_source_concept_id
                   ) %>%
     dplyr::rename(person_id = individual_id
-                  , observation_concept_id = value_type_concept_id
+                  , observation_concept_id = visit_detail_source_concept_id
+                  #, observation_concept_id = value_type_concept_id
                   , observation_date = interview_date
                   , observation_datetime = visit_detail_start_datetime
-                  , value_as_number = value_as_num
-                  , value_as_string = value_as_char
-                  , value_as_concept_id = concept_id
-                  , value_source_value = concept_text
+                  #, value_as_number = value_as_num
+                  , value_as_string = concept_text
+                  #, value_as_string = value_as_char
+                  , value_as_concept_id = value_type_concept_id
+                  #, value_as_concept_id = concept_id
+                  , value_source_value = value_as_num
+                  #, value_source_value = concept_text
                   , observation_event_id = measurement_id
+                  , qualifier_concept_id = concept_id
+                  , qualifier_source_value = value_as_char
                   ) %>%
       dplyr::mutate(observation_type_concept_id = 32883
                     , observation_source_value = value_as_string
                     , observation_source_concept_id = value_as_concept_id
                     , obs_event_field_concept_id = 1147138 #concept id for measurement.measurement_id for CDM v5
+                    , value_source_value = as.character(value_source_value)
                     )
   
   observation_table <- dplyr::bind_rows(observation_table_a, observation_table_b) %>%
     dplyr::arrange(individual_id) %>%
     dplyr::mutate( observation_id = 1:n()
-                   , observation_concept_id = ifelse(individual_concept_id_text %in% c("Protestant Religion", "Catholic Religion",
-                                                                                       "Islam", "Religion Unknown", "Pentecost Religion",
-                                                                                       "Seventh Day Adventist", "Nonconformist Religion",
-                                                                                       "Other Religion", "Protestant religion",
-                                                                                       "Christian, follower of religion", "African religion",
-                                                                                       "Jewish, follower of religion", "No religious affiliation",
-                                                                                       "Muslim, follower of religion", "Hindu, follower of religion"
-                                                                                       ), 4052017, #Religion
-                                              ifelse(individual_concept_id_text %in% c("8th grade / less", "High School", "No Schooling",
-                                                                                       "Bachelors degree", "Some college", "8th grade/less",
-                                                                                       "9th - 12th grade, no diploma", "No schooling",
-                                                                                       "Technical or trade school", "Bachelors degree (e.g., BA, AB, BS)",
-                                                                                       "Higher Degree (Masters, Doctorate)", "Other education"
-                                                                                       ), 42528763, #Highest level of Education
-                                              ifelse(individual_concept_id_text %in% c("Self-employed business", "Employed", "Housewife",
-                                                                                       "Unemployed"), 44804285, #Employment
-                                              ifelse(individual_concept_id_text %in% c("Married", "Cohabiting", "Never Married", "Separation",
-                                                                                       "Widowed", "Marital Status Unknown", "Divorced", "Single",
-                                                                                       "Separeted", "Single/divorced/widowed", "Separated or Divorced"
-                                                                                       ), 4053609, #Marital Status
-                                              ifelse(individual_concept_id_text %in% c("Cesarean section", "Vaginal delivery of fetus",
-                                                                                       "Spontaneous vaginal delivery", "Cesarean delivery"
-                                                                                       ), 4128030, #Delivery Procedure
-                                              ifelse(individual_concept_id_text %in% c("Live Birth", "Stillbirth/Fetal anomaly/IUFD"
-                                                                                       ), 4264823, #Birth outcome
-                                              ifelse(individual_concept_id_text %in% c("Underweight", "Normal weight", "Overweight",
-                                                                                       "Obese"
-                                                                                       ), 4245997, #Body Mass Index
-                                              ifelse(individual_concept_id_text %in% c("gravida 0", "Primigravida", "gravida 1",
-                                                                                       "gravida 2", "gravida 3", "gravida 4",
-                                                                                       "gravida 5", "gravida 6", "gravida 7",
-                                                                                       "gravida 8", "gravida 9", "gravida 10",
-                                                                                       "gravida more than 10"
-                                                                                       ), 4060186, #Gravida
-                                              ifelse(individual_concept_id_text %in% c("Parity 0", "Parity 1", "Parity 2", "Parity 3",
-                                                                                       "Parity 4", "Parity 5", "Parity 6", "Parity 7",
-                                                                                       "Parity 8", "Parity 9", "Parity ten or more"
-                                                                                       ), 4264419, #Parity
-                                              ifelse(individual_concept_id_text %in% c("Household Size of Five to Nine", "Household Size of One",
-                                                                                       "Household Size of Ten to Fourteen",
-                                                                                       "Household Size of Two to Four",
-                                                                                       "Household Size of Fifteen or More"), 4075500, #household size 
-                                                     0 # source of income, Socioeconomic status
-                                                     ))))))))))
                    , observation_source_value = individual_concept_id_text
                    , observation_source_concept_id = as.numeric(individual_concept_id)
                    , observation_type_concept_id = 32883
@@ -286,14 +389,14 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   , observation_source_value, observation_source_concept_id, unit_source_value, qualifier_source_value
                   , value_source_value, observation_event_id, obs_event_field_concept_id
                   ) %>%
-    dplyr::mutate(across(c(observation_source_value, value_source_value), ~strtrim(.x, 49)
+    dplyr::mutate(across(c(observation_source_value, value_source_value, qualifier_source_value), ~strtrim(.x, 49)
                          )
+                  , value_as_string = strtrim(value_as_string, 59)
                   )
   
   }, simplify = FALSE
   )
 
- 
  
 ## Loading to CDM tables
  
@@ -311,7 +414,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                        , field.types = c(observation_id="integer", person_id="integer", observation_concept_id="bigint"
                                          , observation_date="date", observation_datetime="timestamp without time zone"
                                          , observation_type_concept_id="integer", value_as_number="numeric", value_as_string="character varying (60)"
-                                         , value_as_concept_id="bigint", qualifier_concept_id="integer", unit_concept_id="integer", provider_id="integer"
+                                         , value_as_concept_id="bigint", qualifier_concept_id="bigint", unit_concept_id="integer", provider_id="integer"
                                          , visit_occurrence_id="integer", visit_detail_id="integer", observation_source_value="character varying (50)"
                                          , observation_source_concept_id="bigint", unit_source_value="character varying (50)"
                                          , qualifier_source_value="character varying (50)", value_source_value="character varying (50)" 
@@ -322,6 +425,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
     #to accomodate inspire concepts observation_concept_id="bigint" supposed to be observation_concept_id="integer"
     #to accomodate inspire concepts observation_source_concept_id="bigint" supposed to be observation_source_concept_id="integer" 
     #to accomodate inspire concepts value_as_concept_id="bigint" supposed to be value_as_concept_id="integer"
+    #to accomodate inspire concepts qualifier_concept_id="bigint" supposed to be qualifier_concept_id="integer"
      
   ## CDM Primary Key Constraints for OMOP Common Data Model 5.4
      DBI::dbSendQuery(con, glue::glue("
@@ -331,4 +435,6 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
   
 }, simplify = FALSE
 )
+ 
+
 

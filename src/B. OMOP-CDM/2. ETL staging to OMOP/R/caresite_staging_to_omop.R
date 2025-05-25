@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 
 ## Care Site CDM table Transformation
 
@@ -12,7 +13,7 @@ caresite_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^stud
   caresite_table <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
     dplyr::select(population_study_id) %>%
     dplyr::inner_join(staging_tables_data[["population_study"]] %>%
-                        dplyr::select(country, name, population_study_id),
+                        dplyr::select(country, data_source, population_study_id),
                       by = c("population_study_id")
                       ) %>%
     dplyr::filter(population_study_id == study_id) %>%
@@ -26,7 +27,7 @@ caresite_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^stud
                   , place_of_service_source_value = NA
                   ) %>%
     dplyr::rename(care_site_name = country
-                  ,care_site_source_value = name
+                  ,care_site_source_value = data_source
                   ) %>%
     dplyr::select(care_site_id, care_site_name, place_of_service_concept_id, location_id, care_site_source_value,
                   place_of_service_source_value

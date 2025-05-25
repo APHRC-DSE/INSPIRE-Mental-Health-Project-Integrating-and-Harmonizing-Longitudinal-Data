@@ -3,6 +3,7 @@ library(DBI)
 library(dplyr)
 library(lubridate)
 library(tidyr)
+library(readr)
 
 ## Person CDM table Transformation
 
@@ -50,7 +51,7 @@ person_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study_
                         dplyr::mutate(individual_concept_id_text = trimws(individual_concept_id_text)
                                       ) %>%
                         dplyr::select(-individual_demographics_id ) %>%
-                        dplyr::filter(individual_concept_id_text %in% c("Coloured", "Asian/Indian", "African", "White")
+                        dplyr::filter(individual_concept_id_text %in% c("Coloured", "Asian/Indian", "African", "White", "Asian Indian")
                                       ) %>% 
                         dplyr::distinct(individual_id, .keep_all = TRUE) %>%
                         dplyr::rename(race_source_value = individual_concept_id_text,

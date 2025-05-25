@@ -2,6 +2,7 @@ library(RPostgres)
 library(DBI)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(lubridate)
 
 ## Measurement CDM table Transformation
@@ -48,6 +49,20 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                                      value_type_concept_id == 1761347 , NA,
                                                    as.numeric(value_type_concept_id)
                                                    ) #population study 6,7,8,9,10,11 NA represents no concept id as per staging db
+                  , concept_id = ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Over half the days", 45878994,
+                                 ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Not at all sure", 45883172,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "No", 4188540,
+                                 ifelse(instrument_id == 16 & population_study_id ==14 & is.na(concept_id) &
+                                          value_as_char == "Yes", 4188539,
+                                        as.numeric(concept_id) 
+                                        )))) #population study 14 conceptid for GAD7 and PSQ answers NA to actual
+                  , concept_id = ifelse(population_study_id %in% c(4,5) & concept_id == 3000000561, 4188540,
+                                 ifelse(population_study_id %in% c(4,5) & concept_id == 3000000560, 4188539,
+                                        as.numeric(concept_id) 
+                                        )) #population study 4 & 5 conceptid 3000000561/3000000560 to 4188539/4188540
                   ) %>%
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_id, interview_date, instrument_id),
@@ -80,6 +95,9 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                              , "instrument_id" = "instrument_id"
                              )
                       ) %>%
+    
+    dplyr::filter(!instrument_id %in% c(7) #Drop Basis 24 tool
+                  ) %>%
     dplyr::mutate(measurement_id = 1:n()
                   , measurement_concept_id = as.numeric(visit_detail_source_concept_id)
                   #, measurement_concept_id = ifelse(!instrument_id %in% c(1, 2, 4, 5, 8, 15), 0, measurement_concept_id
@@ -107,9 +125,7 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   , measurement_event_id = NA
                   , meas_event_field_concept_id = NA
                   ) %>%
-    dplyr::filter(!instrument_id %in% c(7) #Drop Basis 24 tool
-                  ) %>%
-    dplyr::inner_join(staging_tables_data[["concept"]] %>%
+    dplyr::left_join(staging_tables_data[["concept"]] %>%
                         dplyr::select(concept_text, concept_id) %>%
                         dplyr::distinct(concept_id, .keep_all = TRUE),
                       by = c("measurement_source_concept_id"="concept_id")
@@ -133,6 +149,7 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   ) %>%
     dplyr::filter(value_as_concept_id == 4112438 #Only retain total scores and drop responses
                   ) %>%
+    tidyr::drop_na(value_as_number) %>% #drop NA's in total score
     dplyr::mutate(measurement_id = 1:n()
                   )
     
