@@ -69,7 +69,7 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   │   ├── population_study_id_13               
 │   │   │   └── population_study_id_14
 │   │   │                                                 
-│   │   ├── 4. merge dumps         <- Merging all ETL population studies to central staging
+│   │   ├── 4. merge csv dumps         <- Merging all ETL population studies to central staging
 │   │   └── 5. metabase dashboard
 │   │
 │   ├── B. OMOP-CDM           <- ETL from staging to OMOP
@@ -114,12 +114,12 @@ Thanks goes to these wonderful people:
 | 💵 `Financial` | Financial Support | Wellcome Trust | Wellcome Trust | https://wellcome.org/ |
 | 🔍 `Grant Finders` | Principal Investigator | Agnes Kiragga | African Population & Health Research Centre (APHRC) | |
 | 🔍 `Grant Finders` | Principal Investigator | Jim Todd | London School of Hygiene & Tropical Medicine |  |
-| 📆 `Project Management` <br /> 🔬 `Research` | Project management and research | Bylhah Mugotitsa | African Population & Health Research Centre (APHRC) |  |
-| 🤔 `Ideas` <br /> 👀  `Review` | Ideas & review | Emma Slaymaker | London School of Hygiene & Tropical Medicine |  |
+| 📆 `Project Management` <br /> 🔬 `Research` <br /> 📖 `doc` <br /> 💻 `code` <br /> 🔣 `analysis` | Project management, Research, Documentation of project, ETLs & Atlas analysis | Bylhah Mugotitsa | African Population & Health Research Centre (APHRC) |  |
+| 🤔 `Ideas` <br /> 👀  `Review` <br /> 🔣 `analysis` | Ideas, review & Atlas analysis | Emma Slaymaker | London School of Hygiene & Tropical Medicine |  |
 | 🤔 `Ideas` <br /> 🎨 `Design`  <br /> 👀  `Review` <br /> 🔣 `Analysis` | Ideas, staging database design, review & Atlas analysis | Jay Greenfield | Committee Data of the International Science Council  (CODATA) | |
 | 🤔 `Ideas` <br /> 🎨 `Design`  <br /> 👀  `Review` <br /> 💻 `code` | Ideas, staging database design, review & ETLs | Tathagata Bhattacharjee | London School of Hygiene & Tropical Medicine |  |
 |  🚇 `Infrastructure` <br /> 📦 `platform` <br /> 💻 `code` | Build-Tools i.e staging database, visualization platform & ETLs | Dorothy Mailosi | Committee Data of the International Science Council  (CODATA) |  |
-|  🚇 `Infrastructure` <br /> 📦 `platform` <br /> 💻 `code` | Build-Tools i.e staging database, visualization platform & ETLs | Michael Ochola | African Population & Health Research Centre (APHRC) | |
+|  🎨 `Design`  <br /> 🚇 `Infrastructure` <br /> 📦 `platform` <br /> 💻 `code` | Staging database design, Build-Tools i.e staging database, visualization platform & ETLs | Michael Ochola | African Population & Health Research Centre (APHRC) | |
 | 📖 `doc` <br /> 💻 `code` | Documentation of project & ETLs | David Amadi | London School of Hygiene & Tropical Medicine | |
 | 📖 `doc` <br /> 💻 `code` | Documentation of project & ETLs | Reinpeter Ondeyo | African Population & Health Research Centre (APHRC) | |
 | 💻 `code` <br /> 🔣 `analysis` | ETLs & Atlas analysis | Pauline Andeso | African Population & Health Research Centre (APHRC) | |
