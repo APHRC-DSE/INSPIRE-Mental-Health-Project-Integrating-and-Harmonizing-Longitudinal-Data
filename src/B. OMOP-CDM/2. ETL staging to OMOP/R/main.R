@@ -47,7 +47,7 @@ print(con)
 #staging_schema_name <- "mh_staging_1_1_dev_old" #study 12 w1, 1, 5, 2, 3
 #staging_schema_name <- "mh_staging_1_1_dev_old_new" #study 12 w1, 1, 5, 2, 3, 7, 8, 9, 10, 11
 #staging_schema_name <- "mh_staging_1_1_dev_march" #study 12 w1, 1, 5, 2, 3, 7, 8, 9, 10, 11, 14
-staging_schema_name <- "mh_staging_1_1_dev_april" #study 12 w1 w2, 1, 5, 2, 3, 7, 8, 9, 10, 11, 14, 6, 13 #ignore 13 and 14
+staging_schema_name <- "mh_staging_1_1_dev_aug" #study 12 w1 w2, 1, 5, 2, 3, 7, 8, 9, 10, 11, 14, 6, 13, 4
 
 ### updating staging metadata tables
 source("empty_staging_metadata_tables.R")
@@ -60,7 +60,9 @@ source("read_mh_staging_schema_tables.R")
 
 list_population_studies_raw <- unique(staging_tables_data[["longitudinal_population_study_fact"]]$population_study_id)
 
-list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(13, 14)]
+#list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(0)]
+list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4)]
+#list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4)]
 
 ######################################################################
 
@@ -162,6 +164,8 @@ DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_3_cdm_r"), "results_study_3_cdm_r.json"))
 
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_4_cdm_r"), "results_study_4_cdm_r.json"))
+
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_5_cdm_r"), "results_study_5_cdm_r.json"))
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_6_cdm_r"), "results_study_6_cdm_r.json"))
@@ -177,6 +181,8 @@ DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_11_cdm_r"), "results_study_11_cdm_r.json"))
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_12_cdm_r"), "results_study_12_cdm_r.json"))
+
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_13_cdm_r"), "results_study_13_cdm_r.json"))
 
 DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_14_cdm_r"), "results_study_14_cdm_r.json"))
 

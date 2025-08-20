@@ -5086,3 +5086,427 @@
 2025-05-11 12:30:49	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00635 secs
 2025-05-11 12:30:49	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
 2025-05-11 12:30:49	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00407 secs
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00965 secs
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00491 secs
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00762 secs
+2025-08-19 14:33:03	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00839 secs
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00979 secs
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0058 secs
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00905 secs
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00906 secs
+2025-08-19 14:33:04	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0061 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00485 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0104 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0073 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0106 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00525 secs
+2025-08-19 14:33:05	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0103 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00649 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00345 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00383 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0054 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00372 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00713 secs
+2025-08-19 14:33:06	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00314 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0034 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0043 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00554 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00355 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00438 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00471 secs
+2025-08-19 14:33:07	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00507 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0052 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00397 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00353 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00388 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00431 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00416 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00389 secs
+2025-08-19 14:33:08	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00583 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0033 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00336 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00348 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0038 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00539 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00364 secs
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:09	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00529 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00416 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00383 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00335 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00433 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00396 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00525 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00429 secs
+2025-08-19 14:33:10	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00383 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00363 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00373 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00436 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00408 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00374 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00713 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00423 secs
+2025-08-19 14:33:11	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0212 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00329 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00353 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00327 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00429 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00735 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00425 secs
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:12	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.005 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00315 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00457 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00465 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00373 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00335 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00398 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00389 secs
+2025-08-19 14:33:13	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00354 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00419 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00333 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00349 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00385 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00416 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00337 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00363 secs
+2025-08-19 14:33:14	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00376 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00332 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00336 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0039 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00426 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00412 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00382 secs
+2025-08-19 14:33:15	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00431 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00366 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00413 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00381 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00537 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00405 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00452 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00356 secs
+2025-08-19 14:33:16	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00462 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0059 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00418 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00394 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0433 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00647 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00362 secs
+2025-08-19 14:33:17	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00368 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00439 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00351 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00378 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00438 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00481 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00375 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00561 secs
+2025-08-19 14:33:18	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00463 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00366 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00352 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00426 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00417 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00373 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00346 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00377 secs
+2025-08-19 14:33:19	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00531 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00365 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00404 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00313 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00445 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00449 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00387 secs
+2025-08-19 14:33:20	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00326 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00341 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0046 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00371 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00433 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00515 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00532 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00404 secs
+2025-08-19 14:33:21	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00332 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00414 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00354 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00481 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00595 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00446 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00366 secs
+2025-08-19 14:33:22	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00459 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00395 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0267 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00467 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00422 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00422 secs
+2025-08-19 14:33:23	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00454 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00403 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00373 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00357 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00447 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00498 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00407 secs
+2025-08-19 14:33:24	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00413 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00524 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00444 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00389 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00399 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00564 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00353 secs
+2025-08-19 14:33:25	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0036 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00367 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00409 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00394 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00423 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00366 secs
+2025-08-19 14:33:26	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00383 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00429 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00353 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00352 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00479 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0063 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00383 secs
+2025-08-19 14:33:27	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00482 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00406 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00485 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00398 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00658 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0115 secs
+2025-08-19 14:33:28	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00649 secs
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00725 secs
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00372 secs
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00618 secs
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00554 secs
+2025-08-19 14:33:29	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00512 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0348 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00471 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00374 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00405 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00457 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00633 secs
+2025-08-19 14:33:30	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00459 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00349 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00521 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00401 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00394 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00336 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00634 secs
+2025-08-19 14:33:31	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00431 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00435 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00369 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00371 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00418 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00632 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00747 secs
+2025-08-19 14:33:32	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00515 secs
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00523 secs
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00342 secs
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00354 secs
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	connectPostgreSql	Connecting using PostgreSQL driver
+2025-08-19 14:33:33	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00425 secs

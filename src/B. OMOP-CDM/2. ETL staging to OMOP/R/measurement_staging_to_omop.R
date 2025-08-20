@@ -45,10 +45,18 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                           value_type_concept_id == 1761347 , as.numeric(value_type_concept_id),
                                         as.numeric(concept_id)
                                         ) #population study 6,7,8,9,10,11 tool total scores conceptid in value_type_concept_id
+                  , concept_id = ifelse(instrument_id %in% c(1, 2, 16) & population_study_id %in% c(13) &
+                                          value_type_concept_id %in% c(3042932, 42868746, 3000000278) , as.numeric(value_type_concept_id),
+                                        as.numeric(concept_id)
+                                        ) #population study 13 tool total scores conceptid in value_type_concept_id
                   , value_type_concept_id = ifelse(instrument_id == 6 & population_study_id %in% c(6, 7, 8, 9, 10, 11) &
                                                      value_type_concept_id == 1761347 , NA,
                                                    as.numeric(value_type_concept_id)
                                                    ) #population study 6,7,8,9,10,11 NA represents no concept id as per staging db
+                  , value_type_concept_id = ifelse(instrument_id %in% c(1, 2, 16) & population_study_id %in% c(13) &
+                                                     value_type_concept_id %in% c(3042932, 42868746, 3000000278) , NA,
+                                                   as.numeric(value_type_concept_id)
+                                                   ) #population study 13 NA represents no concept id as per staging db
                   , concept_id = ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
                                           value_as_char == "Over half the days", 45878994,
                                  ifelse(instrument_id == 2 & population_study_id ==14 & is.na(concept_id) &
@@ -100,8 +108,10 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   ) %>%
     dplyr::mutate(measurement_id = 1:n()
                   , measurement_concept_id = as.numeric(visit_detail_source_concept_id)
-                  #, measurement_concept_id = ifelse(!instrument_id %in% c(1, 2, 4, 5, 8, 15), 0, measurement_concept_id
-                                                    #) #only those instruments with concepts in measurement domain
+                  , measurement_concept_id = ifelse(measurement_concept_id %in% c(1761569), 44788755, measurement_concept_id
+                                                    ) #replacing observation domain concept_id for CES-D to one of measurement domain
+                  , measurement_concept_id = ifelse(measurement_concept_id %in% c(3000000266), 40486512, measurement_concept_id
+                                                    ) #replacing observation domain concept_id for PSQ to one of measurement domain
                   , measurement_concept_id = ifelse(instrument_item_id %in% c(19, 20, 21), as.numeric(concept_id),
                                                     measurement_concept_id
                                                     ) #DASS21 instruments items with concepts in measurement domain
@@ -174,7 +184,7 @@ measurement_cdm_load <- sapply(names(measurement_cdm_table), function(x){
                       , field.types = c(measurement_id="integer", person_id="integer", measurement_concept_id="bigint"
                                         , measurement_date="date", measurement_datetime="timestamp without time zone"
                                         , measurement_time="character varying (10)", measurement_type_concept_id="integer"
-                                        , operator_concept_id="integer", value_as_number="numeric", value_as_concept_id="bigint"
+                                        , operator_concept_id="integer", value_as_number="numeric", value_as_concept_id="integer"
                                         , unit_concept_id="integer", range_low="numeric", range_high="numeric", provider_id="integer"
                                         , visit_occurrence_id="integer", visit_detail_id="integer", measurement_source_value="character varying (50)"
                                         , measurement_source_concept_id="bigint", unit_source_value="character varying (50)"
@@ -184,7 +194,6 @@ measurement_cdm_load <- sapply(names(measurement_cdm_table), function(x){
                       )
     
     #to accomodate inspire concepts measurement_concept_id="bigint" supposed to be measurement_concept_id="integer"
-    #to accomodate inspire concepts value_as_concept_id="bigint" supposed to be value_as_concept_id="integer"
     #to accomodate inspire concepts measurement_source_concept_id="bigint" supposed to be measurement_source_concept_id="integer"
   
   ## CDM Primary Key Constraints for OMOP Common Data Model 5.4

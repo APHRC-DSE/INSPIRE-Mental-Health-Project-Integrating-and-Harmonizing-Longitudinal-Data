@@ -27,8 +27,8 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
     dplyr::inner_join(staging_tables_data[["individual_demographics"]] %>%
                         dplyr::mutate(individual_concept_id_text = trimws(individual_concept_id_text)
                                       ) %>%
-                        dplyr::filter(individual_concept_id_text %in% c("Diabetes present", "Mild anemia", "Severe anemia",
-                                                                        "Moderate anemia", "Dyslipidemia", "Hypertension",
+                        dplyr::filter(individual_concept_id_text %in% c("Diabetes present", "Mild anemia", "Severe anemia", "No anemia present",
+                                                                        "Moderate anemia", "Dyslipidemia", "Hypertension", "No pain",
                                                                         "Normal Blood Pressure", "Diabetes", "Pain", "HIV Negative",
                                                                         "Acquired immunodeficiency syndrome, AIDS, or HIV positive"
                                                                         )
@@ -36,9 +36,52 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                       by = c("individual_id")
                       ) %>%
     dplyr::mutate(individual_concept_id = ifelse(individual_concept_id_text %in% c("Hypertension"), 316866,
+                                          ifelse(individual_concept_id_text %in% c("No pain"), 4116815,
+                                          ifelse(individual_concept_id_text %in% c("Diabetes"), 201820,
+                                          ifelse(individual_concept_id_text %in% c("Acquired immunodeficiency syndrome, AIDS, or HIV positive"), 4267414,
+                                          ifelse(individual_concept_id_text %in% c("HIV Negative"), 4013105,
+                                          ifelse(individual_concept_id_text %in% c("No anemia present"), 4094766,
                                           ifelse(individual_concept_id_text %in% c("Mild anemia","Severe anemia", "Moderate anemia"), 439777,
-                                                 as.numeric(individual_concept_id)))
+                                                 as.numeric(individual_concept_id))))))))
                   ) %>%
+    #Group conditions with more than one level so as to obtain wave_id
+    dplyr::mutate(condition_concept_text = ifelse(individual_concept_id_text %in% c("Acquired immunodeficiency syndrome, AIDS, or HIV positive",
+                                                                                       "HIV Negative"
+                                                                                    ), "HIV status", #HIV status
+                                           ifelse(individual_concept_id_text %in% c("Hypertension", "Normal Blood Pressure"
+                                                                                    ),"Blood pressure status", #Blood pressure status
+                                           ifelse(individual_concept_id_text %in% c("Mild anemia","Severe anemia", "Moderate anemia",
+                                                                                    "No anemia present"
+                                                                                    ), "Anemia status", #Anaemia status
+                                           ifelse(individual_concept_id_text %in% c("Pain","No pain"
+                                                                                    ), "Pain status", #Pain
+                                                  individual_concept_id_text
+                                                  ))))
+                    ) %>%
+    dplyr::arrange(condition_concept_text) %>%
+    dplyr::group_by(individual_id, condition_concept_text) %>%
+    dplyr::mutate(unique_seq = dplyr::row_number()
+                  ,unique_types = dplyr::n_distinct(individual_concept_id) 
+                  ) %>%
+    dplyr::ungroup() %>%
+    dplyr::inner_join(staging_tables_data[["wave"]] %>%
+                        dplyr::select(wave_id, name, population_study_id) %>%
+                        dplyr::mutate(name = readr::parse_number(name))
+                      , by = c("population_study_id" = "population_study_id", "unique_seq" = "name")
+                        ) %>%
+    dplyr::mutate(wave_id = ifelse(population_study_id %in% c(12) & wave_id ==33, 1,
+                            ifelse(population_study_id %in% c(12) & wave_id ==34, 2,
+                            ifelse(population_study_id %in% c(14) & wave_id ==36, 1, wave_id
+                                   )))
+                  #Matching wave_id for study 12,14 as is in staging. Transformed wrongly
+                  ) %>%
+    #Get interview date from wave id
+    dplyr::inner_join(staging_tables_data[["interview"]] %>%
+                        dplyr::select(individual_id, interview_date, wave_id) %>%
+                        dplyr::distinct(),
+                      by = c("individual_id","wave_id")
+                      ) %>%
+    #interview_date not linked with visit_start_date to duplicate entries for studies that had only one set of demographics for multiple waves
     dplyr::inner_join(visit_occurrence_cdm_table[[nn]] %>%
                         dplyr::select(person_id, visit_occurrence_id, visit_start_date, visit_start_datetime, provider_id, care_site_id),
                       by = c("individual_id" = "person_id"
@@ -46,7 +89,12 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                              , "care_site_id" = "care_site_id"
                              )
                       ) %>%
-    dplyr::distinct(individual_id, individual_concept_id, visit_occurrence_id, visit_start_date, .keep_all = TRUE) %>%
+    dplyr::mutate(visit_start_date = if_else(unique_types == 2 & interview_date != visit_start_date, NA, visit_start_date)
+                  #Condition to remove duplicate values so as to remain with changing conditions
+                  ) %>%
+    tidyr::drop_na(visit_start_date) %>%
+    dplyr::select(-c(unique_seq, unique_types, interview_date, wave_id)
+                  ) %>%
     dplyr::inner_join(visit_detail_cdm_table[[nn]] %>%
                          dplyr::select(person_id, visit_detail_id, visit_detail_start_date, provider_id, care_site_id, visit_occurrence_id),
                        by = c("individual_id" = "person_id"
@@ -57,16 +105,14 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                               )
                        ) %>%
     dplyr::distinct(visit_occurrence_id, individual_concept_id_text, .keep_all = TRUE) %>%
+    #Remerge interview table to get actual wave again
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_date, wave_id) %>%
                         dplyr::distinct(),
-                      by = c("individual_id" = "individual_id"
-                             ,"visit_start_date" = "interview_date"
-                             )
+                      by = c("individual_id" = "individual_id", "visit_start_date" = "interview_date")
                       ) %>%
     dplyr::mutate(condition_concept_id = individual_concept_id) %>%
     dplyr::rename( person_id = individual_id
-                   , condition_concept_id = individual_concept_id
                    , condition_start_date = visit_start_date
                    , condition_start_datetime = visit_start_datetime
                    , condition_source_value = individual_concept_id_text
@@ -248,7 +294,7 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                    stop_reason, provider_id, visit_occurrence_id, visit_detail_id, condition_source_value,
                    condition_source_concept_id, condition_status_source_value
                    ) %>%
-    dplyr::mutate(across(c(condition_status_source_value), ~strtrim(.x, 49)
+    dplyr::mutate(across(c(condition_status_source_value, condition_source_value), ~strtrim(.x, 49)
                          )
                   )
   

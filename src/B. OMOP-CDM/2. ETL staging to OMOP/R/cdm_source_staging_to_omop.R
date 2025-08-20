@@ -16,7 +16,7 @@ cdm_source_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^st
     dplyr::mutate( cdm_holder = "APHRC"
                    , cdm_source_abbreviation = data_source
                    , cdm_version_concept_id = 756265
-                   , vocabulary_version = "v5.0 30-AUG-24"
+                   , vocabulary_version = "v5.0 27-FEB-25"
                    , cdm_version = "5.4"
                    , cdm_etl_reference = "https://github.com/APHRC-DSE/INSPIRE-Mental-Health-Project-Integrating-and-Harmonizing-Longitudinal-Data"
                    , source_release_date = version_date

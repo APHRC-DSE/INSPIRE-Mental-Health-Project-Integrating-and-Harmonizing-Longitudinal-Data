@@ -14,7 +14,12 @@ data_files <- list.files(path = data_Dir, full.names = F)
 ##load all csv files
 df_list <- sapply(data_files[grepl(".csv$",data_files)], function(z){
   
-  readr::read_csv(base::file.path(data_Dir, z))
+  if (z == "study_13_person.csv") {
+    readr::read_csv(base::file.path(data_Dir, z)) %>%
+      dplyr::mutate(consentdate = lubridate::dmy(consentdate))
+  } else {
+    readr::read_csv(base::file.path(data_Dir, z))
+  }
   
 }, simplify=FALSE)
 
