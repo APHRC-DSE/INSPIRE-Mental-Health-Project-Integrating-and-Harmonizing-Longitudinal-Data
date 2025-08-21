@@ -73,7 +73,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                                                                        ), 4264823, #Birth outcome
                                               ifelse(individual_concept_id_text %in% c("Underweight", "Normal weight", "Overweight",
                                                                                        "Obese"
-                                                                                       ), 4245997, #Body Mass Index
+                                                                                       ), 4103471, #Body Mass Index
                                               ifelse(individual_concept_id_text %in% c("gravida 0", "Primigravida", "gravida 1",
                                                                                        "gravida 2", "gravida 3", "gravida 4",
                                                                                        "gravida 5", "gravida 6", "gravida 7",

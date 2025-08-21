@@ -37,7 +37,7 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                       ) %>%
     dplyr::mutate(individual_concept_id = ifelse(individual_concept_id_text %in% c("Hypertension"), 316866,
                                           ifelse(individual_concept_id_text %in% c("No pain"), 4116815,
-                                          ifelse(individual_concept_id_text %in% c("Diabetes"), 201820,
+                                          ifelse(individual_concept_id_text %in% c("Diabetes", "Diabetes present"), 201820,
                                           ifelse(individual_concept_id_text %in% c("Acquired immunodeficiency syndrome, AIDS, or HIV positive"), 4267414,
                                           ifelse(individual_concept_id_text %in% c("HIV Negative"), 4013105,
                                           ifelse(individual_concept_id_text %in% c("No anemia present"), 4094766,
