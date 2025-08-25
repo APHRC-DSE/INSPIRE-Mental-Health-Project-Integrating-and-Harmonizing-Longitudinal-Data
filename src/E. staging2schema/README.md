@@ -1,6 +1,5 @@
 # staging2schema.org
-
-## Overview  
+ 
 **staging2schema.org** is a toolset designed to generate [Schema.org](https://schema.org/) `Dataset` descriptions directly from a staging database. The goal is to make data and metadata hosted in a staging server **machine-readable**, **FAIR-compliant**.  
 
 This work is inspired by and builds upon the principles of data standardization and harmonization discussed in the paper:  
