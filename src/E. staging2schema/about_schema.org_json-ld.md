@@ -1,8 +1,10 @@
-Excellent and insightful question. This gets to the core of how JSON-LD and Schema.org work together.
+# Does schema.org become a graph in the context of JSON-LD?
 
-The answer is nuanced: **Schema.org itself is not a graph, but it provides the vocabulary used to *describe* a graph when you use it within JSON-LD.**
-
-Let's break that down.
+> Excellent and insightful question. This gets to the core of how JSON-LD and Schema.org work together.
+>
+> The answer is nuanced: **Schema.org itself is not a graph, but it provides the vocabulary used to *describe* a graph when you use it within JSON-LD.**
+>
+> Let's break that down.
 
 ### 1. What is a Graph (Technically Speaking)?
 
