@@ -86,7 +86,9 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │           
 │   ├── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
 │   │   │  
-│   └── D. FIPS+FER4LS     <- FAIR Implementation Profiles (FIPs) and FAIR Evaluation Reports (FERs)              
+│   ├── D. FIPS+FER4LS     <- FAIR Implementation Profiles (FIPs) and FAIR Evaluation Reports (FERs)
+│   │   │
+│   └── E. Staging2Schema        
 └──
 ```
 
