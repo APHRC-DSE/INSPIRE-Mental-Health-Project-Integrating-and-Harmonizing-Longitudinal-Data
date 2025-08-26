@@ -84,11 +84,11 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   ├── 3. Achilles                   
 │   │   └── 4. Data Quality Dashboard
 │   │           
-│   ├── C. ATLAS Analysis     <- Exploratory and results-oriented analysis and visualization
+│   ├── C. ATLAS Analysis  <- Exploratory and results-oriented analysis and visualization
 │   │   │  
 │   ├── D. FIPS+FER4LS     <- FAIR Implementation Profiles (FIPs) and FAIR Evaluation Reports (FERs)
 │   │   │
-│   └── E. Staging2Schema        
+│   └── E. Staging2Schema  <- The MH Studies Catalog      
 └──
 ```
 
