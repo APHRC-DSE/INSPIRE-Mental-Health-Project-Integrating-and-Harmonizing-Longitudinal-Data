@@ -61,8 +61,8 @@ source("read_mh_staging_schema_tables.R")
 list_population_studies_raw <- unique(staging_tables_data[["longitudinal_population_study_fact"]]$population_study_id)
 
 #list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(0)]
-list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4)]
-#list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4)]
+#list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4, 5)]
+list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(4, 5)]
 
 ######################################################################
 
@@ -88,8 +88,13 @@ source("create_cdm_tables_rpackage.R")
 
 ######################################################################
 ## Loading vocabularies in vocabulary schema
-#source("empty_omop_vocabs.R") #Uncomment and Run this if you want to reload vocabularies
-source("load_omop_vocabs.R")
+
+empty_vocab_tables <- FALSE #TRUE to empty and reload vocabularies, FALSE to do nothing
+
+if (empty_vocab_tables) {
+  source("empty_omop_vocabs.R")
+  source("load_omop_vocabs.R")
+}
 
 ######################################################################
 ## Transforming data from Staging and loading to OMOP-CDM

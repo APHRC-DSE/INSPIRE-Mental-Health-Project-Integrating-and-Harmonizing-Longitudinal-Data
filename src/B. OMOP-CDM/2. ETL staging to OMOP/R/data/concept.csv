@@ -176,9 +176,9 @@ INSPIRE,,A little of the time,23/03/2024,31/12/2099,3000000174,3000000174,1,
 INSPIRE,,Half of the time,23/03/2024,31/12/2099,3000000175,3000000175,2,
 INSPIRE,,Most of the time,23/03/2024,31/12/2099,3000000176,3000000176,3,
 INSPIRE,,All of the time,23/03/2024,31/12/2099,3000000177,3000000177,4,
-INSPIRE,,Never,23/03/2024,31/12/2099,3000000178,3000000178,0,
+INSPIRE,,Never,23/03/2024,31/12/2099,3000000178,45876662,0,
 INSPIRE,,Rarely,23/03/2024,31/12/2099,3000000179,3000000179,1,
-INSPIRE,,Sometimes,23/03/2024,31/12/2099,3000000180,3000000180,2,
+INSPIRE,,Sometimes,23/03/2024,31/12/2099,3000000180,45882528,2,
 INSPIRE,,Often,23/03/2024,31/12/2099,3000000181,3000000181,3,
 INSPIRE,,Always,23/03/2024,31/12/2099,3000000182,3000000182,4,
 Type Concept,OMOP4976952,Registry,01/01/1970,31/12/2099,3000000183,32879,,Type Concept
@@ -275,11 +275,12 @@ INSPIRE,,"Did this come about in a way that many people would find hard to belie
 INSPIRE,,"Thought Withdrawal: Over the past year, have you ever felt that some of your thoughts had been taken out of your mind?",23/03/2024,31/12/2099,3000000274,3000000274,,
 INSPIRE,,"Did it feel like an outside force or person was removing them? (Thought Withdrawal: Over the past year, have you ever felt that some of your thoughts had been taken out of your mind?)",23/03/2024,31/12/2099,3000000275,3000000275,,
 INSPIRE,,"Paranoia Probe: Over the past year, have there been times when you felt that people were against you?",23/03/2024,31/12/2099,3000000276,3000000276,,
-INSPIRE,,"Vave there been times when you felt that people were deliberately acting to harm you or your interests? (Paranoia Probe: Over the past year, have there been times when you felt that people were against you?)",23/03/2024,31/12/2099,3000000277,3000000277,,
+INSPIRE,,"Have there been times when you felt that people were deliberately acting to harm you or your interests? (Paranoia Probe: Over the past year, have there been times when you felt that people were against you?)",23/03/2024,31/12/2099,3000000277,3000000277,,
 INSPIRE,,PSQ total score,23/03/2024,31/12/2099,3000000278,3000000278,,
-SNOMED,373066001,yes,31/07/2002,31/12/2099,3000000279,4188539,,Meas Value
-SNOMED,373067005,no,31/07/2002,31/12/2099,3000000280,4188540,,Meas Value
+SNOMED,373066001,yes,31/07/2002,31/12/2099,3000000279,4188539,1,Meas Value
+SNOMED,373067005,no,31/07/2002,31/12/2099,3000000280,4188540,0,Meas Value
 SNOMED,3.42E+14,Educated to primary school level,01/01/1970,31/12/2099,3000000281,44800023,,Observation
+INSPIRE,,Other Education,23/03/2024,31/12/2099,3000000282,3000000282,,
 SNOMED,238131007,Overweight,01/01/1970,31/12/2099,3000000531,437525,,Observation
 SNOMED,43664005,Normal weight,01/01/1970,31/12/2099,3000000532,4183890,,Observation
 SNOMED,248342006,Underweight,01/01/1970,31/12/2099,3000000533,435372,,Observation
@@ -298,8 +299,8 @@ INSPIRE,,No dyslipidemia,23/03/2024,31/12/2099,3000000555,3000000555,,
 INSPIRE,,Short sleep,23/03/2024,31/12/2099,3000000556,3000000556,,
 INSPIRE,,Normal sleep,23/03/2024,31/12/2099,3000000557,3000000557,,
 INSPIRE,,Long sleep,23/03/2024,31/12/2099,3000000558,3000000558,,
-INSPIRE,,Yes,23/03/2024,31/12/2099,3000000560,3000000560,1,
-INSPIRE,,No,23/03/2024,31/12/2099,3000000561,3000000561,0,
+SNOMED,373066001,Yes,31/07/2002,31/12/2099,3000000560,4188539,0,Meas Value
+SNOMED,373067005,No,31/07/2002,31/12/2099,3000000561,4188540,1,Meas Value
 LOINC,LA27722-0,Less than once a week,01/01/1970,31/12/2099,3000000562,36210209,2,Meas Value
 LOINC,LA26457-4,Once or twice a week,01/01/1970,31/12/2099,3000000563,42530680,3,Meas Value
 LOINC,LA6396-1,Three or more times a week,01/01/1970,31/12/2099,3000000564,45877752,4,Meas Value

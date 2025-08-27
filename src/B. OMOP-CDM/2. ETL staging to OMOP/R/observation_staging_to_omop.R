@@ -149,9 +149,11 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                             ifelse(individual_concept_id_text %in% c("Self-employed business"), 44803428, #4059636
                                             ifelse(individual_concept_id_text %in% c("Other Religion", "Other"), 4190569, #45878142	- other
                                             ifelse(individual_concept_id_text %in% c("Housewife", "Homemaker"), 1620877, #45438205 - Non-standard
+                                            ifelse(individual_concept_id_text %in% c("Higher Degree (Masters, Doctorate)"), 3000000191, #INSPIRE study 6-11
+                                            ifelse(individual_concept_id_text %in% c("Other education"), 3000000282, #INSPIRE study 6-11
                                             ifelse(individual_concept_id_text %in% c("Marital Status Unknown", "Unknown Marital Status"), 4052929,
                                                    as.numeric(individual_concept_id)
-                                                   )))))) #changing delivery methods to vaginal, CS which are answers to delivery method
+                                                   )))))))) #changing delivery methods to vaginal, CS which are answers to delivery method
                   ) %>%
     tidyr::drop_na(individual_concept_id_text) %>%
     dplyr::mutate(individual_concept_id_text = as.character(individual_concept_id_text))
@@ -276,6 +278,7 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                        ifelse(instrument_id == 15 & population_study_id == 5 & instrument_item_id == 123, 134,
                                               as.numeric(instrument_item_id)
                                               )))))))))))))) #update instrument_item_id for instrument 15 as per new instrument_item metadata
+                  , value_as_char = trimws(value_as_char)
                   , value_type_concept_id = ifelse(instrument_id == 7 & population_study_id == 12 & 
                                                      concept_id %in% c(3000000165, 3000000166, 3000000167), as.numeric(concept_id),
                                                    as.numeric(value_type_concept_id)
@@ -312,8 +315,10 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                         )))) #population study 14 conceptid for GAD7 and PSQ answers NA to actual
                   , concept_id = ifelse(population_study_id %in% c(4,5) & concept_id == 3000000561, 4188540,
                                  ifelse(population_study_id %in% c(4,5) & concept_id == 3000000560, 4188539,
+                                 ifelse(population_study_id %in% c(4,5) & concept_id == 3000000178, 45876662,
+                                 ifelse(population_study_id %in% c(4,5) & concept_id == 3000000180, 45882528,
                                         as.numeric(concept_id) 
-                                        )) #population study 4 & 5 conceptid 3000000561/3000000560 to 4188539/4188540
+                                        )))) #population study 4 & 5 conceptid 3000000561/3000000560 to 4188539/4188540
                   ) %>%
     dplyr::inner_join(staging_tables_data[["interview"]] %>%
                         dplyr::select(individual_id, interview_id, interview_date, instrument_id),
@@ -431,7 +436,9 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                     , qualifier_concept_id = NA
                     , qualifier_source_value = NA
                     ) %>%
-    tidyr::drop_na(value_as_concept_id)
+    tidyr::drop_na(value_as_concept_id) %>%
+    dplyr::filter(value_as_string != "null" #study 5 
+                  )
   
   observation_table <- dplyr::bind_rows(observation_table_a, observation_table_b) %>%
     dplyr::arrange(individual_id) %>%
