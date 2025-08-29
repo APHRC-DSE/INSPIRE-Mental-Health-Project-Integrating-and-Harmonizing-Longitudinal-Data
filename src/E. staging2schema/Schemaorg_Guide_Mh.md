@@ -9,6 +9,31 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 >[!IMPORTANT]
 >We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
+>
+># Schema.org Guide for the INSPIRE MH DataHub
+
+---
+
+## Table of Contents
+- [Core Dataset Properties for Discovery](#core-dataset-properties-for-discovery)
+- [Getting Started](#getting-started)
+  - [Standard Properties](#standard-properties)
+  - [mainEntity](#mainentity)
+  - [includedInDataCatalog](#includedindatacatalog)
+  - [isBasedOn](#isbasedon)
+  - [subjectOf](#subjectof)
+  - [spatialCoverage](#spatialcoverage)
+  - [temporalCoverage](#temporalcoverage)
+  - [distribution](#distribution)
+- [variableMeasured (The Core of Clinical Data)](#variablemeasured-the-core-of-clinical-data)
+  - [PropertyValue (Individual-Level)](#1-propertyvalue-for-individual-level-clinical-concepts)
+  - [StatisticalVariable (Aggregate Measures)](#2-statisticalvariable-for-aggregate--derived-measures)
+- [Persistent Identifiers](#persistent-identifiers)
+- [Access, Licensing, and Governance](#access-licensing-and-governance)
+- [Provenance and Versioning](#provenance-and-versioning)
+- [Checklist / Cheatsheet](#checklist--cheatsheet)
+
+---
 
 ## Core Dataset Properties for Discovery
 Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery
