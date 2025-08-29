@@ -3,8 +3,8 @@
 ---
 
 ## Purpose
-This guide provides a framework for creating `schema.org` metadata for datasets stored in the **INSPIRE Network staging server**, which hosts **longitudinal mental health data and metadata**. It draws on:
-The goal is to make metadata **standardized, discoverable, interoperable, and reusable**, aligned with the **FAIR principles**.
+This guide provides a framework for creating `schema.org` metadata for datasets stored in the INSPIRE Network staging server, which hosts longitudinal mental health data and metadata. It draws on:
+The goal is to make metadata standardized, discoverable, interoperable, and reusable, aligned with the FAIR principles.
 
 ![Schema.org Metadata Guide Illustration](../../images/SchemaGuide.png)
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
