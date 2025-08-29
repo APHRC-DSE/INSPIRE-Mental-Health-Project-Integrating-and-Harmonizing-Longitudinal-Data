@@ -10,11 +10,9 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 >[!IMPORTANT]
 >We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
 >
-># Schema.org Guide for the INSPIRE MH DataHub
+
 
 ---
-
-## Table of Contents
 - [Core Dataset Properties for Discovery](#core-dataset-properties-for-discovery)
 - [Getting Started](#getting-started)
   - [Standard Properties](#standard-properties)
