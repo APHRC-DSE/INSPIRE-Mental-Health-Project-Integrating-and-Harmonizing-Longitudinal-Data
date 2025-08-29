@@ -92,22 +92,37 @@ A downloadable form of this dataset, at a specific location, in a specific forma
 ### variableMeasured (The Core of Clinical Data)
 The `variableMeasured` property is the most important for clinical interoperability. It can take two forms, and the choice is critical:
 
-1.  **`PropertyValue` (For Individual-Level Clinical Concepts):**
-    *   **Use this for:** Direct measurements, observations, or concepts recorded for each individual subject (e.g., a patient's PHQ-9 score, a diagnosis code).
-    *   **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This is the key to interoperability.
-    *   **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D").
-    *   **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`).
-    *   Follows the [recommendation](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#tier-2-names-of-variables-with-formal-property-types) of `science-on-schema-org`.
+#### 1. `PropertyValue` (For Individual-Level Clinical Concepts)
+**Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
 
-2.  **`StatisticalVariable` (For Aggregate / Derived Measures):**
-    *   **Use this for:** Variables that represent summarized or aggregated statistics about a population, **not** individual measurements (e.g., `prevalence_of_mdd`, `mean_phq9_score`).
-    *   **`statType`:** The type of statistic (e.g., `mean`, `median`, `count`, `prevalence`).
-    *   **`measuredProperty`:** The underlying clinical property the statistic is about (e.g., "Major depressive disorder"). This should also be a `DefinedTerm`.
-    *   **`constraintProperty`:** An array of `PropertyValue` objects that **disaggregate** the statistic (e.g., by `timePeriod`, `ageGroup`, `sex`). This corresponds to a `DataStructureDefinition` in an SDMX data cube.
-    *   **As a rule, a `StatisticalVariable` in clinical research has at least two constraints:**
-        - A `timePeriod` `PropertyValue` (e.g., "Baseline").
-        - A `populationGroup` `PropertyValue` (e.g., "age_12_18").
+**Core Properties:**
+*   **`name`:** The variable name (e.g., `phq9_total_score`, `fasting_glucose`).
+*   **`description`:** A human-readable definition of the variable.
+*   **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This provides the *what*.
+*   **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D", "Blood assay"). This describes the *how*.
 
+**Quantitative Variable Properties:**
+*   **`minValue` / `maxValue`:** For numeric variables, the theoretical or observed range.
+*   **`unitCode` (REQUIRED for measures):** **Use a URL from the QUDT (Quantity, Unit, Dimension and Type) ontology** to unambiguously define the unit. This ensures machine-actionability and prevents ambiguity. Browse units at the [QUDT Ontology Explorer](https://liusemweb.github.io/CEON/ontology/qudt/2.1/index.html).
+*   **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`) or other context.
+
+**Example: A Machine-Readable Lab Measurement Variable**
+```json
+{
+  "@type": "PropertyValue",
+  "name": "glucose_serum_fasting",
+  "description": "Fasting serum glucose level.",
+  "valueReference": {
+    "@type": "DefinedTerm",
+    "inDefinedTermSet": "LOINC",
+    "termCode": "1558-6",
+    "name": "Glucose [Mass/volume] in Serum or Plasma"
+  },
+  "measurementTechnique": "Blood assay",
+  "minValue": 0,
+  "maxValue": 500,
+  "unitCode": "http://qudt.org/vocab/unit/MilliGM-PER-DL"
+}
 ### Summary of Use Cases
 
 | Your Data Is... | Use This Type | Example |
