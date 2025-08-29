@@ -1,17 +1,17 @@
 # Schema.org Metadata Guide for Longitudinal Mental Health Data
 
 ---
-[!NOTE]
+> [!NOTE]
 Entries have properties based on the schema.org Dataset type which borrows from Dublin Core, DCAT, and other specifications. The primary goal is to make mental health data FAIR: Findable, Accessible, Interoperable, and Reusable.
 
-[!TIP]
-Entries are just the metadata. They describe the data but do not contain the sensitive patient-level information itself.
+>[!TIP]
+>Entries are just the metadata. They describe the data but do not contain the sensitive patient-level information itself.
 
-[!IMPORTANT]
-Entries must include instructions for retrieving the actual data or for requesting access through a governed process.
+>[!IMPORTANT]
+>Entries must include instructions for retrieving the actual data or for requesting access through a governed process.
 
-[!WARNING]
-We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
+>[!WARNING]
+>We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
 
 ## Purpose
 This guide provides a framework for creating `schema.org` metadata for datasets stored in the INSPIRE Network staging server, which hosts longitudinal mental health data and metadata.
