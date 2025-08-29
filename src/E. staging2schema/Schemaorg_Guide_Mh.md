@@ -114,15 +114,14 @@ For precise machine-interpretability of measurements, define the QUDT context an
 ```json
 {
   "@context": {
-    "@vocab": "https://schema.org/",
     "qudt": "http://qudt.org/schema/qudt/",
     "quantitykind": "http://qudt.org/vocab/quantitykind/",
     "unit": "http://qudt.org/vocab/unit/",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "@type": "PropertyValue",
-  "name": "creatinine_serum",
-  "description": "The level of creatinine in the patient's blood, a key indicator of kidney function.",
+  "name": "creatinine",
+  "description": "The level of creatinine in the patient's blood indicates kidney function",
   "valueReference": {
     "@type": "DefinedTerm",
     "inDefinedTermSet": "LOINC",
@@ -136,6 +135,7 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:quantityKind": "quantitykind:Concentration",
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
+   ```
 ### Summary of Use Cases
 
 | Your Data Is... | Use This Type | Example |
