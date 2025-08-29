@@ -135,6 +135,16 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:quantityKind": "quantitykind:Concentration",
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
+
+2.  **`StatisticalVariable` (For Aggregate / Derived Measures):**
+    *   **Use this for:** Variables that represent summarized or aggregated statistics about a population, **not** individual measurements (e.g., `prevalence_of_mdd`, `mean_phq9_score`).
+    *   **`statType`:** The type of statistic (e.g., `mean`, `median`, `count`, `prevalence`).
+    *   **`measuredProperty`:** The underlying clinical property the statistic is about (e.g., "Major depressive disorder"). This should also be a `DefinedTerm`.
+    *   **`constraintProperty`:** An array of `PropertyValue` objects that **disaggregate** the statistic (e.g., by `timePeriod`, `ageGroup`, `sex`). This corresponds to a `DataStructureDefinition` in an SDMX data cube.
+    *   **As a rule, a `StatisticalVariable` in clinical research has at least two constraints:**
+        - A `timePeriod` `PropertyValue` (e.g., "Baseline").
+        - A `populationGroup` `PropertyValue` (e.g., "age_12_18").
+
    ```
 ### Summary of Use Cases
 
