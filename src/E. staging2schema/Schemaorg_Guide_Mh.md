@@ -24,7 +24,9 @@ Every dataset should be described using a JSON-LD script. The following properti
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
 
 Let's begin...
-A Dataset in the INSPIRE DataHub has standard properties such as 'name', 'description', 'dateCreated', 'dateModified', 'datePublished', 'license', 'citation', 'version', 'keywords', 'measurementTechnique', 'measurementMethod', 'creator', 'funder', and 'provider'. For an example of 'creator' using the 'Role' type, see the schema.org documentation or JSON-LD examples.
+
+A Dataset in the INSPIRE DataHub has standard properties such as 'name', 'description', 'dateCreated', 'dateModified', 'datePublished', 'license', 'citation', 'version', 'keywords', 'measurementTechnique', 'measurementMethod', 'creator', 'funder', 'provider'. For an example of 'creator' using the 'Role' type, see the schema.org documentation or JSON-LD examples.
+
 
 
 
