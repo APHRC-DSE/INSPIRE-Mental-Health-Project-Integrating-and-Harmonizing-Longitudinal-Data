@@ -25,12 +25,6 @@ Every dataset should be described using a JSON-LD script. The following properti
 
 ## Getting Started...
 
-# The INSPIRE DataHub Schema.org Guide
-
-## Let's begin...
-
-A `Dataset` in the INSPIRE DataHub is described using the following core properties.
-
 ### Standard Properties
 Standard properties including `name`, `description`, `dateCreated`, `dateModified`, `datePublished`, `license`, `citation`, `version`, `keywords`, `measurementTechnique`, `measurementMethod`, `creator`, `funder`, and `provider`.
 
