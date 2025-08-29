@@ -12,8 +12,8 @@ The goal is to make metadata standardized, discoverable, interoperable, and reus
 Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery
 - **DataCatalog** → Represents the staging database or hub.
 - **Dataset** → Describes individual longitudinal studies or waves.
- **variableMeasured** → Two types: `PropertyValue` (metadata about variables) and `StatisticalVariable` (for statistical measures). 
-- **DefinedTerm** → Connects variables to controlled vocabularies (DDI, OMOP, SNOMED, LOINC, etc.).
+- **variableMeasured** → Two types: `PropertyValue` (metadata about variables) and `StatisticalVariable` (for statistical measures). 
+- **DefinedTerm** → Connects variables to controlled vocabularies (SNOMED, LOINC, etc.).
 - **CreativeWork / ScholarlyArticle** → Links datasets to related publications.
 - **Person / Organization** → Identifies investigators, contributors, and funders.
 - **identifier (PropertyValue)** → Provides persistent identifiers (DOI, registry IDs)
