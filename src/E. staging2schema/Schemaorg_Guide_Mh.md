@@ -10,10 +10,6 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 >[!IMPORTANT]
 >We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
 
-## Purpose
-This guide provides a framework for creating `schema.org` metadata for datasets stored in the INSPIRE Network staging server, which hosts longitudinal mental health data and metadata.
-The goal is to make metadata standardized, discoverable, interoperable, and reusable, aligned with the FAIR principles.
-
 ## Core Dataset Properties for Discovery
 Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery
 - **DataCatalog** → Represents the staging database or hub.
@@ -28,24 +24,9 @@ Every dataset should be described using a JSON-LD script. The following properti
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
 
 Let's begin...
+A Dataset in the INSPIRE DataHub has standard properties such as 'name', 'description', 'dateCreated', 'dateModified', 'datePublished', 'license', 'citation', 'version', 'keywords', 'measurementTechnique', 'measurementMethod', 'creator', 'funder', and 'provider'. For an example of 'creator' using the 'Role' type, see the schema.org documentation or JSON-LD examples.
 
-A Dataset in the INSPIRE DataHub has the following standard properties:
 
-* `name`
-* `description`
-* `dateCreated`
-* `dateModified`
-* `datePublished`
-* `license`
-* `citation`
-* `version`
-* `keywords`
-* `measurementTechnique`
-* `measurementMethod`
-* `creator`
-* `funder`
-* `provider`
 
-For an example of `creator` using the `Role` type, see the schema.org documentation or JSON-LD examples.
 
 
