@@ -1,4 +1,4 @@
-# Schema.org Metadata Guide for Longitudinal Mental Health Data
+# Schema.org Guide for the INSPIRE MH DataHub
 
 ---
 > [!NOTE]
@@ -22,8 +22,6 @@ Every dataset should be described using a JSON-LD script. The following properti
 
 ![Schema.org Metadata Guide Illustration](../../images/SchemaGuide.png)
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
-
-# Schema.org Guide for the INSPIRE DataHub
 
 ## Let's begin...
 
