@@ -8,9 +8,6 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 >Entries are just the metadata. They describe the data but do not contain the sensitive patient-level information itself.
 
 >[!IMPORTANT]
->Entries must include instructions for retrieving the actual data or for requesting access through a governed process.
-
->[!WARNING]
 >We are in the process of identifying which properties are necessary and which are optional. This guide represents our current best practices.
 
 ## Purpose
