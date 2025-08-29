@@ -90,7 +90,7 @@ A downloadable form of this dataset, at a specific location, in a specific forma
     *   Takes a `SearchAction` when the distribution is retrieved through a service endpoint that takes query parameters. [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#accessing-data-through-a-service-endpoint). ***This is the preferred method for a staging server,** allowing for cohort exploration via tools like OHDSI ATLAS or FHIR APIs.*
 
 ### variableMeasured (The Core of Clinical Data)
-The `variableMeasured` property is the most important for clinical interoperability. It can take two forms, and the choice is critical:
+The `variableMeasured` property is the most important for clinical interoperability. It can take two forms, and the choice is critica
 
 #### 1. `PropertyValue` (For Individual-Level Clinical Concepts)
 **Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
@@ -100,28 +100,41 @@ The `variableMeasured` property is the most important for clinical interoperabil
 *   **`description`:** A human-readable definition of the variable.
 *   **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This provides the *what*.
 *   **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D", "Blood assay"). This describes the *how*.
-
-**Quantitative Variable Properties:**
 *   **`minValue` / `maxValue`:** For numeric variables, the theoretical or observed range.
-*   **`unitCode` (REQUIRED for measures):** **Use a URL from the QUDT (Quantity, Unit, Dimension and Type) ontology** to unambiguously define the unit. This ensures machine-actionability and prevents ambiguity. Browse units at the [QUDT Ontology Explorer](https://liusemweb.github.io/CEON/ontology/qudt/2.1/index.html).
+
+**Advanced QUDT Properties (Recommended for Quantitative Data):**
+For precise machine-interpretability of measurements, define the QUDT context and use its properties. This is superior to a simple `unitCode`.
+*   **`qudt:dataType`:** The XML Schema Definition (XSD) data type of the value (e.g., `xsd:decimal`, `xsd:integer`, `xsd:float`).
+*   **`qudt:quantityKind`:** The type of quantity being measured (e.g., `quantitykind:Concentration`, `quantitykind:Mass`, `quantitykind:Length`).
+*   **`qudt:unit`:** The specific unit of measurement from the QUDT vocabulary (e.g., `unit:MilliGM-PER-dL`, `unit:MilliMOL-PER-L`).
+
 *   **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`) or other context.
 
-**Example: A Machine-Readable Lab Measurement Variable**
+**Example: A Semantically Rich Lab Measurement Variable**
 ```json
 {
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "quantitykind": "http://qudt.org/vocab/quantitykind/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
   "@type": "PropertyValue",
-  "name": "glucose_serum_fasting",
-  "description": "Fasting serum glucose level.",
+  "name": "creatinine_serum",
+  "description": "The level of creatinine in the patient's blood, a key indicator of kidney function.",
   "valueReference": {
     "@type": "DefinedTerm",
     "inDefinedTermSet": "LOINC",
-    "termCode": "1558-6",
-    "name": "Glucose [Mass/volume] in Serum or Plasma"
+    "termCode": "2160-0",
+    "name": "Creatinine [Mass/volume] in Serum or Plasma"
   },
   "measurementTechnique": "Blood assay",
-  "minValue": 0,
-  "maxValue": 500,
-  "unitCode": "http://qudt.org/vocab/unit/MilliGM-PER-DL"
+  "minValue": 0.2,
+  "maxValue": 15.0,
+  "qudt:dataType": "xsd:decimal",
+  "qudt:quantityKind": "quantitykind:Concentration",
+  "qudt:unit": "unit:MilliGM-PER-dL"
 }
 ### Summary of Use Cases
 
