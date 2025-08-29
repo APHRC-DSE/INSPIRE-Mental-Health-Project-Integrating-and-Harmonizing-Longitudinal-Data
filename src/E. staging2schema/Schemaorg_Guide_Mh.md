@@ -149,8 +149,4 @@ For precise machine-interpretability of measurements, define the QUDT context an
 
 ### Summary of Use Cases
 
-| Your Data Is... | Use This Type | Example |
-| :--- | :--- | :--- |
-| **Individual-level** measurements | `PropertyValue` | A patient's PHQ-9 score, a diagnosis code, a lab value. |
-| **Aggregate** statistics | `StatisticalVariable` | The prevalence of MDD in 2022, the average HbA1c by region. |
 
