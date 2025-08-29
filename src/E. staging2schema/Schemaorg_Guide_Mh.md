@@ -135,6 +135,7 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:quantityKind": "quantitykind:Concentration",
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
+   ```
 
 2.  **`StatisticalVariable` (For Aggregate / Derived Measures):**
     *   **Use this for:** Variables that represent summarized or aggregated statistics about a population, **not** individual measurements (e.g., `prevalence_of_mdd`, `mean_phq9_score`).
@@ -145,7 +146,7 @@ For precise machine-interpretability of measurements, define the QUDT context an
         - A `timePeriod` `PropertyValue` (e.g., "Baseline").
         - A `populationGroup` `PropertyValue` (e.g., "age_12_18").
 
-   ```
+
 ### Summary of Use Cases
 
 | Your Data Is... | Use This Type | Example |
