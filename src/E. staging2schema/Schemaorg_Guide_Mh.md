@@ -147,6 +147,5 @@ For precise machine-interpretability of measurements, define the QUDT context an
         - A `populationGroup` `PropertyValue` (e.g., "age_12_18").
 
 
-### Summary of Use Cases
 
 
