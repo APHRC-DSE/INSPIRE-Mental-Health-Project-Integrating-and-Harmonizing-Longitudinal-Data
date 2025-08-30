@@ -13,6 +13,8 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 
 ---
+## Table of Contents
+- [Introduction](#introduction)
 - [Core Dataset Properties for Discovery](#core-dataset-properties-for-discovery)
 - [Getting Started](#getting-started)
   - [Standard Properties](#standard-properties)
@@ -20,6 +22,7 @@ Entries have properties based on the schema.org Dataset type which borrows from 
   - [includedInDataCatalog](#includedindatacatalog)
   - [isBasedOn](#isbasedon)
   - [subjectOf](#subjectof)
+  - [about](#about-linking-datasets-to-concepts-events-and-actions)
   - [spatialCoverage](#spatialcoverage)
   - [temporalCoverage](#temporalcoverage)
   - [distribution](#distribution)
@@ -30,6 +33,7 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 - [Access, Licensing, and Governance](#access-licensing-and-governance)
 - [Provenance and Versioning](#provenance-and-versioning)
 - [Checklist / Cheatsheet](#checklist--cheatsheet)
+
 
 ---
 
