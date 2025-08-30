@@ -73,7 +73,7 @@ Represents the primary entity the dataset describes. Usually `Person` (patient) 
   "name": "cohort_definition",
   "value": "Adolescents aged 12-18 with a primary diagnosis of major depressive disorder"
 }
-
+```
 ...
 
 ### Embed in a Data Catalog (includedInDataCatalog)
@@ -180,7 +180,7 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:quantityKind": "quantitykind:Concentration",
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
-
+```
 ### Use StatisticalVariable for Aggregate Measures
 
 ## Model Variables Properly (`variableMeasured`)
