@@ -212,15 +212,15 @@ For precise machine-interpretability of measurements, define the QUDT context an
 ### Describe About, Events, and Actions
 This section explains how to semantically capture **dataset topics**, **key milestones**, and **workflow/process provenance** for the staging database.
 
-#### `about` – Dataset Content / Topics
-- **Property:** `about`  
-- **Value Type:** `Thing` (typically `DefinedTerm` or `CategoryCode`)  
-- **Purpose:** Links the dataset to the primary subjects it describes (e.g., mental health conditions, interventions, or study domains).
+- #### `about` – Dataset Content / Topics
+  - **Property:** `about`  
+  - **Value Type:** `Thing` (typically `DefinedTerm` or `CategoryCode`)  
+  - **Purpose:** Links the dataset to the primary subjects it describes (e.g., mental health conditions, interventions, or study domains).
 
-#### Event – Significant Milestones
-- **Property:** `subjectOf`  
-- **Value Type:** `Event`  
-- **Purpose:** Captures key events in the dataset lifecycle, such as data collection periods, study enrollment windows, or data release milestones.
+- #### Event – Significant Milestones
+  - **Property:** `subjectOf`  
+  - **Value Type:** `Event`  
+  - **Purpose:** Captures key events in the dataset lifecycle, such as data collection periods, study enrollment windows, or data release milestones.
 
 #### Action – Workflows and Processes
 - **Property:** `actionableWorkflow` (planned workflows) or `prov:wasGeneratedBy` (executed processes)  
