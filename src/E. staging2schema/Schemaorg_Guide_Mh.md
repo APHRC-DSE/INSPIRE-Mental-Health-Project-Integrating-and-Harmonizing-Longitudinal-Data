@@ -222,19 +222,18 @@ This section explains how to semantically capture **dataset topics**, **key mile
   - **Value Type:** `Event`  
   - **Purpose:** Captures key events in the dataset lifecycle, such as data collection periods, study enrollment windows, or data release milestones.
 
-#### Action – Workflows and Processes
-- **Property:** `actionableWorkflow` (planned workflows) or `prov:wasGeneratedBy` (executed processes)  
-- **Value Type:** `Action` (Schema.org) or `prov:Activity` (PROV-O)  
-- **Purpose:** Describes data processing steps that transform raw data into curated datasets or the staging database.
+- #### Action – Workflows and Processes
+  - **Property:** `actionableWorkflow` (planned workflows) or `prov:wasGeneratedBy` (executed processes)  
+  - **Value Type:** `Action` (Schema.org) or `prov:Activity` (PROV-O)  
+  - **Purpose:** Describes data processing steps that transform raw data into curated datasets or the staging database.
 
-Each Action typically includes:
-- **object:** The input dataset or resource.  
-- **result:** The output dataset (e.g., curated staging DB).  
-- **instrument:** The `SoftwareApplication` used to perform the processing step.
-
-##### Reference Links
-- Schema.org `Action` & `about`: [https://schema.org/Action](https://schema.org/Action)  
-- PROV-O ontology: [https://www.w3.org/TR/prov-o/](https://www.w3.org/TR/prov-o/)  
+- Each Action typically includes:
+  - **object:** The input dataset or resource.  
+  - **result:** The output dataset (e.g., curated staging DB).  
+  - **instrument:** The `SoftwareApplication` used to perform the processing step.
+- ##### Reference Links
+  - Schema.org `Action` & `about`: [https://schema.org/Action](https://schema.org/Action)  
+  - PROV-O ontology: [https://www.w3.org/TR/prov-o/](https://www.w3.org/TR/prov-o/)  
 
 
 ### Assign Persistent Identifiers (identifier)
