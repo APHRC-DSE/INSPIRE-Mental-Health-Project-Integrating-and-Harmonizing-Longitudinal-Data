@@ -13,30 +13,6 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 
 ---
-## Table of Contents
-- [Understand the Purpose (Introduction)](#understand-the-purpose-introduction)
-- [Capture Core Discovery Metadata](#capture-core-discovery-metadata)
-- [Start with the Dataset Backbone](#start-with-the-dataset-backbone)
-  - [Define Standard Properties](#define-standard-properties)
-  - [Link the Main Entity](#link-the-main-entity)
-  - [Embed in a Data Catalog](#embed-in-a-data-catalog)
-  - [Reference Source Material](#reference-source-material)
-  - [Connect to Related Works](#connect-to-related-works)
-  - [Specify Spatial Coverage](#specify-spatial-coverage)
-  - [Specify Temporal Coverage](#specify-temporal-coverage)
-  - [Define Distribution Channels](#define-distribution-channels)
-- [Model Variables Properly](#model-variables-properly)
-  - [Use PropertyValue for Clinical Concepts](#use-propertyvalue-for-clinical-concepts)
-  - [Use StatisticalVariable for Aggregate Measures](#use-statisticalvariable-for-aggregate-measures)
-  - [Add Patient-Reported Outcomes (PRO) Example](#add-patient-reported-outcomes-pro-example)
-- [Describe About, Events, and Actions](#describe-about-events-and-actions)
-- [Assign Persistent Identifiers](#assign-persistent-identifiers)
-- [Declare Access, Licensing, and Governance](#declare-access-licensing-and-governance)
-- [Record Provenance and Versioning](#record-provenance-and-versioning)
-- [Use the Checklist Before Publishing](#use-the-checklist-before-publishing)
----
-## Table of Contents
-
 - Understand the Purpose (Introduction)  
 - Capture Core Discovery Metadata  
 - Start with the Dataset Backbone  
@@ -56,12 +32,12 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 - Assign Persistent Identifiers (`identifier`)  
 - Declare Access, Licensing, and Governance (`license`, `provider`, `funder`)  
 - Record Provenance and Versioning (`isBasedOn`, `prov:wasDerivedFrom`)  
-- Use the Checklist Before Publishing  
+- Use the Checklist Before Publishing 
 
 ---
+## Understand the Purpose (Introduction)
 
-## Core Dataset Properties for Discovery
-Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery
+Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery:
 - **DataCatalog** → Represents the staging database or hub.
 - **Dataset** → Describes individual longitudinal studies or waves.
 - **variableMeasured** → Two types: `PropertyValue` (metadata about variables) and `StatisticalVariable` (for statistical measures). 
@@ -70,8 +46,38 @@ Every dataset should be described using a JSON-LD script. The following properti
 - **Person / Organization** → Identifies investigators, contributors, and funders.
 - **identifier (PropertyValue)** → Provides persistent identifiers (DOI, registry IDs)
 
-![Schema.org Metadata Guide Illustration](../../images/SchemaGuide.png)
+![Schema.org Metadata Guide Illustration](../../images/SchemaGuide.png)  
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
+
+---
+
+## Capture Core Discovery Metadata
+Core metadata supports dataset discovery, indexing, and FAIR principles.  
+
+
+---
+
+## Start with the Dataset Backbone
+
+### Define Standard Properties (`name`, `description`, `keywords`, etc.)
+Standard properties including `name`, `description`, `dateCreated`, `dateModified`, `datePublished`, `license`, `citation`, `version`, `keywords`, `measurementTechnique`, `measurementMethod`, `creator`, `funder`, and `provider`.
+
+* **For `creator` and `contributor`:** Use the `Role` pattern to specify detailed contributor roles (e.g., "Principal Investigator", "Data Curator"). [See here for a detailed example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people).  
+* **For `citation`:** If a publication describes the dataset or its methodology, use a `ScholarlyArticle` object instead of plain text to create a rich, machine-readable link. *Example: The [INSPIRE methodology paper](https://doi.org/10.3389/fdata.2024.1435510) should be cited this way.*  
+
+### Link the Main Entity (`mainEntity`)
+Indicates the primary entity described in the dataset. For clinical data, this is overwhelmingly the **`Person`** (the patient or research subject).  
+
+* Use `additionalProperty` to describe the cohort definition.  
+* **INSPIRE Recommendation:** Add a `PropertyValue` with `name="cohort_definition"`
+
+
+
+
+
+
+
+
 
 ## Getting Started...
 
