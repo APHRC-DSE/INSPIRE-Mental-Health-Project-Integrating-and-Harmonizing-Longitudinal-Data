@@ -13,26 +13,26 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 
 ---
-- Understand the Purpose (Introduction)  
-- Capture Core Discovery Metadata  
-- Start with the Dataset Backbone  
-  - Define Standard Properties (`name`, `description`, `keywords`, etc.)  
-  - Link the Main Entity (`mainEntity`)  
-  - Embed in a Data Catalog (`includedInDataCatalog`)  
-  - Reference Source Material (`isBasedOn`)  
-  - Connect to Related Works (`subjectOf`)  
-  - Specify Spatial Coverage (`spatialCoverage`)  
-  - Specify Temporal Coverage (`temporalCoverage`)  
-  - Define Distribution Channels (`distribution`)  
-- Model Variables Properly (`variableMeasured`)  
-  - Use `PropertyValue` for Individual-Level Clinical Concepts  
-  - Use `StatisticalVariable` for Aggregate / Derived Measures  
-  - Add Patient-Reported Outcomes (PRO) Example with `PropertyValue` + `DefinedTerm`  
-- Describe About, Events, and Actions (`about`, `Event`, `Action`, `SoftwareApplication`)  
-- Assign Persistent Identifiers (`identifier`)  
-- Declare Access, Licensing, and Governance (`license`, `provider`, `funder`)  
-- Record Provenance and Versioning (`isBasedOn`, `prov:wasDerivedFrom`)  
-- Use the Checklist Before Publishing 
+## Table of Contents
+
+- Define Standard Properties (`name`, `description`, `keywords`, etc.) → [Go to section](#define-standard-properties-name-description-keywords)
+- Link the Main Entity (`mainEntity`) → [Go to section](#link-the-main-entity-mainentity)
+- Embed in a Data Catalog (`includedInDataCatalog`) → [Go to section](#embed-in-a-data-catalog-includedindatacatalog)
+- Reference Source Material (`isBasedOn`) → [Go to section](#reference-source-material-isbasedon)
+- Connect to Related Works (`subjectOf`) → [Go to section](#connect-to-related-works-subjectof)
+- Specify Spatial Coverage (`spatialCoverage`) → [Go to section](#specify-spatial-coverage-spatialcoverage)
+- Specify Temporal Coverage (`temporalCoverage`) → [Go to section](#specify-temporal-coverage-temporalcoverage)
+- Define Distribution Channels (`distribution`) → [Go to section](#define-distribution-channels-distribution)
+- Model Variables Properly (`variableMeasured`) → [Go to section](#model-variables-properly-variablemeasured)
+  - Use PropertyValue for Individual-Level Clinical Concepts → [Go to section](#use-propertyvalue-for-individual-level-clinical-concepts)
+  - Use StatisticalVariable for Aggregate Measures → [Go to section](#use-statisticalvariable-for-aggregate-measures)
+  - Add Patient-Reported Outcomes (PRO) Example → [Go to section](#add-patient-reported-outcomes-pro-example)
+- Describe About, Events, and Actions → [Go to section](#describe-about-events-and-actions)
+- Assign Persistent Identifiers (`identifier`) → [Go to section](#assign-persistent-identifiers-identifier)
+- Declare Access, Licensing, and Governance → [Go to section](#declare-access-licensing-and-governance)
+- Record Provenance and Versioning → [Go to section](#record-provenance-and-versioning)
+- Use the Checklist Before Publishing → [Go to section](#use-the-checklist-before-publishing)
+ 
 
 ---
 ## Understand the Purpose (Introduction)
