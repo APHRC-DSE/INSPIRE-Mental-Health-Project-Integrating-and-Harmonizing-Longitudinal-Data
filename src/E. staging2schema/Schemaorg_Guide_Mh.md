@@ -50,55 +50,162 @@ Every dataset should be described using a JSON-LD script. The following properti
 
 ![Schema.org Metadata Guide Illustration](../../images/SchemaGuide.png)
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
-...
+
 
 ## Getting Started...
 
-...
 
-## Start with the Dataset Backbone
+### Define Standard Properties (`name`, `description`, `keywords`, etc.)
+Standard properties including `name`, `description`, `dateCreated`, `dateModified`, `datePublished`, `license`, `citation`, `version`, `keywords`, `measurementTechnique`, `measurementMethod`, `creator`, `funder`, and `provider`.
 
-### Define Standard Properties (name, description, keywords)
+*   **For `creator` and `contributor`:** Use the `Role` pattern for detailed contributor roles. [Example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people)  
+*   **For `citation`:** Use `ScholarlyArticle` objects for publications linked to the dataset.  
 
-...
 
 ### Link the Main Entity (mainEntity)
+Represents the primary entity the dataset describes. Usually `Person` (patient) in clinical datasets.
+
+*   Use `additionalProperty` to describe cohort definitions.  
+*   Example:
+```json
+{
+  "@type": "PropertyValue",
+  "name": "cohort_definition",
+  "value": "Adolescents aged 12-18 with a primary diagnosis of major depressive disorder"
+}
 
 ...
 
 ### Embed in a Data Catalog (includedInDataCatalog)
+A data catalog which contains this dataset.
 
-...
+*   **Our data catalog is named the `INSPIRE DataHub`.**
+    ```json
+    "includedInDataCatalog": {
+      "@type": "DataCatalog",
+      "name": "INSPIRE DataHub",
+      "url": "https://datahub.inspirenetwork.org"
+    }
+    ```
 
 ### Reference Source Material (isBasedOn)
+A resource from which this work is derived or a modification/adaptation. This is **critical for provenance**.
 
-...
+*   Can take the form of an array of resources. For INSPIRE, this typically includes:
+    1.  **Source raw data** (e.g., `{"@type": "Dataset", "name": "Raw EHR Export from Site A"}`).
+    2.  **Study Protocol** (e.g., `{"@type": "CreativeWork", "name": "INSPIRE Study Protocol v2.1", "version": "2.1"}`).
+    3.  **A previous version** of the dataset.
+*   See [here](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#indicating-a-source-dataset-schemaisbasedon-and-provwasderivedfrom) for an example. We also recommend using `prov:wasDerivedFrom` from the PROV ontology for stronger provenance semantics.
+
+
 
 ### Connect to Related Works (subjectOf)
+A `Claim` about this dataset. Think of the `Claim(s)` a Dataset makes as its **hypotheses or primary research questions**.
 
-...
+*   Minimally, a claim has an `appearance` that indicates an occurrence in some `CreativeWork` (e.g., a pre-registration, published paper).
+*   Can take the form of an array of claims.
+*   **INSPIRE Recommendation:** Use this to link the data to the research questions it aims to answer, enhancing scientific clarity.
+
+
 
 ### Specify Spatial Coverage (spatialCoverage)
 
-...
+The spatial coverage of a CreativeWork takes the place(s) which are the focus of the content.
+
+*   A spatialCoverage may take an array of `Place` for multi-site studies.
+*   A `Place` takes a `name`, a `description`, and a `geo`.
+*   A `geo`, in turn, takes:
+    *   `GeoCoordinates` ([See example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geocoordinates-for-point-locations)) for specific site locations.
+    *   `GeoShape` ([See example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geoshape-for-all-other-location-types)) for representing catchment areas.
+*   Use `additionalProperty` to identify the spatial reference system (e.g., WGS84). [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#spatial-reference-systems).
 
 ### Specify Temporal Coverage (temporalCoverage)
+`temporalCoverage` is expressed in ISO 8601 format. For longitudinal studies, use a date interval.
 
-...
+*   **Example:** `"2018-01-01/2023-12-31"`
+*   **For individual variables,** use `variableMeasured[*].additionalProperty` to specify `timepoint` or `assessmentDate` for each measurement wave, providing granular temporal context.
+
 
 ### Define Distribution Channels (distribution)
 
-...
+A downloadable form of this dataset, at a specific location, in a specific format.
 
-## Model Variables Properly (variableMeasured)
+*   **Takes either a `DataDownload` or a `SearchAction`**.
+    *   Takes a `DataDownload` when a distribution can be retrieved by a URL. [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#distributions). *Suitable for aggregate data packages.*
+    *   Takes a `SearchAction` when the distribution is retrieved through a service endpoint that takes query parameters. [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#accessing-data-through-a-service-endpoint). ***This is the preferred method for a staging server,** allowing for cohort exploration via tools like OHDSI ATLAS or FHIR APIs.*
 
-### Use PropertyValue for Individual-Level Clinical Concepts
 
-...
+## Model Variables Properly (`variableMeasured`)
+
+### Use `PropertyValue` for Individual-Level Clinical Concepts
+**Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
+
+**Core Properties:**
+*   **`name`:** The variable name (e.g., `phq9_total_score`, `fasting_glucose`).
+*   **`description`:** A human-readable definition of the variable.
+*   **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This provides the *what*.
+*   **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D", "Blood assay"). This describes the *how*.
+*   **`minValue` / `maxValue`:** For numeric variables, the theoretical or observed range.
+
+**Advanced QUDT Properties (Recommended for Quantitative Data):**
+For precise machine-interpretability of measurements, define the QUDT context and use its properties. This is superior to a simple `unitCode`.
+*   **`qudt:dataType`:** The XML Schema Definition (XSD) data type of the value (e.g., `xsd:decimal`, `xsd:integer`, `xsd:float`).
+*   **`qudt:quantityKind`:** The type of quantity being measured (e.g., `quantitykind:Concentration`, `quantitykind:Mass`, `quantitykind:Length`).
+*   **`qudt:unit`:** The specific unit of measurement from the QUDT vocabulary (e.g., `unit:MilliGM-PER-dL`, `unit:MilliMOL-PER-L`).
+
+*   **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`) or other context.
+
+**Example:**
+```json
+{
+  "@context": {
+    "qudt": "http://qudt.org/schema/qudt/",
+    "quantitykind": "http://qudt.org/vocab/quantitykind/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "PropertyValue",
+  "name": "creatinine",
+  "description": "The level of creatinine in the patient's blood indicates kidney function",
+  "valueReference": {
+    "@type": "DefinedTerm",
+    "inDefinedTermSet": "LOINC",
+    "termCode": "2160-0",
+    "name": "Creatinine [Mass/volume] in Serum or Plasma"
+  },
+  "measurementTechnique": "Blood assay",
+  "minValue": 0.2,
+  "maxValue": 15.0,
+  "qudt:dataType": "xsd:decimal",
+  "qudt:quantityKind": "quantitykind:Concentration",
+  "qudt:unit": "unit:MilliGM-PER-dL"
+}
 
 ### Use StatisticalVariable for Aggregate Measures
 
-...
+## Model Variables Properly (`variableMeasured`)
+
+### Use `PropertyValue` for Individual-Level Clinical Concepts
+
+**Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
+
+**Core Properties:**
+
+* **`name`:** The variable name (e.g., `phq9_total_score`, `fasting_glucose`).
+* **`description`:** A human-readable definition of the variable.
+* **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This provides the *what*.
+* **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D", "Blood assay"). This describes the *how*.
+* **`minValue` / `maxValue`:** For numeric variables, the theoretical or observed range.
+
+**Advanced QUDT Properties (Recommended for Quantitative Data):**
+For precise machine-interpretability of measurements, define the QUDT context and use its properties. This is superior to a simple `unitCode`.
+
+* **`qudt:dataType`:** The XML Schema Definition (XSD) data type of the value (e.g., `xsd:decimal`, `xsd:integer`, `xsd:float`).
+* **`qudt:quantityKind`:** The type of quantity being measured (e.g., `quantitykind:Concentration`, `quantitykind:Mass`, `quantitykind:Length`).
+* **`qudt:unit`:** The specific unit of measurement from the QUDT vocabulary (e.g., `unit:MilliGM-PER-dL`, `unit:MilliMOL-PER-L`).
+* **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`) or other context.
+
+
 
 ### Add Patient-Reported Outcomes (PRO) Example
 
