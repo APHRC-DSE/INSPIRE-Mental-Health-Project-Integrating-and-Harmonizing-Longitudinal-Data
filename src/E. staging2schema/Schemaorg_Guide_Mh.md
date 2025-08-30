@@ -13,7 +13,7 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 
 ---
-## Table of Contents
+### Table of Contents
 - [Capture Core Discovery Metadata](#capture-core-discovery-metadata)  
 - [Getting Started](#getting-started)
 - [Capture Core Discovery Metadata](#capture-core-discovery-metadata)
@@ -37,7 +37,7 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 - [Use the Checklist Before Publishing](#use-the-checklist-before-publishing)
 
 --- 
-## Capture Core Discovery Metadata
+### Capture Core Discovery Metadata
 
 Every dataset should be described using a JSON-LD script. The following properties are essential for basic discovery
 - **DataCatalog** → Represents the staging database or hub.
@@ -52,7 +52,7 @@ Every dataset should be described using a JSON-LD script. The following properti
 *Figure 1: A conceptual diagram of the core schema.org types and their relationships for describing datasets.*
 
 
-## Getting Started...
+### Getting Started...
 
 
 ### Define Standard Properties (`name`, `description`, `keywords`, etc.)
@@ -135,9 +135,9 @@ A downloadable form of this dataset, at a specific location, in a specific forma
     *   Takes a `SearchAction` when the distribution is retrieved through a service endpoint that takes query parameters. [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#accessing-data-through-a-service-endpoint). ***This is the preferred method for a staging server,** allowing for cohort exploration via tools like OHDSI ATLAS or FHIR APIs.*
 
 
-## Model Variables Properly (`variableMeasured`)
+### Model Variables Properly (`variableMeasured`)
 
-### Use `PropertyValue` for Individual-Level Clinical Concepts
+#### Use `PropertyValue` for Individual-Level Clinical Concepts
 **Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
 
 **Core Properties:**
@@ -181,7 +181,7 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
 ```
-### Use StatisticalVariable for Aggregate Measures
+#### Use StatisticalVariable for Aggregate Measures
 
 ## Model Variables Properly (`variableMeasured`)
 
@@ -207,27 +207,27 @@ For precise machine-interpretability of measurements, define the QUDT context an
 
 
 
-### Add Patient-Reported Outcomes (PRO) Example
+#### Add Patient-Reported Outcomes (PRO) Example
 
 ...
 
-## Describe About, Events, and Actions
+### Describe About, Events, and Actions
 
 ...
 
-## Assign Persistent Identifiers (identifier)
+### Assign Persistent Identifiers (identifier)
 
 ...
 
-## Declare Access, Licensing, and Governance
+### Declare Access, Licensing, and Governance
 
 ...
 
-## Record Provenance and Versioning
+### Record Provenance and Versioning
 
 ...
 
-## Use the Checklist Before Publishing
+### Use the Checklist Before Publishing
 
 ...
 
