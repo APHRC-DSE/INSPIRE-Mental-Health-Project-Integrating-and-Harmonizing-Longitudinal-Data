@@ -181,29 +181,17 @@ For precise machine-interpretability of measurements, define the QUDT context an
   "qudt:unit": "unit:MilliGM-PER-dL"
 }
 ```
-#### Use StatisticalVariable for Aggregate Measures
+#### Use `StatisticalVariable` for Aggregate Measures
 
-## Model Variables Properly (`variableMeasured`)
+  *   **Use this for:** Variables that represent summarized or aggregated statistics about a population, **not** individual measurements (e.g., `prevalence_of_mdd`, `mean_phq9_score`).
+    *   **`statType`:** The type of statistic (e.g., `mean`, `median`, `count`, `prevalence`).
+    *   **`measuredProperty`:** The underlying clinical property the statistic is about (e.g., "Major depressive disorder"). This should also be a `DefinedTerm`.
+    *   **`constraintProperty`:** An array of `PropertyValue` objects that **disaggregate** the statistic (e.g., by `timePeriod`, `ageGroup`, `sex`). This corresponds to a `DataStructureDefinition` in an SDMX data cube.
+    *   **As a rule, a `StatisticalVariable` in clinical research has at least two constraints:**
+        - A `timePeriod` `PropertyValue` (e.g., "Baseline").
+        - A `populationGroup` `PropertyValue` (e.g., "age_12_18").
 
-### Use `PropertyValue` for Individual-Level Clinical Concepts
 
-**Use this for:** Direct measurements, observations, or concepts recorded for each individual subject.
-
-**Core Properties:**
-
-* **`name`:** The variable name (e.g., `phq9_total_score`, `fasting_glucose`).
-* **`description`:** A human-readable definition of the variable.
-* **`valueReference` (CRUCIAL):** Use `DefinedTerm` to **semantically anchor** the variable to a concept in a **controlled vocabulary** (OMOP, SNOMED, LOINC, DDI). This provides the *what*.
-* **`measurementTechnique`:** The instrument or method (e.g., "PHQ-9", "HAM-D", "Blood assay"). This describes the *how*.
-* **`minValue` / `maxValue`:** For numeric variables, the theoretical or observed range.
-
-**Advanced QUDT Properties (Recommended for Quantitative Data):**
-For precise machine-interpretability of measurements, define the QUDT context and use its properties. This is superior to a simple `unitCode`.
-
-* **`qudt:dataType`:** The XML Schema Definition (XSD) data type of the value (e.g., `xsd:decimal`, `xsd:integer`, `xsd:float`).
-* **`qudt:quantityKind`:** The type of quantity being measured (e.g., `quantitykind:Concentration`, `quantitykind:Mass`, `quantitykind:Length`).
-* **`qudt:unit`:** The specific unit of measurement from the QUDT vocabulary (e.g., `unit:MilliGM-PER-dL`, `unit:MilliMOL-PER-L`).
-* **`additionalProperty`:** For longitudinal metadata (`timepoint`, `wave`, `protocolVersion`) or other context.
 
 
 
