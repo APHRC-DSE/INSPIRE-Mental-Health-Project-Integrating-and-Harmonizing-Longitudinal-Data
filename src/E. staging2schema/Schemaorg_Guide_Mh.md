@@ -16,8 +16,6 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 ### Table of Contents
 - [Capture Core Discovery Metadata](#capture-core-discovery-metadata)  
 - [Getting Started](#getting-started)
-- [Define Standard Properties](#capture-core-discovery-metadata)
-- [Start with the Dataset Backbone](#start-with-the-dataset-backbone)
 - [Define Standard Properties](#define-standard-properties-name-description-keywords) (`name`, `description`, `keywords`, etc.)
 - [Link the Main Entity](#link-the-main-entity-mainentity) (`mainEntity`)
 - [Embed in a Data Catalog](#embed-in-a-data-catalog-includedindatacatalog) (`includedInDataCatalog`)
