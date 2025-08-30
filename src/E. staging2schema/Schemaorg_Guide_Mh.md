@@ -102,26 +102,37 @@ A `Claim` about this dataset. Think of the `Claim(s)` a Dataset makes as its **h
 
 *   Minimally, a claim has an `appearance` that indicates an occurrence in some `CreativeWork` (e.g., a pre-registration, published paper).
 *   Can take the form of an array of claims.
-*   **INSPIRE Recommendation:** Use this to link the data to the research questions it aims to answer, enhancing scientific clarity.
+
 
 
 
 ### Specify Spatial Coverage (spatialCoverage)
 
-The spatial coverage of a CreativeWork takes the place(s) which are the focus of the content.
+Indicates study locations.
 
-*   A spatialCoverage may take an array of `Place` for multi-site studies.
-*   A `Place` takes a `name`, a `description`, and a `geo`.
-*   A `geo`, in turn, takes:
-    *   `GeoCoordinates` ([See example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geocoordinates-for-point-locations)) for specific site locations.
-    *   `GeoShape` ([See example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geoshape-for-all-other-location-types)) for representing catchment areas.
-*   Use `additionalProperty` to identify the spatial reference system (e.g., WGS84). [See here for an example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#spatial-reference-systems).
+- Can include multiple `Place` entries for multi-site studies.  
+- Each `Place` includes:
+  - `name`
+  - `description`
+  - `geo`
 
-### Specify Temporal Coverage (temporalCoverage)
-`temporalCoverage` is expressed in ISO 8601 format. For longitudinal studies, use a date interval.
+The `geo` property can take one of the following:
 
-*   **Example:** `"2018-01-01/2023-12-31"`
-*   **For individual variables,** use `variableMeasured[*].additionalProperty` to specify `timepoint` or `assessmentDate` for each measurement wave, providing granular temporal context.
+- `GeoCoordinates` ([See Example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geocoordinates-for-point-locations))  
+- `GeoShape` ([See Example](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#use-geoshape-for-all-other-location-types))  
+
+Use `additionalProperty` to indicate the spatial reference system (e.g., WGS84).
+
+### Specify Temporal Coverage (`temporalCoverage`)
+
+Indicates the time period that the dataset applies to. Expressed in **ISO 8601 format**.
+
+- For longitudinal studies, use a **date interval**.
+  - **Example:** `"2018-01-01/2023-12-31"`
+- Open-ended date ranges can be indicated using `".."` for the unknown end.
+  - **Example:** `"2015-11/.."` (starts in November 2015, end date unspecified)
+- **For individual variables**, use `variableMeasured[*].additionalProperty` to specify `timepoint` or `assessmentDate` for each measurement wave, providing **granular temporal context**.
+
 
 
 ### Define Distribution Channels (distribution)
