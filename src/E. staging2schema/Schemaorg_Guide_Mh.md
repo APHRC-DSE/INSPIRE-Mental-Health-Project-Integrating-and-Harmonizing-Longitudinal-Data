@@ -14,26 +14,49 @@ Entries have properties based on the schema.org Dataset type which borrows from 
 
 ---
 ## Table of Contents
-- [Introduction](#introduction)
-- [Core Dataset Properties for Discovery](#core-dataset-properties-for-discovery)
-- [Getting Started](#getting-started)
-  - [Standard Properties](#standard-properties)
-  - [mainEntity](#mainentity)
-  - [includedInDataCatalog](#includedindatacatalog)
-  - [isBasedOn](#isbasedon)
-  - [subjectOf](#subjectof)
-  - [about](#about-linking-datasets-to-concepts-events-and-actions)
-  - [spatialCoverage](#spatialcoverage)
-  - [temporalCoverage](#temporalcoverage)
-  - [distribution](#distribution)
-- [variableMeasured (The Core of Clinical Data)](#variablemeasured-the-core-of-clinical-data)
-  - [PropertyValue (Individual-Level)](#1-propertyvalue-for-individual-level-clinical-concepts)
-  - [StatisticalVariable (Aggregate Measures)](#2-statisticalvariable-for-aggregate--derived-measures)
-- [Persistent Identifiers](#persistent-identifiers)
-- [Access, Licensing, and Governance](#access-licensing-and-governance)
-- [Provenance and Versioning](#provenance-and-versioning)
-- [Checklist / Cheatsheet](#checklist--cheatsheet)
+- [Understand the Purpose (Introduction)](#understand-the-purpose-introduction)
+- [Capture Core Discovery Metadata](#capture-core-discovery-metadata)
+- [Start with the Dataset Backbone](#start-with-the-dataset-backbone)
+  - [Define Standard Properties](#define-standard-properties)
+  - [Link the Main Entity](#link-the-main-entity)
+  - [Embed in a Data Catalog](#embed-in-a-data-catalog)
+  - [Reference Source Material](#reference-source-material)
+  - [Connect to Related Works](#connect-to-related-works)
+  - [Specify Spatial Coverage](#specify-spatial-coverage)
+  - [Specify Temporal Coverage](#specify-temporal-coverage)
+  - [Define Distribution Channels](#define-distribution-channels)
+- [Model Variables Properly](#model-variables-properly)
+  - [Use PropertyValue for Clinical Concepts](#use-propertyvalue-for-clinical-concepts)
+  - [Use StatisticalVariable for Aggregate Measures](#use-statisticalvariable-for-aggregate-measures)
+  - [Add Patient-Reported Outcomes (PRO) Example](#add-patient-reported-outcomes-pro-example)
+- [Describe About, Events, and Actions](#describe-about-events-and-actions)
+- [Assign Persistent Identifiers](#assign-persistent-identifiers)
+- [Declare Access, Licensing, and Governance](#declare-access-licensing-and-governance)
+- [Record Provenance and Versioning](#record-provenance-and-versioning)
+- [Use the Checklist Before Publishing](#use-the-checklist-before-publishing)
+---
+## Table of Contents
 
+- Understand the Purpose (Introduction)  
+- Capture Core Discovery Metadata  
+- Start with the Dataset Backbone  
+  - Define Standard Properties (`name`, `description`, `keywords`, etc.)  
+  - Link the Main Entity (`mainEntity`)  
+  - Embed in a Data Catalog (`includedInDataCatalog`)  
+  - Reference Source Material (`isBasedOn`)  
+  - Connect to Related Works (`subjectOf`)  
+  - Specify Spatial Coverage (`spatialCoverage`)  
+  - Specify Temporal Coverage (`temporalCoverage`)  
+  - Define Distribution Channels (`distribution`)  
+- Model Variables Properly (`variableMeasured`)  
+  - Use `PropertyValue` for Individual-Level Clinical Concepts  
+  - Use `StatisticalVariable` for Aggregate / Derived Measures  
+  - Add Patient-Reported Outcomes (PRO) Example with `PropertyValue` + `DefinedTerm`  
+- Describe About, Events, and Actions (`about`, `Event`, `Action`, `SoftwareApplication`)  
+- Assign Persistent Identifiers (`identifier`)  
+- Declare Access, Licensing, and Governance (`license`, `provider`, `funder`)  
+- Record Provenance and Versioning (`isBasedOn`, `prov:wasDerivedFrom`)  
+- Use the Checklist Before Publishing  
 
 ---
 
