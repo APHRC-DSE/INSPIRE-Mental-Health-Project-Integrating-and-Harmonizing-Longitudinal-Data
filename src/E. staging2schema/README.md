@@ -32,9 +32,9 @@ Follow this sequence to navigate the materials effectively:
 
 ####  💡 Tips
 
-- Start with **📝 checklist** to understand key properties.  
-- Use **📖 full guide** to deepen knowledge of each property.  
-- Explore **⚙️ metadata extraction** and **💻 JSON-LD conversion scripts** to see practical implementation.  
-- Review **🔎 JSON-LD graph concepts** to understand how entities and relationships are represented for machine-readability.
+- Start with **checklist** to understand key properties.  
+- Use **full guide** to deepen knowledge of each property.  
+- Explore **metadata extraction** and **💻 JSON-LD conversion scripts** to see practical implementation.  
+- Review **JSON-LD graph concepts** to understand how entities and relationships are represented for machine-readability.
 
 ---
