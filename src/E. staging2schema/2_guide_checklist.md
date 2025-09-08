@@ -1,5 +1,8 @@
 ### Schema.org Guide Implementation Checklist
 
+> [!NOTE]
+Use this checklist to implement Schema.org `Dataset` descriptions consistently and in alignment with FAIR principles.
+
 #### Core Properties
 - [ ] **Name & Description**: Add `name`, `description`, and `keywords`
 - [ ] **Identifier**: Assign persistent `identifier` (DOI or similar)
