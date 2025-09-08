@@ -38,5 +38,3 @@ Follow this sequence to navigate the materials effectively:
 - Review **🔎 JSON-LD graph concepts** to understand how entities and relationships are represented for machine-readability.
 
 ---
-
-> This folder is part of the **INSPIRE Mental Health Project**, integrating and harmonizing longitudinal datasets for FAIR metadata practices.
