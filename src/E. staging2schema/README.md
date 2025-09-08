@@ -1,4 +1,4 @@
-# staging2schema.org
+### staging2schema.org
  
 **staging2schema.org** is a toolset designed to generate [Schema.org](https://schema.org/) `Dataset` descriptions directly from Mental Health(MH) staging database. The goal is to make metadata and data hosted in the staging server **machine-readable**, **FAIR-compliant**.  
 
@@ -8,12 +8,35 @@ This work is inspired by and builds upon the principles of data standardization 
 
 ---
 
-## Features  
-- Connects to a staging database (PostgreSQL supported, extendable to others).  
-- Extracts both **data** and **metadata** from the source system.  
-- Transforms metadata into Schema.org `Dataset` JSON-LD format.  
-- Provides reusable scripts in **R**   
+#### Learning Path
+
+Follow this sequence to navigate the materials effectively:
+
+1. **📝 Quick Overview – `guide_checklist.md`**  
+   - One-page checklist of essential Schema.org properties.
+
+2. **📖 Full Guide – `guide_full.md`**  
+   - Detailed explanations for each property, context, and recommended additions.
+
+3. **⚙️ Metadata Extraction – `Translation.md`**  
+   - Scripts to extract metadata and related data from the staging database, including variable definitions, labels, and controlled vocabularies.
+
+4. **💻 JSON-LD Conversion – `jsonld.md`**  
+   - Converts extracted metadata into **Schema.org JSON-LD scripts**, producing machine-readable representations of the datasets.
+
+5. **🔎 Understanding JSON-LD Graphs – `about_schema.org_json-ld.md`**  
+   - Explains how Schema.org vocabulary defines a **graph of entities and relationships**.  
+   - Illustrates nodes (entities) and edges (relationships) in JSON-LD and how datasets become interlinked graphs, enabling richer machine-readable metadata.
 
 ---
-## Project Structure  
 
+####  💡 Tips
+
+- Start with **📝 checklist** to understand key properties.  
+- Use **📖 full guide** to deepen knowledge of each property.  
+- Explore **⚙️ metadata extraction** and **💻 JSON-LD conversion scripts** to see practical implementation.  
+- Review **🔎 JSON-LD graph concepts** to understand how entities and relationships are represented for machine-readability.
+
+---
+
+> This folder is part of the **INSPIRE Mental Health Project**, integrating and harmonizing longitudinal datasets for FAIR metadata practices.
