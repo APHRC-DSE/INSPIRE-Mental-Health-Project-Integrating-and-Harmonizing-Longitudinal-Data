@@ -1,24 +1,24 @@
-# 🗂 Schema.org Dataset Metadata Guide
+### Schema.org Dataset Metadata Guide
 
-### ✅ Core Standard Properties
+#### ✅ Core Standard Properties
 - [ ] **Identity**: `name`, `description`, `keywords`  
 - [ ] **Persistent Identifier**: `identifier`  
 - [ ] **Source Reference**: `isBasedOn`  
 - [ ] **Related Works**: `subjectOf`  
 
-### 🌍 Coverage
+#### 🌍 Coverage
 - [ ] **Spatial Coverage**: `spatialCoverage`  
 - [ ] **Temporal Coverage**: `temporalCoverage`  
 
-### 📊 Data and Variables
+#### 📊 Data and Variables
 - [ ] **Variable Metadata**: `variableMeasured`  
 - [ ] **Individual-level Concepts**: `PropertyValue`  
 - [ ] **Aggregate Measures**: `StatisticalVariable`  
 
-### 📌 Contextual Information
+#### 📌 Contextual Information
 - [ ] **About / Events / Actions**: `about`, `event`, `action`  
 
-### ⭐ Recommended Additions
+#### ⭐ Recommended Additions
 - [ ] **License**: `license`  
 - [ ] **Creators, Publishers, Funders**: `creator`, `publisher`, `funder`  
 - [ ] **Versioning**: `version`  
