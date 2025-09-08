@@ -23,3 +23,14 @@
 - [ ] **Creators, Publishers, Funders**: `creator`, `publisher`, `funder`  
 - [ ] **Versioning**: `version`  
 - [ ] **Distribution Details**: `distribution`
+
+## 🗂️ Schema.org Dataset Metadata Guide
+
+| Category | Properties |
+|----------|------------|
+| 🏷️ Core | `name`, `description`, `keywords`, `identifier`, `isBasedOn`, `subjectOf` |
+| 🌍 Coverage | `spatialCoverage`, `temporalCoverage` |
+| 📊 Variables | `variableMeasured`, `PropertyValue`, `StatisticalVariable` |
+| 🔎 Context | `about`, `event`, `action` |
+| 🛠️ Additions | `license`, `creator`, `publisher`, `funder`, `version`, `distribution` |
+
