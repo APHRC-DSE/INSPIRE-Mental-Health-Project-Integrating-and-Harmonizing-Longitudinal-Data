@@ -1,77 +1,43 @@
-### 🗂️ Schema.org Dataset Metadata Guide (Checklist)
+### Schema.org Guide Implementation Checklist
 
----
-### ✅ Core Standard Properties
-| Property | Description | Priority |
-|----------|------------|----------|
-| `name` | Dataset title | Required ✅ |
-| `description` | Detailed summary | Required ✅ |
-| `keywords` | Search terms for discovery | Required ✅ |
-| `identifier` | Persistent ID (DOI, etc.) | Required ✅ |
-| `isBasedOn` | Source reference | Recommended ⚠️ |
-| `subjectOf` | Related works | Recommended ⚠️ |
+#### Core Properties
+- [ ] **Name & Description**: Add `name`, `description`, and `keywords`
+- [ ] **Identifier**: Assign persistent `identifier` (DOI or similar)
+- [ ] **References**: Include `isBasedOn` and `subjectOf` if applicable
 
-- [ ] **Identity**: `name`, `description`, `keywords`  
-- [ ] **Persistent Identifier**: `identifier`  
-- [ ] **Source Reference**: `isBasedOn`  
-- [ ] **Related Works**: `subjectOf`  
+####  Coverage Information
+- [ ] **Spatial Coverage**: Define `spatialCoverage` (countries/regions)
+- [ ] **Temporal Coverage**: Specify `temporalCoverage` (date range)
 
----
+#### Variable Documentation
+- [ ] **Variables List**: Populate `variableMeasured` with all variables
+- [ ] **Individual Metadata**: Add `PropertyValue` for key variables
+- [ ] **Aggregate Measures**: Include `StatisticalVariable` for statistics
 
-### 🌍 Coverage Metadata
-| Property | Description | Priority |
-|----------|------------|----------|
-| `spatialCoverage` | Geographic coverage | Recommended ⚠️ |
-| `temporalCoverage` | Time period coverage | Recommended ⚠️ |
+#### Contextual Metadata
+- [ ] **Topics**: Define primary `about` subjects
+- [ ] **Events**: Link related `event` entities
+- [ ] **Actions**: Specify supported `action` types
 
-- [ ] **Spatial Coverage**: `spatialCoverage`  
-- [ ] **Temporal Coverage**: `temporalCoverage`  
-
----
-
-### 📊 Variable Documentation
-| Property | Description | Priority |
-|----------|------------|----------|
-| `variableMeasured` | Variables captured in the dataset | Required ✅ |
-| `PropertyValue` | Individual-level variable metadata | Recommended ⚠️ |
-| `StatisticalVariable` | Aggregate measures | Recommended ⚠️ |
-
-- [ ] **Variable Metadata**: `variableMeasured`  
-- [ ] **Individual-level Concepts**: `PropertyValue`  
-- [ ] **Aggregate Measures**: `StatisticalVariable`  
+#### Enhanced Metadata
+- [ ] **License**: Apply appropriate `license`
+- [ ] **Creators**: Credit all `creator` organizations/people
+- [ ] **Publisher**: Identify `publisher` entity
+- [ ] **Funders**: Acknowledge `funder` organizations
+- [ ] **Version**: Set current `version` number
+- [ ] **Distribution**: Describe `distribution` methods
 
 ---
 
-### 🔍 Contextual Information
-| Property | Description | Priority |
-|----------|------------|----------|
-| `about` | Primary topics | Recommended ⚠️ |
-| `event` | Related events | Recommended ⚠️ |
-| `action` | Associated actions | Recommended ⚠️ |
+###### Priority Levels:
+- 🔴 **High**: Required properties (`name`, `description`, `identifier`)
+- 🟡 **Medium**: Recommended enhancements (`license`, `creator`, `version`)
+- 🔵 **Low**: Conditional properties (`isBasedOn`, `subjectOf`, contextual info)
 
-- [ ] **About / Events / Actions**: `about`, `event`, `action`  
-
----
-
-### ⭐ Recommended Enhancements
-| Property | Description | Priority |
-|----------|------------|----------|
-| `license` | Usage rights | High 🔥 |
-| `creator` | Dataset authors | High 🔥 |
-| `publisher` | Publishing entity | High 🔥 |
-| `funder` | Funding sources | High 🔥 |
-| `version` | Version number | High 🔥 |
-| `distribution` | Access methods | High 🔥 |
-
-- [ ] **License**: `license`  
-- [ ] **Creators, Publishers, Funders**: `creator`, `publisher`, `funder`  
-- [ ] **Versioning**: `version`  
-- [ ] **Distribution Details**: `distribution`  
+### Best Practices:
+- Use consistent naming conventions
+- Include both human-readable and machine-readable content
+- Validate with [Schema.org Validator](https://validator.schema.org/)
+- Test with Google’s [Rich Results Test](https://search.google.com/test/rich-results)
 
 ---
-
-💡 **Tips for Learners:**
-- Check off each item as you implement it to track progress.  
-- Focus on **Required ✅** fields first for minimum compliance.  
-- Use **High 🔥** recommended fields to enhance FAIRness.  
-- Refer to `guide_full.md` for detailed explanations and examples.
