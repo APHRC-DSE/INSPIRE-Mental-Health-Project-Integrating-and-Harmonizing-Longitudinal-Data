@@ -5,7 +5,7 @@
 - [ ] **Identifier**: Assign persistent `identifier` (DOI or similar)
 - [ ] **References**: Include `isBasedOn` and `subjectOf` if applicable
 
-####  Coverage Information
+#### Coverage Information
 - [ ] **Spatial Coverage**: Define `spatialCoverage` (countries/regions)
 - [ ] **Temporal Coverage**: Specify `temporalCoverage` (date range)
 
@@ -29,15 +29,13 @@
 
 ---
 
-###### Priority Levels:
-- 🔴 **High**: Required properties (`name`, `description`, `identifier`)
-- 🟡 **Medium**: Recommended enhancements (`license`, `creator`, `version`)
-- 🔵 **Low**: Conditional properties (`isBasedOn`, `subjectOf`, contextual info)
+#### Priority Levels:
+- **High**: Required properties (`name`, `description`, `identifier`)
+- **Medium**: Recommended enhancements (`license`, `creator`, `version`)
+- **Low**: Conditional properties (`isBasedOn`, `subjectOf`, contextual info)
 
-### Best Practices:
+#### Best Practices:
 - Use consistent naming conventions
 - Include both human-readable and machine-readable content
 - Validate with [Schema.org Validator](https://validator.schema.org/)
-- Test with Google’s [Rich Results Test](https://search.google.com/test/rich-results)
-
----
+- Test with Google's [Rich Results Test](https://search.google.com/test/rich-results)
