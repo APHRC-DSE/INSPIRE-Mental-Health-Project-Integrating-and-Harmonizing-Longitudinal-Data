@@ -27,6 +27,9 @@ Follow this sequence to navigate the materials effectively:
 5. **🔎 Understanding JSON-LD Graphs – `about_schema.org_json-ld.md`**  
    - Explains how Schema.org vocabulary defines a **graph of entities and relationships**.  
    - Illustrates nodes (entities) and edges (relationships) in JSON-LD and how datasets become interlinked graphs, enabling richer machine-readable metadata.
+  
+6. **🖼️ Images**  
+   - Contains diagrams, visualizations, and screenshots that illustrate workflows, JSON-LD graphs, and other key concepts.
 
 ---
 
