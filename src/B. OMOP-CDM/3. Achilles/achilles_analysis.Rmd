@@ -144,9 +144,9 @@ print(con)
 #List all schemas in database 
 list_all_schemas_cdm <- dbGetQuery(con, "SELECT schema_name FROM information_schema.schemata") #output is df
 
-#Extract schemas of interest with the stated format you saved. We saved ours as this: study_1_cdm_r, study_2_cdm_r.....etc
+#Extract schemas of interest with the stated format you saved. We saved ours as this: study_1_cdm, study_2_cdm.....etc
 
-list_all_schemas_study_cdm <- list_all_schemas_cdm$schema_name[grepl("^study_", list_all_schemas_cdm$schema_name)]
+list_all_schemas_study_cdm <- list_all_schemas_cdm$schema_name[grepl("_cdm$", list_all_schemas_cdm$schema_name)]
 
 ```
 
@@ -174,8 +174,9 @@ Automated Characterization of Health Information at Large-Scale Longitudinal Evi
 achilles_analysis <- sapply(list_all_schemas_study_cdm, function(x){
   
   nn <- x
+  study_id <- readr::parse_number(nn)
   
-  results_schema <- paste0("results_", nn) #Creating object to match results schemas in database: results_study_1_cdm_r....etc
+  results_schema <- paste0("study_", study_id,"_results") #Creating object to match results schemas in DB: study_1_results..etc
   
   vocabulary_schema <- "vocabulary" #one common vocabulary schema in database
   
