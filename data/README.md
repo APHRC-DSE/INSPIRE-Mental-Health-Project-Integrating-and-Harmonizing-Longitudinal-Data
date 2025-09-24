@@ -27,3 +27,12 @@ The scoping analysis led to access of datasets from 17 articles. Source Code can
 | **17** | South Africa | Living Alone And Depression In A Developing Country Context: Longitudinal Evidence From South Africa | 2021 | https://doi.org/10.1016/j.ssmph.2021.100800 | Dorrit Posel | Data repository | http://www.nids.uct.ac.za/nids-data/data-access | National Income Dynamics Study (NIDS) | Center for Epidemiological Studies-Depression (CES-D) |
 
 ## Primary data
+
+We obtained new datasets from primary collection of data from HDSS (Health and Demographics Surveillance System), in Kenya (Kilifi) and Uganda (Iganga Mayuge, Kagando). The identification of homesteads within HDSS relies on the comprehensive databases already established, which encompass detailed demographic and health-related information. This existing data infrastructure allows for a sophisticated random sampling strategy, ensuring a representative cross-section of households is included.
+
+| **number** | **study country** | **source title**   | **source year** | **study name**                |
+|------------|-------------------|--------------------|-----------------|-------------------------------|
+| **1**      | Kenya             | Kilifi HDSS        | 2024            | INSPIRE Mental Health Project |
+| **2**      | Uganda            | Iganga Mayuge HDSS | 2023, 2024      | INSPIRE Mental Health Project |
+| **3**      | Uganda            | Kagando HDSS       | 2024            | INSPIRE Mental Health Project |
+
