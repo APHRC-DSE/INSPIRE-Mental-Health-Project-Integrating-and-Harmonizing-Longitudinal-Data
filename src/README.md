@@ -13,6 +13,8 @@ The staging database serves as an innovative tool in managing longitudinal menta
 
 ## Source Data
 
+A total of 14 studies (Secondary - 11; Primary - 3) were to be mapped.  
+
 ### Secondary data
 To ensure the diversity of tools mapped, the selection of secondary datasets from the 17 articles to be mapped to the staging database was based on the mental health assessment tools used as below:
 
@@ -20,7 +22,7 @@ To ensure the diversity of tools mapped, the selection of secondary datasets fro
 - **Anxiety**: Depression, anxiety and stress scale (DASS-21) and Generalized Anxiety Disorder 7-item (GAD-7)
 - **Psychosis**: Psychosis Screening Questionnaire (PSQ)  
 
-The final studies to be mapped were from 11 articles as highlighted in the table below on the ***ETL to Staging column***.
+Secondary studies to be mapped were from 11 articles, as highlighted in the table below on the ***ETL to Staging column***.
 
 | **number** | **study country** | **source title** | **link doi** | **tools used** | **ETL to Staging** |
 |---|---|---|---|---|---|
@@ -43,3 +45,12 @@ The final studies to be mapped were from 11 articles as highlighted in the table
 | **17** | South Africa | Living Alone And Depression In A Developing Country Context: Longitudinal Evidence From South Africa | https://doi.org/10.1016/j.ssmph.2021.100800 | Center for Epidemiological Studies-Depression (CES-D) | Yes |
 
 ### Primary data
+
+All 3 studies from the primary data collection were to be mapped as highlighted in the table below on the ***ETL to Staging column***.
+
+| **number** | **study country** | **source title**   | **link doi**                         | **tools used**                                                                                                     | **ETL to Staging ** |
+|------------|-------------------|--------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------|
+| **1**      | Kenya             | Kilifi HDSS        |                                      | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes                 |
+| **2**      | Uganda            | Iganga Mayuge HDSS |  https://doi.org/10.1093/ije/dyaa064 | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7)                                          | Yes                 |
+| **3**      | Uganda            | Kagando HDSS       |                                      | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes                 |
+
