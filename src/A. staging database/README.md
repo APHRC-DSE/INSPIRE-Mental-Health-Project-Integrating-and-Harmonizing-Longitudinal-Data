@@ -81,6 +81,7 @@ ETL implementation for the 14 population longitudinal studies can be found in th
 
 ## 4. Merge the various ETL-source data to staging instances to central staging database
 
+Automate the process of moving different local versions of staging to a central staging warehouse. Implementation for this can be found in the [4. Local staging merge to central staging](./4.%20Local%20staging%20merge%20to%20central%20staging) folder.
 
 ## 5. Create Visualization platform (Metabase)
 
