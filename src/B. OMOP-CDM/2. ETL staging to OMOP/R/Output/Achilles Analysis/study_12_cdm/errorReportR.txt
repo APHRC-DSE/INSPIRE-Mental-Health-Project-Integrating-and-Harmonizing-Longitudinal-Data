@@ -1,0 +1,76 @@
+Thread: Main
+Message:  Error executing SQL:
+org.postgresql.util.PSQLException: ERROR: schema "study_study_12_cdm_results" does not exist
+  Position: 14
+An error report has been created at  D:/APHRC/OMOP-CDM/OMOP_ETL_Work/Staging_DB_to_OMOP/script_and_data/Output/Achilles Analysis/study_12_cdm/achillesErrorCreateAchillesAnalysis.txt
+Level:  FATAL
+Time:  2025-09-22 20:51:00
+
+Stack trace:
+18: (function (condition) 
+{
+    if (is(condition, "error")) {
+        log("FATAL", conditionMessage(condition), echoToConsole = FALSE)
+
+17: signalCondition(cnd)
+16: signal_abort(cnd, .file)
+15: abort(paste("Error executing SQL:", message, paste("An error report has been created at ", fileName), sep = "\n"), call. = FALSE
+14: .createErrorReport(dbms, err$message, sqlStatement, errorReportFile)
+13: value[[3]](cond)
+12: tryCatchOne(expr, names, parentenv, handlers[[1]])
+11: tryCatchList(expr, classes, parentenv, handlers)
+10: tryCatch({
+    startQuery <- Sys.time()
+    rowsAffected <- c(rowsAffected, lowLevelExecuteSql(connection, sqlStatement))
+    delta
+9: DatabaseConnector::executeSql(connection = connection, sql = sql, errorReportFile = file.path(outputFolder, "achillesErrorCreate
+8: achilles_analysis.R#43: Achilles::achilles(connectionDetails = cd_achilles, cdmDatabaseSchema = nn, resultsDatabaseSchema = resu
+7: FUN(X[[i]], ...)
+6: lapply(X = X, FUN = FUN, ...)
+5: achilles_analysis.R#21: sapply(list_all_schemas_study_cdm$schema_name[grepl("^study_", list_all_schemas_study_cdm$schema_name)],
+4: eval(ei, envir)
+3: eval(ei, envir)
+2: withVisible(eval(ei, envir))
+1: source("achilles_analysis.R")
+
+R version:
+R version 4.5.1 (2025-06-13 ucrt)
+
+Platform:
+x86_64-w64-mingw32
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- utils
+- datasets
+- methods
+- base
+
+Other attached packages:
+- Achilles (1.7.2)
+- DataQualityDashboard (2.6.3)
+- CommonDataModel (1.0.1)
+- rJava (1.0-11)
+- SqlRender (1.19.2)
+- remotes (2.5.0)
+- glue (1.8.0)
+- DatabaseConnector (6.4.0)
+- devtools (2.4.5)
+- usethis (3.1.0)
+- scales (1.4.0)
+- lubridate (1.9.4)
+- forcats (1.0.0)
+- stringr (1.5.1)
+- dplyr (1.1.4)
+- purrr (1.0.4)
+- readr (2.1.5)
+- tidyr (1.3.1)
+- tibble (3.3.0)
+- ggplot2 (3.5.2)
+- tidyverse (2.0.0)
+- DBI (1.2.3)
+- RPostgres (1.4.8)
+
+

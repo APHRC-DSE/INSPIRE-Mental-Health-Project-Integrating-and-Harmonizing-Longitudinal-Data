@@ -329,20 +329,20 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                       visit_detail_start_datetime, provider_id, visit_detail_source_concept_id) %>%
                         dplyr::mutate(instrument_id = ifelse(visit_detail_source_concept_id == 44804610, 1,
                                                       ifelse(visit_detail_source_concept_id == 45772733, 2,
-                                                      ifelse(visit_detail_source_concept_id == 3000000219, 3,
+                                                      ifelse(visit_detail_source_concept_id == 2000000219, 3,
                                                       ifelse(visit_detail_source_concept_id == 4164838, 4, 
                                                       ifelse(visit_detail_source_concept_id == 37310582, 5,
                                                       ifelse(visit_detail_source_concept_id == 1761569, 6,
-                                                      ifelse(visit_detail_source_concept_id == 3000000223, 7,
+                                                      ifelse(visit_detail_source_concept_id == 2000000223, 7,
                                                       ifelse(visit_detail_source_concept_id == 36714019, 8,
                                                       ifelse(visit_detail_source_concept_id == 1988691, 9,
-                                                      ifelse(visit_detail_source_concept_id == 3000000226, 10,
-                                                      ifelse(visit_detail_source_concept_id == 3000000227, 11,
-                                                      ifelse(visit_detail_source_concept_id == 3000000228, 12,
-                                                      ifelse(visit_detail_source_concept_id == 3000000229, 13,
-                                                      ifelse(visit_detail_source_concept_id == 3000000230, 14,
+                                                      ifelse(visit_detail_source_concept_id == 2000000226, 10,
+                                                      ifelse(visit_detail_source_concept_id == 2000000227, 11,
+                                                      ifelse(visit_detail_source_concept_id == 2000000228, 12,
+                                                      ifelse(visit_detail_source_concept_id == 2000000229, 13,
+                                                      ifelse(visit_detail_source_concept_id == 2000000230, 14,
                                                       ifelse(visit_detail_source_concept_id == 44783153, 15,
-                                                      ifelse(visit_detail_source_concept_id == 3000000266, 16, 0
+                                                      ifelse(visit_detail_source_concept_id == 2000000266, 16, 0
                                                              ))))))))))))))))
                                       , instrument_id = as.integer(instrument_id)
                                       )
@@ -375,8 +375,9 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                       visit_occurrence_id, visit_detail_id
                                       ) %>%
                         dplyr::mutate(measurement_concept_id = if_else(measurement_concept_id == 44788755, 1761569, #CES-D 
-                                                               if_else(measurement_concept_id == 40486512, 3000000266, #PSQ
-                                                                       measurement_concept_id ))
+                                                               #if_else(measurement_concept_id == 40486512, 3000000266, #PSQ
+                                                                       measurement_concept_id 
+                                                                       ) #)
                                       )
                       , by = c("individual_id" = "person_id"
                                , "interview_date" = "measurement_date"
@@ -474,6 +475,10 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   ) %>%
     dplyr::mutate(across(c(observation_source_value, value_source_value, qualifier_source_value), ~strtrim(.x, 49)
                          )
+                  , across(c(observation_concept_id, value_as_concept_id, observation_source_concept_id), 
+                           ~if_else(.x > 3000000000, .x - 1000000000, .x
+                                    ) #change INSPIRE concepts to 2 billion
+                           )
                   , value_as_string = strtrim(value_as_string, 59)
                   )
   
@@ -494,14 +499,14 @@ observation_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                        , value = observation_cdm_table[[nn]]
                        , overwrite = TRUE
                        , row.names = FALSE
-                       , field.types = c(observation_id="integer", person_id="integer", observation_concept_id="bigint"
+                       , field.types = c(observation_id="integer", person_id="integer", observation_concept_id="integer"
                                          , observation_date="date", observation_datetime="timestamp without time zone"
                                          , observation_type_concept_id="integer", value_as_number="numeric", value_as_string="character varying (60)"
-                                         , value_as_concept_id="bigint", qualifier_concept_id="integer", unit_concept_id="integer", provider_id="integer"
+                                         , value_as_concept_id="integer", qualifier_concept_id="integer", unit_concept_id="integer", provider_id="integer"
                                          , visit_occurrence_id="integer", visit_detail_id="integer", observation_source_value="character varying (50)"
-                                         , observation_source_concept_id="bigint", unit_source_value="character varying (50)"
+                                         , observation_source_concept_id="integer", unit_source_value="character varying (50)"
                                          , qualifier_source_value="character varying (50)", value_source_value="character varying (50)" 
-                                         , observation_event_id="bigint", obs_event_field_concept_id="integer"
+                                         , observation_event_id="integer", obs_event_field_concept_id="integer"
                                          )
                        )
     

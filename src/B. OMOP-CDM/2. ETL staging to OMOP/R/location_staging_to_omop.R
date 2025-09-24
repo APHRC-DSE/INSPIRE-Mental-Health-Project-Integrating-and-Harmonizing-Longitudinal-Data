@@ -29,6 +29,22 @@ location_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^stud
                       by = c("location_id")
                       ) %>%
     dplyr::mutate(country_concept_id = as.numeric(universe_spatial_coverage_concept_id)
+                  , latitude = if_else(population_study_id == 14 & village_name == "Charo wa mae", -3.6239466,
+                               if_else(population_study_id == 14 & village_name == "Juakali", -3.5753049, 
+                               if_else(population_study_id == 14 & village_name == "Kasarani", -3.230491, 
+                               if_else(population_study_id == 14 & village_name == "Kisumu ndogo", -3.2193128, 
+                               if_else(population_study_id == 14 & village_name == "Mavueni", -3.6228921, 
+                               if_else(population_study_id == 14 & village_name == "Mnarani", -3.6564446, 
+                                       latitude
+                                       )))))) #latitude for population study 14 missing
+                  , longitude = if_else(population_study_id == 14 & village_name == "Charo wa mae", 39.8483414,
+                                if_else(population_study_id == 14 & village_name == "Juakali", 39.1936074, 
+                                if_else(population_study_id == 14 & village_name == "Kasarani", 40.0699973, 
+                                if_else(population_study_id == 14 & village_name == "Kisumu ndogo", 40.1164891, 
+                                if_else(population_study_id == 14 & village_name == "Mavueni", 39.8287295, 
+                                if_else(population_study_id == 14 & village_name == "Mnarani", 39.8199827, 
+                                        longitude
+                                        )))))) #longitude for population study 14 missing
                   ) %>%
     dplyr::group_by(village_name, place_kind, country, country_concept_id) %>%
     dplyr::summarise(latitude = round(median(latitude, na.rm = TRUE), 4)

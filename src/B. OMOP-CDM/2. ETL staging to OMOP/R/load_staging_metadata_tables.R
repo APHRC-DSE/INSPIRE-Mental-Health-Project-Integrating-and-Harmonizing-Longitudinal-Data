@@ -9,16 +9,16 @@ working_directory
 # Loading metadata in staging Tables
 
 ##list files in data folder
-data_files <- list.files(path = data_Dir, full.names = F)
+data_files <- list.files(path = base::file.path(data_Dir, "staging metadata"), full.names = F)
 
 ##load all csv files
 df_list <- sapply(data_files[grepl(".csv$",data_files)], function(z){
   
   if (z == "study_13_person.csv") {
-    readr::read_csv(base::file.path(data_Dir, z)) %>%
+    readr::read_csv(base::file.path(data_Dir, "staging metadata", z)) %>%
       dplyr::mutate(consentdate = lubridate::dmy(consentdate))
   } else {
-    readr::read_csv(base::file.path(data_Dir, z))
+    readr::read_csv(base::file.path(data_Dir, "staging metadata", z))
   }
   
 }, simplify=FALSE)

@@ -81,20 +81,20 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                                       visit_detail_start_datetime, provider_id, visit_detail_source_concept_id) %>%
                         dplyr::mutate(instrument_id = ifelse(visit_detail_source_concept_id == 44804610, 1,
                                                       ifelse(visit_detail_source_concept_id == 45772733, 2,
-                                                      ifelse(visit_detail_source_concept_id == 3000000219, 3,
+                                                      ifelse(visit_detail_source_concept_id == 2000000219, 3,
                                                       ifelse(visit_detail_source_concept_id == 4164838, 4, 
                                                       ifelse(visit_detail_source_concept_id == 37310582, 5,
                                                       ifelse(visit_detail_source_concept_id == 1761569, 6,
-                                                      ifelse(visit_detail_source_concept_id == 3000000223, 7,
+                                                      ifelse(visit_detail_source_concept_id == 2000000223, 7,
                                                       ifelse(visit_detail_source_concept_id == 36714019, 8,
                                                       ifelse(visit_detail_source_concept_id == 1988691, 9,
-                                                      ifelse(visit_detail_source_concept_id == 3000000226, 10,
-                                                      ifelse(visit_detail_source_concept_id == 3000000227, 11,
-                                                      ifelse(visit_detail_source_concept_id == 3000000228, 12,
-                                                      ifelse(visit_detail_source_concept_id == 3000000229, 13,
-                                                      ifelse(visit_detail_source_concept_id == 3000000230, 14,
+                                                      ifelse(visit_detail_source_concept_id == 2000000226, 10,
+                                                      ifelse(visit_detail_source_concept_id == 2000000227, 11,
+                                                      ifelse(visit_detail_source_concept_id == 2000000228, 12,
+                                                      ifelse(visit_detail_source_concept_id == 2000000229, 13,
+                                                      ifelse(visit_detail_source_concept_id == 2000000230, 14,
                                                       ifelse(visit_detail_source_concept_id == 44783153, 15,
-                                                      ifelse(visit_detail_source_concept_id == 3000000266, 16, 0
+                                                      ifelse(visit_detail_source_concept_id == 2000000266, 16, 0
                                                              ))))))))))))))))
                                       , instrument_id = as.integer(instrument_id)
                                       )
@@ -110,8 +110,8 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                   , measurement_concept_id = as.numeric(visit_detail_source_concept_id)
                   , measurement_concept_id = ifelse(measurement_concept_id %in% c(1761569), 44788755, measurement_concept_id
                                                     ) #replacing observation domain concept_id for CES-D to one of measurement domain
-                  , measurement_concept_id = ifelse(measurement_concept_id %in% c(3000000266), 40486512, measurement_concept_id
-                                                    ) #replacing observation domain concept_id for PSQ to one of measurement domain
+                  #, measurement_concept_id = ifelse(measurement_concept_id %in% c(3000000266), 40486512, measurement_concept_id
+                  #                                 ) #replacing observation domain concept_id for PSQ to one of measurement domain
                   , measurement_concept_id = ifelse(instrument_item_id %in% c(19, 20, 21), as.numeric(concept_id),
                                                     measurement_concept_id
                                                     ) #DASS21 instruments items with concepts in measurement domain
@@ -156,6 +156,10 @@ measurement_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^s
                    ) %>%
     dplyr::mutate(across(c(measurement_source_value, value_source_value), ~strtrim(.x, 49)
                          )
+                  , measurement_source_concept_id = if_else(measurement_source_concept_id > 3000000000,
+                                                            measurement_source_concept_id - 1000000000,
+                                                            measurement_source_concept_id
+                                                            ) #change INSPIRE concepts to 2 billion
                   ) %>%
     dplyr::filter(value_as_concept_id == 4112438 #Only retain total scores and drop responses
                   ) %>%
@@ -181,13 +185,13 @@ measurement_cdm_load <- sapply(names(measurement_cdm_table), function(x){
                       , value = measurement_cdm_table[[nn]]
                       , overwrite = TRUE
                       , row.names = FALSE
-                      , field.types = c(measurement_id="integer", person_id="integer", measurement_concept_id="bigint"
+                      , field.types = c(measurement_id="integer", person_id="integer", measurement_concept_id="integer"
                                         , measurement_date="date", measurement_datetime="timestamp without time zone"
                                         , measurement_time="character varying (10)", measurement_type_concept_id="integer"
                                         , operator_concept_id="integer", value_as_number="numeric", value_as_concept_id="integer"
                                         , unit_concept_id="integer", range_low="numeric", range_high="numeric", provider_id="integer"
                                         , visit_occurrence_id="integer", visit_detail_id="integer", measurement_source_value="character varying (50)"
-                                        , measurement_source_concept_id="bigint", unit_source_value="character varying (50)"
+                                        , measurement_source_concept_id="integer", unit_source_value="character varying (50)"
                                         , unit_source_concept_id="integer", value_source_value="character varying (50)"
                                         , measurement_event_id="integer", meas_event_field_concept_id="integer"
                                         )

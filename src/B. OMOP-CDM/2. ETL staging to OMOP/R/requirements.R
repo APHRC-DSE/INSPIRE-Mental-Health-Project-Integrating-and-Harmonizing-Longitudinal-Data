@@ -42,7 +42,7 @@ base::ifelse(!base::dir.exists(DQD_Dir), base::dir.create(DQD_Dir),
 
 ### Install CRAN packages
 required_packages <- c("RPostgres", "DBI", "tidyverse", "lubridate", "tibble", "scales", "devtools",
-                       "DatabaseConnector", "glue", "remotes"
+                       "DatabaseConnector", "glue", "remotes", "glue"
                        )
 
 installed_packages <- required_packages %in% base::rownames(utils::installed.packages())

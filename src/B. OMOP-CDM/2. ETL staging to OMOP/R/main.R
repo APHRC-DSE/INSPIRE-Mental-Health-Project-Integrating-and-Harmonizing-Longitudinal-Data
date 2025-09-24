@@ -62,7 +62,7 @@ list_population_studies_raw <- unique(staging_tables_data[["longitudinal_populat
 
 #list_population_studies <- list_population_studies_raw[!list_population_studies_raw %in% c(0)]
 #list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(12, 1, 14, 6, 13, 4, 5)]
-list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(4, 5)]
+list_population_studies <- list_population_studies_raw[list_population_studies_raw %in% c(6, 7, 8, 9, 10)]
 
 ######################################################################
 
@@ -75,7 +75,7 @@ source("create_cdm_vocab_results_schema.R")
 list_all_schemas_cdm <- dbGetQuery(con, "SELECT schema_name FROM information_schema.schemata") #output is df
 
 #List lps tables based on staging schema version adding vocabulary schema
-list_tables_study_lps <- paste(c(paste0("study_", as.numeric(list_population_studies), "_cdm_r"), "vocabulary"))
+list_tables_study_lps <- paste(c(paste0("study_", as.numeric(list_population_studies), "_cdm"), "vocabulary"))
 
 #List all schemas with changing staging schema version
 list_all_schemas_study_cdm <- list_all_schemas_cdm %>%
@@ -89,11 +89,21 @@ source("create_cdm_tables_rpackage.R")
 ######################################################################
 ## Loading vocabularies in vocabulary schema
 
+#using back slash as we are utilizing sql statements to load athena vocabs and INSPIRE vocabs from csv files
+vocab_folder_path <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1757485884122")
+
+
 empty_vocab_tables <- FALSE #TRUE to empty and reload vocabularies, FALSE to do nothing
 
 if (empty_vocab_tables) {
+  
   source("empty_omop_vocabs.R")
+  
+  #Load ATHENA vocabs from CSV
   source("load_omop_vocabs.R")
+  
+  #Load INSPIRE concepts from CSV
+  source("load_inspire_vocabs.R")
 }
 
 ######################################################################
@@ -150,46 +160,46 @@ source("data_quality_dashboard.R")
 #INSPECT LOGS
 
 ParallelLogger::launchLogViewer(
-  logFileName = base::file.path(base::file.path(DQD_Dir, "study_1_cdm_r"), 
-                                paste0("log_DqDashboard_",cdm_source_cdm_table[["study_1_cdm_r"]]$cdm_source_abbreviation, ".txt")
+  logFileName = base::file.path(base::file.path(DQD_Dir, "study_1_cdm"), 
+                                paste0("log_DqDashboard_",cdm_source_cdm_table[["study_1_cdm"]]$cdm_source_abbreviation, ".txt")
                                 )
   )
 
 ParallelLogger::launchLogViewer(
-  logFileName = base::file.path(base::file.path(DQD_Dir, "study_12_cdm_r"),  
-                                paste0("log_DqDashboard_",cdm_source_cdm_table[["study_12_cdm_r"]]$cdm_source_abbreviation, ".txt"))
+  logFileName = base::file.path(base::file.path(DQD_Dir, "study_12_cdm"),  
+                                paste0("log_DqDashboard_",cdm_source_cdm_table[["study_12_cdm"]]$cdm_source_abbreviation, ".txt"))
   )
 
 #VIEW RESULTS
 #Launching Dashboard as Shiny App
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_1_cdm_r"), "results_study_1_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_1_cdm"), "results_study_1_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_2_cdm_r"), "results_study_2_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_2_cdm"), "results_study_2_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_3_cdm_r"), "results_study_3_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_3_cdm"), "results_study_3_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_4_cdm_r"), "results_study_4_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_4_cdm"), "results_study_4_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_5_cdm_r"), "results_study_5_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_5_cdm"), "results_study_5_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_6_cdm_r"), "results_study_6_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_6_cdm"), "results_study_6_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_7_cdm_r"), "results_study_7_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_7_cdm"), "results_study_7_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_8_cdm_r"), "results_study_8_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_8_cdm"), "results_study_8_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_9_cdm_r"), "results_study_9_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_9_cdm"), "results_study_9_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_10_cdm_r"), "results_study_10_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_10_cdm"), "results_study_10_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_11_cdm_r"), "results_study_11_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_11_cdm"), "results_study_11_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_12_cdm_r"), "results_study_12_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_12_cdm"), "results_study_12_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_13_cdm_r"), "results_study_13_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_13_cdm"), "results_study_13_cdm.json"))
 
-DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_14_cdm_r"), "results_study_14_cdm_r.json"))
+DataQualityDashboard::viewDqDashboard(base::file.path(base::file.path(DQD_Dir, "study_14_cdm"), "results_study_14_cdm.json"))
 
 ######################################################################
 

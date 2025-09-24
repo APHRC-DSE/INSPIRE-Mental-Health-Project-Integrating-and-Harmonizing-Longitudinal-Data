@@ -44,20 +44,20 @@ visit_detail_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^
                   , visit_detail_source_value = "Home Visit"
                   , visit_detail_source_concept_id = if_else(instrument_id == 1, 44804610, #measurement domain
                                                       if_else(instrument_id == 2, 45772733, #measurement domain
-                                                      if_else(instrument_id == 3, 3000000219,
+                                                      if_else(instrument_id == 3, 2000000219, #INSPIRE concepts to 2 billion
                                                       if_else(instrument_id == 4, 4164838, #measurement domain
                                                       if_else(instrument_id == 5, 37310582, #measurement domain
                                                       if_else(instrument_id == 6, 1761569, #observation domain
-                                                      if_else(instrument_id == 7, 3000000223,
+                                                      if_else(instrument_id == 7, 2000000223,
                                                       if_else(instrument_id == 8, 36714019, #measurement domain
                                                       if_else(instrument_id == 9, 1988691, #observation domain
-                                                      if_else(instrument_id == 10, 3000000226,
-                                                      if_else(instrument_id == 11, 3000000227,
-                                                      if_else(instrument_id == 12, 3000000228,
-                                                      if_else(instrument_id == 13, 3000000229,
-                                                      if_else(instrument_id == 14, 3000000230,
+                                                      if_else(instrument_id == 10, 2000000226, #INSPIRE concepts to 2 billion
+                                                      if_else(instrument_id == 11, 2000000227, #INSPIRE concepts to 2 billion
+                                                      if_else(instrument_id == 12, 2000000228, #INSPIRE concepts to 2 billion
+                                                      if_else(instrument_id == 13, 2000000229, #INSPIRE concepts to 2 billion
+                                                      if_else(instrument_id == 14, 2000000230, #INSPIRE concepts to 2 billion
                                                       if_else(instrument_id == 15, 44783153, #measurement domain
-                                                      if_else(instrument_id == 16, 3000000266, 0
+                                                      if_else(instrument_id == 16, 2000000266, 0
                                                               ))))))))))))))))
                   , admitted_from_concept_id = 581476
                   , admitted_from_source_value = "Home Visit"
@@ -102,7 +102,7 @@ visit_detail_cdm_load <- sapply(names(visit_detail_cdm_table), function(x){
                                         visit_detail_start_date="date", visit_detail_start_datetime="timestamp without time zone",
                                         visit_detail_end_date="date", visit_detail_end_datetime="timestamp without time zone",
                                         visit_detail_type_concept_id="integer", provider_id= "integer", care_site_id="integer",
-                                        visit_detail_source_value= "character varying (50)", visit_detail_source_concept_id="bigint",
+                                        visit_detail_source_value= "character varying (50)", visit_detail_source_concept_id="integer",
                                         admitted_from_concept_id="integer", admitted_from_source_value="character varying (50)", 
                                         discharged_to_source_value="character varying (50)", discharged_to_concept_id="integer",
                                         preceding_visit_detail_id="integer", parent_visit_detail_id="integer", visit_occurrence_id="integer"

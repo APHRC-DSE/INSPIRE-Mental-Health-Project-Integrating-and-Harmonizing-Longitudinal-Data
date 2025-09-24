@@ -22,7 +22,7 @@ achilles_analysis <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study
   nn <- x
   study_id <- readr::parse_number(nn)
 
-  results_schema <- paste0("results_", nn)
+  results_schema <- paste0("study_", study_id,"_results")
   
   vocabulary_schema <- "vocabulary"
   
@@ -58,7 +58,3 @@ achilles_analysis <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study
 }, simplify = FALSE
 )
 
-staging_tables_data[["population_study"]] %>%
-  dplyr::filter(population_study_id == 1) %>%
-  dplyr::pull(data_source) %>%
-  as.character()

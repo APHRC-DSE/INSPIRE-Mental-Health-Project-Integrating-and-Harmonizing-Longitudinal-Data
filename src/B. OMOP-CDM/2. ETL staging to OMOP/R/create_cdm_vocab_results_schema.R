@@ -7,7 +7,7 @@ working_directory
 # Create a new schema for each study
 create_cdm_schema_name <- sapply(as.numeric(list_population_studies), function(x){
   nn <- x
-  name <- paste0("study_", nn, "_cdm_r")
+  name <- paste0("study_", nn, "_cdm")
   
   # Create a new schema
   query <- paste0("CREATE SCHEMA IF NOT EXISTS ", name, ";")
@@ -22,7 +22,7 @@ create_cdm_schema_name <- sapply(as.numeric(list_population_studies), function(x
 # Create results schema for each study
 create_results_schema_name <- sapply(as.numeric(list_population_studies), function(x){
   nn <- x
-  name <- paste0("results_study_", nn, "_cdm_r")
+  name <- paste0("study_", nn, "_results")
   
   # Create a new schema
   query <- paste0("CREATE SCHEMA IF NOT EXISTS ", name, ";")

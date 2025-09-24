@@ -26,7 +26,7 @@ dqd_dashboard <- sapply(list_all_schemas_study_cdm$schema_name[grepl("^study_", 
   study_id <- readr::parse_number(nn)
   
   #Create results schema objects
-  results_schema <- paste0("results_", nn)
+  results_schema <- paste0("study_", study_id,"_results")
   
   vocabulary_schema <- "vocabulary"
   

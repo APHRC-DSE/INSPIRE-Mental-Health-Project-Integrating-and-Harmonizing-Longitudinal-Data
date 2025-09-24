@@ -117,7 +117,9 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                    , condition_start_datetime = visit_start_datetime
                    , condition_source_value = individual_concept_id_text
                    , condition_source_concept_id = individual_concept_id
-                   )
+                   ) %>%
+    dplyr::filter(!condition_concept_id %in% c(4116815) #4116815 (No Pain) status changed from S to NS concept in new version of vocab
+                  )
   
   ## LPS fact table tool scores
   condition_table_b <- staging_tables_data[["longitudinal_population_study_fact"]] %>%
@@ -178,20 +180,20 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                                       visit_detail_start_datetime, provider_id, visit_detail_source_concept_id) %>%
                         dplyr::mutate(instrument_id = ifelse(visit_detail_source_concept_id == 44804610, 1,
                                                       ifelse(visit_detail_source_concept_id == 45772733, 2,
-                                                      ifelse(visit_detail_source_concept_id == 3000000219, 3,
+                                                      ifelse(visit_detail_source_concept_id == 2000000219, 3,
                                                       ifelse(visit_detail_source_concept_id == 4164838, 4, 
                                                       ifelse(visit_detail_source_concept_id == 37310582, 5,
                                                       ifelse(visit_detail_source_concept_id == 1761569, 6,
-                                                      ifelse(visit_detail_source_concept_id == 3000000223, 7,
+                                                      ifelse(visit_detail_source_concept_id == 2000000223, 7,
                                                       ifelse(visit_detail_source_concept_id == 36714019, 8,
                                                       ifelse(visit_detail_source_concept_id == 1988691, 9,
-                                                      ifelse(visit_detail_source_concept_id == 3000000226, 10,
-                                                      ifelse(visit_detail_source_concept_id == 3000000227, 11,
-                                                      ifelse(visit_detail_source_concept_id == 3000000228, 12,
-                                                      ifelse(visit_detail_source_concept_id == 3000000229, 13,
-                                                      ifelse(visit_detail_source_concept_id == 3000000230, 14,
+                                                      ifelse(visit_detail_source_concept_id == 2000000226, 10,
+                                                      ifelse(visit_detail_source_concept_id == 2000000227, 11,
+                                                      ifelse(visit_detail_source_concept_id == 2000000228, 12,
+                                                      ifelse(visit_detail_source_concept_id == 2000000229, 13,
+                                                      ifelse(visit_detail_source_concept_id == 2000000230, 14,
                                                       ifelse(visit_detail_source_concept_id == 44783153, 15,
-                                                      ifelse(visit_detail_source_concept_id == 3000000266, 16, 0
+                                                      ifelse(visit_detail_source_concept_id == 2000000266, 16, 0
                                                              ))))))))))))))))
                                       , instrument_id = as.integer(instrument_id)
                                       )
@@ -296,6 +298,10 @@ condition_occurrence_cdm_table <- sapply(list_all_schemas_study_cdm$schema_name[
                    ) %>%
     dplyr::mutate(across(c(condition_status_source_value, condition_source_value), ~strtrim(.x, 49)
                          )
+                  , across(c(condition_source_concept_id), 
+                           ~if_else(.x > 3000000000, .x - 1000000000, .x
+                                    ) #change INSPIRE concepts to 2 billion
+                           )
                   )
   
 }, simplify = FALSE
@@ -321,7 +327,7 @@ condition_occurrence_cdm_load <- sapply(names(condition_occurrence_cdm_table), f
                                         condition_type_concept_id="integer", condition_status_concept_id="integer",
                                         stop_reason="character varying (20)", provider_id="integer", visit_occurrence_id="integer",
                                         visit_detail_id="integer", condition_source_value="character varying (50)",
-                                        condition_source_concept_id="bigint", condition_status_source_value="character varying (50)"
+                                        condition_source_concept_id="integer", condition_status_source_value="character varying (50)"
                                         )
                       )
     

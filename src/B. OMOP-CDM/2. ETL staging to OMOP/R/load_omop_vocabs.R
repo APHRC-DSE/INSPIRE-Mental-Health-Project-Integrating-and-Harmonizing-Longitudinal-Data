@@ -10,15 +10,15 @@ load_omop_vocabs <- sapply(list_all_schemas_study_cdm$schema_name[grepl("vocabul
   nn <- x
   
   #Set path to your downloaded and unzipped Vocabularies from Athena
-  path_concept_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\CONCEPT.csv")
-  path_concept_relationship_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\CONCEPT_RELATIONSHIP.csv")
-  path_concept_ancestor_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\CONCEPT_ANCESTOR.csv")
-  path_concept_synonym_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\CONCEPT_SYNONYM.csv")
-  path_drug_strength_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\DRUG_STRENGTH.csv")
-  path_vocabulary_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\VOCABULARY.csv")
-  path_relationship_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\RELATIONSHIP.csv")
-  path_concept_class_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\CONCEPT_CLASS.csv")
-  path_domain_vocabs <- glue::glue("D:\\APHRC\\OMOP-CDM\\Usagi and Vocabulary\\vocabulary_download_v5_1755588371799\\DOMAIN.csv")
+  path_concept_vocabs <- glue::glue(vocab_folder_path, "\\CONCEPT.csv")
+  path_concept_relationship_vocabs <- glue::glue(vocab_folder_path, "\\CONCEPT_RELATIONSHIP.csv")
+  path_concept_ancestor_vocabs <- glue::glue(vocab_folder_path, "\\CONCEPT_ANCESTOR.csv")
+  path_concept_synonym_vocabs <- glue::glue(vocab_folder_path, "\\CONCEPT_SYNONYM.csv")
+  path_drug_strength_vocabs <- glue::glue(vocab_folder_path, "\\DRUG_STRENGTH.csv")
+  path_vocabulary_vocabs <- glue::glue(vocab_folder_path, "\\VOCABULARY.csv")
+  path_relationship_vocabs <- glue::glue(vocab_folder_path, "\\RELATIONSHIP.csv")
+  path_concept_class_vocabs <- glue::glue(vocab_folder_path, "\\CONCEPT_CLASS.csv")
+  path_domain_vocabs <- glue::glue(vocab_folder_path, "\\DOMAIN.csv")
   
   query_set_search_path <- DBI::dbExecute(con, sprintf("SET search_path TO %s", nn))
   
