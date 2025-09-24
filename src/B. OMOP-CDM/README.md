@@ -31,6 +31,7 @@ ETL design and implementation process from staging db to OMOP CDM can be found i
 
 ## 2. ETL staging to OMOP
 
+Code for ETL of the 14 studies from central staging to OMOP CDM can be found in the [2. ETL staging to OMOP](./2.%20ETL%20staging%20to%20OMOP) folder.
 
 ## 3. Achilles
 Achilles is part of [HADES](https://ohdsi.github.io/Hades/index.html) set collection of open-source R packages.
