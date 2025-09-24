@@ -48,9 +48,8 @@ Secondary studies to be mapped were from 11 articles, as highlighted in the tabl
 
 All 3 studies from the primary data collection were to be mapped as highlighted in the table below on the ***ETL to Staging column***.
 
-| **number** | **study country** | **source title**   | **link doi**                         | **tools used**                                                                                                     | **ETL to Staging ** |
-|------------|-------------------|--------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------|
-| **1**      | Kenya             | Kilifi HDSS        |                                      | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes                 |
-| **2**      | Uganda            | Iganga Mayuge HDSS |  https://doi.org/10.1093/ije/dyaa064 | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7)                                          | Yes                 |
-| **3**      | Uganda            | Kagando HDSS       |                                      | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes                 |
-
+| **number** | **study country** | **source title** | **link doi** | **tools used** | **ETL to Staging** |
+|---|---|---|---|---|---|
+| **1** | Kenya | Kilifi HDSS |  | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes  |
+| **2** | Uganda | Iganga Mayuge HDSS |  https://doi.org/10.1093/ije/dyaa064 | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7) | Yes  |
+| **3** | Uganda | Kagando HDSS |  | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ) | Yes  |
