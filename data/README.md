@@ -30,7 +30,7 @@ The scoping analysis led to access of datasets from 17 articles. Source Code can
 
 We obtained new datasets from primary collection of data from HDSS (Health and Demographics Surveillance System), in Kenya (Kilifi) and Uganda (Iganga Mayuge, Kagando). The identification of homesteads within HDSS relies on the comprehensive databases already established, which encompass detailed demographic and health-related information. This existing data infrastructure allows for a sophisticated random sampling strategy, ensuring a representative cross-section of households is included.
 
-| **number** | **study country** | **source title** | **source year** | **study name** | **tools used ** |
+| **number** | **study country** | **source title** | **source year** | **study name** | **tools used** |
 |---|---|---|---|---|---|
 | **1** | Kenya | Kilifi HDSS | 2024 | INSPIRE Mental Health Project | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7), Psychosis Screening Questionnaire (PSQ)  |
 | **2** | Uganda | Iganga Mayuge HDSS | 2023, 2024 | INSPIRE Mental Health Project | Patient Health Questionnaire (PHQ-9);Generalized Anxiety Disorder (GAD-7)  |
