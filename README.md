@@ -69,7 +69,7 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   │   ├── population_study_id_13               
 │   │   │   └── population_study_id_14
 │   │   │                                                 
-│   │   ├── 4. merge csv dumps         <- Merging all ETL population studies to central staging
+│   │   ├── 4. Local staging merge to central staging     <- Merging all ETL population studies to central staging
 │   │   └── 5. metabase dashboard
 │   │
 │   ├── B. OMOP-CDM           <- ETL from staging to OMOP
@@ -85,12 +85,34 @@ Inspired by [Cookie Cutter Data Science](https://github.com/drivendata/cookiecut
 │   │   └── 4. Data Quality Dashboard
 │   │           
 │   ├── C. ATLAS Analysis  <- Exploratory and results-oriented analysis and visualization
-│   │   │  
+│   │   │
+│   │   ├── 1. WSL Installation           <- Windows Subsystem for Linux (WSL) Installation
+│   │   ├── 2. Docker Installation        <- Install Docker Engine on a Linux distribution i.e, Ubuntu
+│   │   ├── 3. OHDSI-Broadsea_PgAdmin-Container-Atlas-Configuration          <- Install Broadsea and PgAdmin containers, then connect PgAdmin to AtlasDB
+│   │   ├── 4. Restore-CDM-to-AtlasDB_Generate-Results_WebAPIConfiguration    <- Restore CDM to Atlas DB, Generate Results, and WebAPI Configuration
+│   │   ├──                   
+│   │   └── 
+│   │           
 │   ├── D. FIPS+FER4LS     <- FAIR Implementation Profiles (FIPs) and FAIR Evaluation Reports (FERs)
 │   │   │
+│   │   
 │   └── E. Staging2Schema  <- The MH Studies Catalog      
+│
 └──
 ```
+
+## Requirements
+
+### Hardware
+A laptop/desktop with the following specifications is recommended:
+
+- **Processor:** Intel Core i5 or higher (higher core count is beneficial for parallel processing)
+- **RAM:** 16GB (recommended for most OHDSI workloads) if you anticipate running multiple containers or handling large datasets, consider upgrading to 32GB.
+- **Storage:** Minimum 500GB, but more is better with Solid-State Drive SSD
+- **Operating System:** Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
+
+### Software
+
 
 ## Maintainers
 
