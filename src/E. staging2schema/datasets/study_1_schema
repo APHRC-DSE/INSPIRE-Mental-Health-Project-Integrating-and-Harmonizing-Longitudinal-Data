@@ -1,0 +1,240 @@
+{
+  "@context": [
+    "https://schema.org/",
+    {
+      "qudt": "http://qudt.org/schema/qudt/",
+      "quantitykind": "http://qudt.org/vocab/quantitykind/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gaia": "https://ohdsi.github.io/Gaia/",
+      "ddi": "http://ddialliance.org/Specification/DDI-Lifecycle/3.2/",
+      "omop": "http://ohdsi.org/omop/",
+      "snomed": "http://snomed.info/id/",
+      "loinc": "http://loinc.org/"
+    }
+  ],
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.1186/s12888-018-1904-7",
+  "name": "Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women",
+  "description": "Longitudinal cohort study examining prevalence, incidence and correlates of postpartum depressive symptoms in Kenyan women using the Edinburgh Postnatal Depression Scale in urban Nairobi settings.",
+  "abstract": "Background: Few longitudinal studies have examined associations between risk factors during pregnancy and mental health outcomes during the postpartum period. We used a cohort study design to estimate the prevalence, incidence and correlates of significant postpartum depressive symptoms in Kenyan women. Methods: We recruited adult women residing in an urban, resource-poor setting and attending maternal and child health clinics in two public hospitals in Nairobi, Kenya. A translated Kiswahili Edinburgh Postpartum Depression Scale was used to screen for depressive symptoms at baseline assessment in the 3rd trimester and follow up assessment at 6–10 weeks postpartum. Information was collected on potential demographic, psychosocial and clinical risk variables. Potential risk factors for postpartum depression were evaluated using multivariate logistic regression analysis. Results: Out of the 171 women who were followed up at 6–10 weeks postpartum, 18.7% (95% CI: 13.3–25.5) were found to have postpartum depression using an EPDS cut off of 10. In multivariate analyses, the odds of having postpartum depression was increased more than seven-fold in the presence of conflict with partner (OR = 7.52, 95% CI: 2.65–23.13). The association between antepartum and postpartum depression was quite strong but did not reach statistical significance (OR = 3.37, 95% CI: 0.98–11.64). Conclusions: The high prevalence of significant postnatal depressive symptoms among Kenyan women underscores the need for addressing this public health burden. Depression screening and psychosocial support interventions that address partner conflict resolution should be offered as part of maternal health care.",
+  "identifier": "10.1186/s12888-018-1904-7",
+  "url": "https://doi.org/10.1186/s12888-018-1904-7",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateCreated": "2014-05-05",
+  "datePublished": "2018-12-27",
+  "dateModified": "2018-12-27",
+  "version": "1.0",
+  "keywords": [
+    "Postpartum depression",
+    "Antenatal depression",
+    "Psychosocial risk factors",
+    "Edinburgh postpartum depression scale",
+    "Kenya",
+    "Maternal health",
+    "Urban health",
+    "Longitudinal study"
+  ],
+  "creator": [
+    {
+      "@type": "Organization",
+      "name": "Research institutions in Nairobi, Kenya"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "BMC Psychiatry"
+  },
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Research funding organizations"
+    }
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Nairobi County, Kenya",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -1.3021282,
+      "longitude": 36.7203683
+    }
+  },
+  "temporalCoverage": "2014-05-05/2014-11-10",
+  "temporalMethod": "Longitudinal",
+  "dataCollectionMethod": "Structured questionnaire",
+  "measurementTechnique": "Structured questionnaire",
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "OHDSI Gaia Catalog",
+    "url": "https://ohdsi.github.io/Gaia/"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://example.com/data_study_1_nodups_rows_20251007_165744.csv"
+    }
+  ],
+  "citation": "Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women. BMC Psychiatry (2018). https://doi.org/10.1186/s12888-018-1904-7",
+  "healthCondition": {
+    "@type": "MedicalCondition",
+    "name": "Postpartum Depression",
+    "code": {
+      "@type": "MedicalCode",
+      "codingSystem": "SNOMED CT",
+      "codeValue": "76742003"
+    }
+  },
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "EPDS_Total_Score",
+      "description": "Total score from Edinburgh Postnatal Depression Scale",
+      "propertyID": ["1989297", "OMOP", "99046-5", "LOINC"],
+      "qudt:dataType": "xsd:integer",
+      "qudt:quantityKind": "omop:Measurement",
+      "qudt:unit": "qudt:Score",
+      "minValue": 0,
+      "maxValue": 30,
+      "measurementMethod": "Edinburgh Postnatal Depression Scale (EPDS)"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "individual_gender",
+      "description": "Biological sex of study participant",
+      "propertyID": ["8532", "OMOP", "248152002", "SNOMED"],
+      "qudt:dataType": "xsd:string",
+      "valueReference": {
+        "@type": "DefinedTermSet",
+        "name": "Biological Sex Categories",
+        "identifier": "https://athena.ohdsi.org/search-terms/terms/8532",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Female",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/8532"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "individual_year_of_birth",
+      "description": "Year of birth of study participant",
+      "propertyID": ["YearOfBirth", "DDI"],
+      "qudt:dataType": "xsd:gYear",
+      "qudt:quantityKind": "qudt:Time",
+      "minValue": 1988,
+      "maxValue": 1993
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "household_size_category",
+      "description": "Categorical classification of household size",
+      "propertyID": ["3000000213", "OMOP"],
+      "qudt:dataType": "xsd:string",
+      "valueReference": {
+        "@type": "DefinedTermSet",
+        "name": "Household Size Categories",
+        "identifier": "https://athena.ohdsi.org/search-terms/terms/3000000213",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Household Size of Two to Four",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/3000000213"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "residence_location_type",
+      "description": "Classification of residential area type",
+      "propertyID": ["UrbanRuralClassification", "DDI"],
+      "qudt:dataType": "xsd:string",
+      "valueReference": {
+        "@type": "DefinedTermSet",
+        "name": "Residence Location Types",
+        "identifier": "https://athena.ohdsi.org/search-terms/terms/urban_rural",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Urban",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/urban"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "EPDS_SelfHarm_Thoughts",
+      "description": "The thought of harming myself has occurred to me",
+      "propertyID": ["45884598", "OMOP", "LA6270-8", "LOINC"],
+      "qudt:dataType": "xsd:string",
+      "measurementMethod": "EPDS Item 31",
+      "valueReference": {
+        "@type": "DefinedTermSet",
+        "name": "EPDS SelfHarm Thoughts Responses",
+        "identifier": "https://athena.ohdsi.org/search-terms/terms/45884598",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Never",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45884598-1"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Hardly ever",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45884598-2"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Sometimes",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45884598-3"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Yes, quite often",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45884598-4"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "EPDS_Laugh_FunnySide",
+      "description": "I have been able to laugh and see the funny side of things",
+      "propertyID": ["45878094", "OMOP", "LA18376-6", "LOINC"],
+      "qudt:dataType": "xsd:string",
+      "measurementMethod": "EPDS Item 22",
+      "valueReference": {
+        "@type": "DefinedTermSet",
+        "name": "EPDS Laugh FunnySide Responses",
+        "identifier": "https://athena.ohdsi.org/search-terms/terms/45878094",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "As much as I always could",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45878094-1"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Not quite so much now",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45878094-2"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Definitely not so much now",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45878094-3"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "Not at all",
+            "identifier": "https://athena.ohdsi.org/search-terms/terms/45878094-4"
+          }
+        ]
+      }
+    }
+  ]
+}
